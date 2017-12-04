@@ -1,0 +1,135 @@
+\documentclass[a4paper]{scrartcl}
+
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+
+% Document variables
+\newcommand{\Author}{Oliver Friedrich, Johannes Hamfler}
+\newcommand{\Title}{Prototypische Umsetzung eines Chatbots zur Terminverwaltung}
+\newcommand{\Subtitle}{Masterprojekt WS 2017}
+\newcommand{\Supervisor}{Prof.\ Dr.\ Michael Frank}
+\newcommand{\Affil}{Hochschule für Technik, Wirtschaft und Kultur Leipzig}
+\newcommand{\Faculty}{Fakultät Informatik, Mathematik und Naturwissenschaften}
+
+
+\usepackage[hidelinks]{hyperref}
+\hypersetup{%
+    pdftitle={\Title},%
+    pdfauthor={\Author},%
+    pdfsubject={\Subtitle},%
+}
+
+\usepackage[
+    headsepline,%
+    footsepline,%
+    automark,%
+]{scrlayer-scrpage}
+
+\usepackage{listings}
+
+% enable and define SourceCode-Listings
+\usepackage{minted}
+\setminted{%
+    linenos=true,
+    breaklines=true,
+    tabsize=4,
+    numbersep=5pt,
+    fontsize=\footnotesize,
+}
+
+%\newmintedfile[ansible]{yaml}{}
+%\newmintedfile[vagrant]{ruby}{}
+
+\usepackage[babel,german=quotes]{csquotes}
+
+\usepackage{graphicx}
+\graphicspath{{./img/}}
+\newcommand{\Logo}{\includegraphics[height=30px]{HTWK_Logo_RGB-transparent_250.png}}
+\newcommand{\BigLogo}{\includegraphics[height=60px]{HTWK_Logo_RGB-transparent_250.png}}
+
+\usepackage[affil-it]{authblk}
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\setlength{\parindent}{0em}
+
+% For folder listings and trees
+%\definecolor{folderbg}{RGB}{255,255,255}
+%\usepackage{forest}
+
+\usepackage[acronym,toc,shortcuts]{glossaries}
+\makeglossaries%
+
+% \newacronym{DNS}{DNS}{Domain Name Service}
+
+\usepackage[style=alphabetic,backend=biber]{biblatex}
+\bibliography{main.bib}
+
+% Enable custom title page
+\titlepage%
+
+\begin{document}
+
+
+\begin{titlepage}
+    \centering
+    \textbf{\Huge {\Title}}\\
+    \vspace{2cm}
+    {\Large \Subtitle}\\
+    \vspace{1cm}
+    {\Large Betreuer: \Supervisor}\\
+    \vspace{2cm}
+    {\Large \Author}\\
+    \vspace{2cm}
+    {\MakeUppercase{\Affil}}\\
+    \vspace{0.5cm}
+    {\MakeUppercase{\Faculty}}\\
+    \vspace{2cm}
+    {\Large vorgelegt am:\\ \today}\\
+    \vspace{4cm}
+    {\BigLogo}
+\end{titlepage}
+
+\ohead{{\Title}}
+\chead{}
+\ihead{{\Logo}}
+\ofoot{\headmark}
+\automark[subsection]{subsection}
+\ifoot{{\Author}}
+\cfoot{\thepage}
+
+\pagebreak
+% \listoftodos
+\tableofcontents
+\pagebreak
+
+\input{content.tex}
+
+\pagebreak
+
+\section{Anhang}
+
+%Literatur
+% \nocite{heap_ansible:_2016}
+
+\printbibliography%
+
+\pagebreak
+
+%Abkürzungen ausgeben
+\deftranslation[to=German]{Acronyms}{Abkürzungsverzeichnis}
+\printglossary[type=\acronymtype,style=long,title=Abkürzungsverzeichnis]
+
+%\lstlistoflistings
+\listoffigures
+
+\pagebreak
+
+\subsection{Selbständigkeitserklärung}
+\large
+Hiermit erklären wir, dass wir die vorliegende Hausarbeit selbständig verfasst und keine anderen als die angegebenen Hilfsmittel benutzt haben.
+Die Stellen der Hausarbeit, die anderen Quellen im Wortlaut oder dem Sinn nach entnommen wurden, sind durch Angaben der Herkunft kenntlich gemacht. Dies gilt auch für Zeichnungen, Skizzen, bildliche Darstellungen sowie für Quellen aus dem Internet.
+
+\vspace{3cm}
+\textit{\Author}\\
+
+\today
+\end{document}

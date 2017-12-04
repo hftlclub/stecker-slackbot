@@ -1,0 +1,57 @@
+\documentclass[xetex,mathserif,serif]{beamer}
+
+\usetheme{metropolis}
+%\metroset{background=dark}
+
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+\hypersetup{pdfstartview={Fit}} % fits the presentation to the window when first displayed
+
+\usepackage{csquotes}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\graphicspath{{img/}}
+\usepackage{booktabs}
+
+\usepackage[
+backend=biber,%
+style=authoryear,%
+citestyle=authoryear,%
+]{biblatex}
+\bibliography{main.bib}
+
+\date{\today}
+\institute{Fakultät IMN - HTWK Leipzig}
+\author{Oliver Friedrich}
+
+\newcommand{\Logo}{\includegraphics[height=0.3\textheight]{HTWK_Logo_RGB-transparent_250.png}}
+\newcommand{\BigLogo}{\includegraphics[height=0.9\textheight]{HTWK_Logo_RGB-transparent_250.png}}
+
+%TODO
+\title{}
+\subtitle{}
+
+
+\begin{document}
+
+\begin{frame}
+\centering
+\titlepage
+\end{frame}
+
+\begin{frame}
+    \frametitle{Inhaltsübersicht}
+    \tableofcontents
+\end{frame}
+
+\begin{frame}
+    \frametitle{}
+\end{frame}
+
+\begin{frame}
+    \centering
+    \huge Vielen Dank für die Aufmerksamkeit!\\
+\end{frame}
+
+\end{document}

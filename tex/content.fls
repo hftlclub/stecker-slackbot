@@ -1,0 +1,5 @@
+PWD /home/ohli/Studium/3FS/Masterprojekt/steckerbot/tex
+INPUT /usr/share/texmf-dist/web2c/texmf.cnf
+INPUT /var/lib/texmf/web2c/pdftex/latex.fmt
+INPUT content.tex
+OUTPUT content.log
