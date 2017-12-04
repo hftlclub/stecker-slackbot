@@ -1,0 +1,14 @@
+@startuml
+
+:Mitarbeiter: as MA
+MA --> (Termin anlegen)
+MA --> (Termin abfragen)
+MA --> (...)
+
+:Administrator: as admin
+admin --> (Termin löschen)
+admin --> (Nutzer anlegen)
+admin --> (Nutzer löschen)
+admin --> (Berechtigungen des Nutzers ändern)
+
+@enduml
