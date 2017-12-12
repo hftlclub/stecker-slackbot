@@ -19,9 +19,15 @@
 * Optionen für E-Mail oder andere Systeme offen halten
 * db-Verbindung darf die ganze zeit offen bleiben (SQL)
 
-## ToDo
-@Ferdi: bitte Trello anlegen 
-
-@Johannes: HuBot anschauen
-
-@Oli: TS checken, Projektplan
+## Mensatreff 12.12.2017:
+* Docker-compose für Dev-Env - check
+* DB-Server vorhanden - Daten generisch halten + dokumentieren, ggf. extra Tabellen für Bot (z.B. Mapping Wort-Datensatz)
+* Redis-Cache? Geschwindigkeit - check
+* install/backup-Skripts + Strategie - Betrachtung in Doku reicht
+* Coffeescript vs. Typescript? -  ToDo
+* Netzwerkkonfig/Ports? - Doppel-NAT, HTTP-Ports 80, 443 über vHosts
+* Sicherheitsbedenken - keine
+* Termin-API/Datenmodell - normalisiert, siehe Aufgabenstellung
+* E-Mail an Bots als extra Schnittstelle? - möglich, in Zukunft
+* Berechtigungsstruktur/Nutzerrollen? - Status von Ferdi
+* "Besoffen bedienbar", Zielgruppe: Informatiker, aber auch Lehrer
