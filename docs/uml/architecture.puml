@@ -1,0 +1,21 @@
+@startuml
+
+title Deploymentdiagramm
+
+actor Nutzer
+component Slack
+frame Appserver {
+component Chatbot
+interface redis
+interface iCalFeed
+database Termindatenbank
+}
+
+Nutzer <--> Slack
+Nutzer <--> iCalFeed
+Slack <-> Chatbot
+Chatbot <-> redis
+redis <--> Termindatenbank
+Termindatenbank <--> iCalFeed
+
+@enduml
