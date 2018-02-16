@@ -1,0 +1,33 @@
+@startuml
+
+title Datenmodell
+
+class User {
+  + user_id
+  - user_name
+  - slack_id
+  + group_id
+}
+
+class Shift {
+  + shift_id
+  - shift_name
+  + date_id
+  + user_id 
+}
+
+class Group {
+    + group_id
+    - group_name
+}
+
+class Date {
+  + date_id
+  + shift_id
+}
+
+User "1" -* "n" Shift
+Date "1" --* "n" Shift
+Group "1" --* "n" User
+
+@enduml

@@ -3,12 +3,15 @@
 :Mitarbeiter: as MA
 MA --> (Termin anlegen)
 MA --> (Termin abfragen)
-MA --> (...)
+MA --> (Termin zusagen)
+MA --> (Termin absagen)
 
 :Administrator: as admin
 admin --> (Termin löschen)
 admin --> (Nutzer anlegen)
 admin --> (Nutzer löschen)
 admin --> (Berechtigungen des Nutzers ändern)
+
+admin --|> MA : includes
 
 @enduml
