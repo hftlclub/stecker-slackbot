@@ -31,3 +31,9 @@
 * E-Mail an Bots als extra Schnittstelle? - möglich, in Zukunft
 * Berechtigungsstruktur/Nutzerrollen? - Status von Ferdi
 * "Besoffen bedienbar", Zielgruppe: Informatiker, aber auch Lehrer
+
+
+## Nützliche Links
+* [Redis Tutorial](http://www.try.redis.io)
+* [Resources for Slack Bots](https://www.botwiki.org/resources/slackbots/)
+* [Slack App Testing](https://slackapi.github.io/steno/)
