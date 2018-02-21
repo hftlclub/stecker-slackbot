@@ -1,21 +1,56 @@
-\documentclass[a4paper]{scrartcl}
+\documentclass[
+	numbers=noenddot, % ¬ .e am Ende von TOC
+	toc=flat, %Flache TOC
+	12pt, % Schriftgröße 
+	titlepage, % es wird eine Titelseite verwendet 
+	listof=totoc, % Verzeichnisse im Inhaltsverzeichnis aufführen 
+	bibliography=totoc, % Literaturverzeichnis im Inhaltsverzeichnis aufführen 
+	a4paper
+]{scrartcl}
 
 \usepackage[ngerman]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage[left=2.5cm,right=2.5cm, top=2cm, bottom=2cm]{geometry}
+\usepackage{setspace}
+\setlength{\footskip}{1.2cm}  % distance between footer and content
+
+
+
 
 % Document variables
-\newcommand{\Author}{Oliver Friedrich, Johannes Hamfler}
+\newcommand{\versiondate}{\today}
+\newcommand{\firstAuthor}{Oliver Friedrich}
+\newcommand{\secondAuthor}{Johannes Hamfler}
+\newcommand{\Authors}{\firstAuthor, \secondAuthor}
+\newcommand{\shortAuthors}{O. Friedrich, J. Hamfler}
 \newcommand{\Title}{Prototypische Umsetzung eines Chatbots zur Terminverwaltung}
 \newcommand{\Subtitle}{Masterprojekt WS 2017}
-\newcommand{\Supervisor}{Prof.\ Dr.\ Michael Frank}
+\newcommand{\Supervisor}{Prof. Dr.  rer. nat. habil. Michael Frank}
 \newcommand{\Affil}{Hochschule für Technik, Wirtschaft und Kultur Leipzig}
 \newcommand{\Faculty}{Fakultät Informatik, Mathematik und Naturwissenschaften}
-
+\newcommand{\unterschriftenfelder}[4]{%
+  \parbox{\textwidth}{
+    \centering #1, \versiondate\\
+    \vspace{2cm}
+    
+    \parbox{6cm}{
+      \centering
+      \rule{6cm}{1pt}\\
+       #2 
+    }
+    \hfill
+    \parbox{6cm}{
+      \centering
+      \rule{6cm}{1pt}\\
+      #3
+    }
+  }
+}
 
 \usepackage[hidelinks]{hyperref}
 \hypersetup{%
     pdftitle={\Title},%
-    pdfauthor={\Author},%
+    pdfauthor={\Authors},%
     pdfsubject={\Subtitle},%
 }
 
@@ -64,7 +99,8 @@
 \bibliography{main.bib}
 
 % Enable custom title page
-\titlepage%
+%\titlepage%
+
 
 \begin{document}
 
@@ -77,39 +113,60 @@
     \vspace{1cm}
     {\Large Betreuer: \Supervisor}\\
     \vspace{2cm}
-    {\Large \Author}\\
+    {\Large \Authors}\\
     \vspace{2cm}
     {\MakeUppercase{\Affil}}\\
     \vspace{0.5cm}
     {\MakeUppercase{\Faculty}}\\
     \vspace{2cm}
-    {\Large vorgelegt am:\\ \today}\\
+    {\Large vorgelegt am:\\ \versiondate}\\
     \vspace{4cm}
     {\BigLogo}
 \end{titlepage}
 
-\ohead{{\Title}}
-\chead{}
-\ihead{{\Logo}}
-\ofoot{\headmark}
-\automark[subsection]{subsection}
-\ifoot{{\Author}}
-\cfoot{\thepage}
 
+% % % % % % % % % % % % % % % % % % % % % % % % % INHALTSVERZEICHNIS
+\chead{}
+\ihead{\headmark}
+\ohead{}
+\ifoot{{\Authors}}
+\cfoot{}
+\ofoot{\versiondate}
 \pagebreak
-% \listoftodos
+
 \tableofcontents
 \pagebreak
+% % % % % % % % % % % % % % % % % % % % % % % % % INHALTSVERZEICHNIS
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % INHALT
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\parindent0pt % Keine Absatzeinrückungen
+\parskip2ex %Absatzhöhe
+
+\chead{}
+\ihead{\footnotesize \textsc{\headmark}}
+\ohead{\thepage}
+%\automark[subsection]{subsection}
+\automark[section]{section}
+\ifoot{{\Authors}}
+\cfoot{}
+\ofoot{\versiondate}
 
 \input{content.tex}
+% % % % % % % % % % % % % % % % % % % % % % % % % INHALT
 
-\pagebreak
-
-\section{Anhang}
+\newpage
+%\section{Anhang}
+\appendix
 
 %Literatur
 % \nocite{heap_ansible:_2016}
-
+\newpage
+%\lhead{{\footnotesize \textsc{Quellenverzeichnis}}}
+\renewcommand\refname{Quellenverzeichnis}
 \printbibliography%
 
 \pagebreak
@@ -121,15 +178,17 @@
 %\lstlistoflistings
 \listoffigures
 
-\pagebreak
 
-\subsection{Selbständigkeitserklärung}
+\setcounter{secnumdepth}{0}
+\pagebreak
+\ihead{\footnotesize \textsc{Selbständigkeitserklärung}}
+\ohead{}
+\section*{Selbständigkeitserklärung}
 \large
 Hiermit erklären wir, dass wir die vorliegende Hausarbeit selbständig verfasst und keine anderen als die angegebenen Hilfsmittel benutzt haben.
 Die Stellen der Hausarbeit, die anderen Quellen im Wortlaut oder dem Sinn nach entnommen wurden, sind durch Angaben der Herkunft kenntlich gemacht. Dies gilt auch für Zeichnungen, Skizzen, bildliche Darstellungen sowie für Quellen aus dem Internet.
 
 \vspace{3cm}
-\textit{\Author}\\
+\unterschriftenfelder{Leipzig}{\firstAuthor}{\secondAuthor}
 
-\today
 \end{document}
