@@ -20,6 +20,10 @@
 *.mtc
 *.mtc1
 *.out
+*.fls
+*.bcf
+*.pdf
 *.synctex.gz
 *.fdb_latexmk
 _minted-main
+texstudio-config.txsprofile
