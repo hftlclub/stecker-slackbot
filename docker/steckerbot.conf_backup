@@ -1,0 +1,29 @@
+# ------------------------------
+# Host
+# ------------------------------
+HOST_PORT=9001
+
+# ------------------------------
+# SQL DB
+# ------------------------------
+DBNAME=steckerbot
+DBUSER=steckerbot
+
+# (A-Za-z0-9)
+DBPASS=HobXO0SVdDfwsKP85tPZ8OLsM4Ag
+DBROOT=zThKKf4ctFRkVlmWOkk0ecRpRI0c
+
+# -------------------------------
+# Steckerbot Konfiguration
+# -------------------------------
+SB_VERSION=develop
+SB_IP=0.0.0.0
+SB_PORT=9001
+
+# User configuration
+SB_ADMINUSER=admin
+SB_ADMINPASS=yz4EPvf1QnI9V3blrf6ohHfxO1Ly
+
+# Fixed project name
+COMPOSE_PROJECT_NAME=steckerbot-dockerized
+
