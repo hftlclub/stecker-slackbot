@@ -1,117 +1,23 @@
-
 \section{Einleitung}
+\input{sec/einleitung}
+\label{einleitung}
 % kurz Abstract
 % um was gehts, wer gab den auftrag, welcher hintergrund / motivation
 % was ist das grobe ziel
 
 \clearpage
 \section{Anforderungen und Festlegungen}
+\input{sec/anforderungen}
+\label{anforderungen}
 % Ferdi will, Ferdi verlangt, Ferdi lässt Spielraum (feine ziele)
 % Festgelegte Begriffe, allgemeingültige Aussagen für das Dokument
 
 \clearpage
 \section{Auswahl eines Bot-Frameworks}
+\input{sec/botframework}
+\label{botframework}
 % HuBot, BotKit
 % Einschränkungen der Auswahl weil ...
-\subsection{Vergleichsparameter}
-Für einen Vergleich der einzusetzenden Bot-Frameworks werden für diese im Folgenden Vergleichsparameter definiert. Dabei ist es wichtig, diese an den Anforderungen aus dem vorherigen Kapitel sowie technischen Aspekten zu orientieren.
-
-Jeder Parameter muss folgende Kriterien erfüllen:
-
-\begin{itemize}
-    \item messbar, als Zahlen- Text- oder Wahrheitswert
-    \item generisch, d.h. auf die zu vergleichenden Frameworks anwendbar
-    \item nachweisbar, d.h. die Herkunft des Wertes ist nachvollziehbar
-\end{itemize}
-
-Aus \autoref{tab:botparameters} sind passende Bewertungsparameter gemäß der oben genannten Anforderungen zu entnehmen.
-
-% evtl. booktabs statt tabularx
-\begin{table}[htbp]
-    \begin{tabularx}{\textwidth}{lXp{6cm}}
-   \hline
-   \textbf{Parameter} & \textbf{Beschreibung} & \textbf{Quelle} \\
-   \hline
-   Alter & Datum des ersten Commits im Master-branch & \verb+git log --reverse | head -3+\\
-   \hline
-   Aktivität & Commits in den Master-branch, Anz. Pull-Requests & GitHub Projektübersicht \\
-   \hline
-   Codequalität & Testabdeckung und Anz. Issues & GitHub, Tests vorhanden \\
-   \hline
-   Komplexität & Anz. Klassen, SLOC, Dateigröße \textbf{ohne Beispiele, externe Abhängigkeiten etc.} & \verb+du+, Code, \verb+git ls-files | xargs wc -l+ \\
-   \hline
-   Programmiersprache & primär verwendete Programmiersprache & GitHub-Seite \\
-   \hline
-   Integrationsgrad & Anz. bereits vorhandener Integrationen & Website, Dokumentation \\
-   \hline
-   Erweiterbarkeit & Anz. an Erweiterungsmodulen & Code, Dokumentation \\
-   \hline
-   Dokumentation & Dokumentation vorhanden ja/nein & docs-Ordner oder GitHub-Wiki \\
-   \hline
-   Lizenz & Art der Lizenz des Projektes & LICENSE.md im Git-Repositorium \\
-   \hline
-\end{tabularx}
-\caption{Parameter zum Vergleich der Bot-Frameworks}
-\label{tab:botparameters}
-\end{table}
-
-Die Aussagefähigkeit der in \autoref{tab:botparameters} enthaltenen Parameter ist stellenweise kritisch zu hinterfragen, da die Genauigkeit zugunsten der Generizität eingeschränkt wurde. 
-Beispiele:
-\begin{itemize}
-    \item Testabdeckung: je nach Auswahl und Integration der Testbibliothek kann die Testabdeckung immer 100\% betragen
-\item SLOC: viele Codezeilen deuten nicht zwingend auf guten Code hin (von Kommentaren wird hier abgesehen)
-\end{itemize}
-
-Unter Beachtung der Einschränkungen und der Kombination aller Parameter ist eine differenzierte Gegenüberstellung durchführbar.
-
-\subsection{Auswahl möglicher Frameworks}
-
-Aufbauend auf den zu Beginn gestellten Anforderungen entfallen Frameworks, die:
-\begin{itemize}
-    \item deren Quelltext nicht frei verfügbar ist
-    \item eine dauerhafte Verbindung zum Hersteller benötigen
-    \item nicht kostenfrei sind
-\end{itemize}
-
-Durch diese Einschränkungen sind z.B. das von facebook entwickelte wit-Botframework (\url{https://wit.ai/} und das von Microsoft entwickelte Bot-framework (\url{https://dev.botframework.com/}) nicht Teil weiterer Betrachtungen.
-Eine weitere Gruppe von Botframeworks zeichnet sich durch eine (meist zwingende) Anbindung an eine Spracherkennung aus, die für den hier gewünschten Anwendungsfall nicht benötigt wird. Dadurch wird z.B. \url{api.ai} nicht Teil weiterer Betrachtungen sein.
-
-
-Weitere Botframeworks sind unter \url{https://github.com/abdelhai/awesome-bots} aufgelistet. 
-Von den dort aufgelisteten Frameworks entsprechen hier \textbf{Botkit} und \textbf{Hubot} den Anforderungen.
-
-\subsection{Vergleich der Frameworks}
-
-\begin{table}[htbp]
-    \centering
-    \begin{tabularx}{\textwidth}{lXX}
-        \hline
-        \textbf{Parameter} & \textbf{Botkit} & \textbf{Hubot} \\
-        \hline
-        Alter (Stand 02.2018) & ~2 Jahre & ~5 Jahre \\
-        \hline
-        Aktivität & 2078 Commits, 29 Pull-Requests & 2011 Commits, 5 Pull-Requests \\
-        \hline
-        Codequalität & 115 Issues, Testabdeckung 100\% & 30 Issues, Testabdeckung 100\% \\
-        \hline
-        Komplexität & 35259 SLOC & 7472 SLOC\\
-        \hline
-        Programmiersprache & TypeScript & CoffeeScript\\
-        \hline
-        Integrationsgrad & tbd & tbd \\
-        \hline
-        Erweiterbarkeit & tbd & tbd \\
-        \hline
-        Dokumentation & ja & ja \\
-        \hline
-        Lizenz & frei, MIT & frei, MIT \\
-    \end{tabularx}
-    \caption{Vergleich von Botkit und Hubot}
-    \label{tab:comparebotkithubot}
-\end{table}
-
-% Zwischenfazit: Botkit ist größer und umfangreicher, Hubot kleiner und simpler.
-% Würde ich am Ende von TypeScript vs. CoffeeScript abhängig machen
 
 \clearpage
 \section{Entwurf eines Modells}
