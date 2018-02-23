@@ -1,0 +1,48 @@
+\subsection{Anforderungsanalyse mittels Use-Case-Betrachtung}
+
+\subsubsection{Interaktion über Slack}
+
+Es werden folgende Befehle für die Interaktion definiert.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l|l}
+  Befehl & Bedeutung \\
+ \hline
+% für vergessliche Leute
+ zeige Schicht & zeigt die nächste Schicht für die aufrufende Person an \\
+ zeige Schichten & zeigt alle zukünftigen Schichten für die aufrufende Person an \\
+ zeige alle Schichten & zeigt einen Schichtplan an, welcher alle Mitglieder enthält \\
+ 
+% jedes Mitglied muss pro Jahr mindestens x mal an die Bar
+ zeige Anzahl Schichten & zeigt die geleisteten Schichten für dieses Jahr an \\
+ zeige Anzahl alte Schichten & zeigt die geleisteten Sichten für letztes Jahr an \\
+ 
+% zum Anzeigen der Auswahl an welchen man teilnehemn möchte
+ zeige Termine & zeigt alle kommenden Termine $t_i$ an \\
+ zeige Veranstaltungen & zeigt alle zukünftigen Veranstaltungen $v_i$ an ($V \subseteq T$) \\
+ zeige Sitzungen & zeigt alle zukünftigen Sitzungen $s_i$ an ($S \subseteq T$) \\
+ 
+% für Termin eintragen
+ nehme Teil an $t_i$ & trägt den aufrufenden Nutzer als Teilnehmer für $t_i$ ein \\
+ nehme nicht Teil an $t_i$ & trägt den aufrufenden Nutzer für $t_i$ aus
+ 
+\end{tabular}
+\caption{Befehle zur Chatbotinteraktion}
+\label{tab:chatbotinteraktion}
+\end{table}
+
+
+\subsection{Datenbankschema}
+
+Das Datenbankschema soll laut Anforderung unabhängig von einem spezifischen Chatbot nutzbar sein. Falls ein Chatbot ausgetauscht oder andere Interaktionsmethoden hinzugefügt werden, darf die Datenbank entsprechend keine Abhängigkeiten besitzen. Es wird deshalb ein Datenbankschema angelegt, welches nur die Terminverwaltung abbildet und anschließend eine Erweiterung hinzugefügt, welche die notwendigen Schlüssel auf die verwendete Plattform abbildet.
+
+% Hier das DB-Schmea rein und eine Fremdschlüsseltabelle für die Slack-Nutzernamen und bla
+
+\subsection{Kommunikationsschnittstellen}
+
+Die kommunikation zwischen der Datenbank und dem Chatbot erfolgt auf dem gleichen Host, weshalb keine besonderen Fälle beachtet werden müssen. Der Kommunikationspfad zwischen dem Chatbot und Slack wird jedoch über ein Hochschulnetzwerk durchgeführt. In diesem sind in das Netzwerk des Clubs nur die Ports 80 und 443 freigegeben. Ausgehend ????????????????? doppeltes NAT aber Webseiten ok
+
+Aus diesem Grund muss der Chatbot sich als Client mit Slack verbinden und darf keine Serveranwendung sein, welche ein Polling implementiert.
+
+% vllt Grafik einfügen?
