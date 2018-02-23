@@ -25,5 +25,7 @@
 *.pdf
 *.synctex.gz
 *.fdb_latexmk
+*.xml
+*.xml
 _minted-main
 texstudio-config.txsprofile
