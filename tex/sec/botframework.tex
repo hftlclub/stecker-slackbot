@@ -20,17 +20,19 @@ Aus \autoref{tab:botparameters} sind passende Bewertungsparameter gemäß der ob
    \hline
    Alter & Datum des ersten Commits im Master-branch & \verb+git log --reverse | head -3+\\
    \hline
-   Aktivität & Commits in den Master-branch, Anz. Pull-Requests & GitHub Projektübersicht \\
+   Aktivität & Commits in den Master-branch, Anz.\ Pull-Requests & GitHub Projektübersicht \\
    \hline
-   Codequalität & Testabdeckung und Anz. Issues & GitHub, Tests vorhanden \\
+   Popularität & Anz.\ \enquote{Stars} und \enquote{Forks} & GitHub \\
+    \hline
+   Codequalität & Testabdeckung und Anz.\ Issues & GitHub, Tests vorhanden \\
    \hline
-   Komplexität & Anz. Klassen, SLOC, Dateigröße \textbf{ohne Beispiele, externe Abhängigkeiten etc.} & \verb+du+, Code, \verb+git ls-files | xargs wc -l+ \\
+   Komplexität & Anz.\ Klassen, SLOC, Dateigröße \textbf{ohne Beispiele, externe Abhängigkeiten etc.} & \verb+du+, Code, \verb+git ls-files | xargs wc -l+ \\
    \hline
    Programmiersprache & primär verwendete Programmiersprache & GitHub-Seite \\
    \hline
-   Integrationsgrad & Anz. bereits vorhandener Integrationen & Website, Dokumentation \\
+   Integrationsgrad & Anz.\ bereits vorhandener Integrationen & Website, Dokumentation, npm \\
    \hline
-   Erweiterbarkeit & Anz. an Erweiterungsmodulen & Code, Dokumentation \\
+   Erweiterbarkeit & Anz.\ an Erweiterungsmodulen & Code, Dokumentation \\
    \hline
    Dokumentation & Dokumentation vorhanden ja/nein & docs-Ordner oder GitHub-Wiki \\
    \hline
@@ -78,15 +80,17 @@ Von den dort aufgelisteten Frameworks entsprechen hier \textbf{Botkit} (\url{htt
         \hline
         Aktivität & 2078 Commits, 29 Pull-Requests & 2011 Commits, 5 Pull-Requests \\
         \hline
+        Popularität & 7.813 Stars, 1.714 Forks & 13.817 Stars, 3.269 Forks \\
+        \hline
         Codequalität & 115 Issues, Testabdeckung 100\% & 30 Issues, Testabdeckung 100\% \\
         \hline
-        Komplexität & 35259 SLOC & 7472 SLOC\\
+        Komplexität & 35259 SLOC & 7472 SLOC \\
         \hline
-        Programmiersprache & TypeScript & CoffeeScript\\
+        Programmiersprache & TypeScript & CoffeeScript \\
         \hline
-        Integrationsgrad & tbd & tbd \\
+        Integrationsgrad & 12 & 62 \\
         \hline
-        Erweiterbarkeit & tbd & tbd \\
+        Erweiterbarkeit & 28 & ~50 \\
         \hline
         Dokumentation & ja & ja \\
         \hline
@@ -98,3 +102,8 @@ Von den dort aufgelisteten Frameworks entsprechen hier \textbf{Botkit} (\url{htt
 
 % Zwischenfazit: Botkit ist größer und umfangreicher, Hubot kleiner und simpler.
 % Würde ich am Ende von TypeScript vs. CoffeeScript abhängig machen
+
+Wie in \autoref{tab:comparebotkithubot} ersichtlich, bietet Hubot aufgrund der längeren Entwicklungszeit eine größere Anzahl von Nutzern und Integrationen. Desweiteren ist Hubot auf die praktische Notwendigkeit bei GitHub zurückzuführen, die Entwicklungsprozesse an ChatOps\footnote{Ausführen von Deployment-Befehlen etc. direkt aus dem Chat-Programm, Hintergrund siehe: \url{https://www.youtube.com/watch?v=NST3u-GjjFw}} auszurichten.
+Beide Frameworks dienen dabei unterschiedlichen Zielen: während Botkit eher als Rahmenwerk für darauf aufbauende Bots anzusehen ist, ist der Bot als solches direkt bei Hubot integriert und kann modular erweitert werden.
+
+% TODO: kurz auf Botkit eingehen, Programmiersprachen check, ENTSCHEIDUNG TREFFEN
