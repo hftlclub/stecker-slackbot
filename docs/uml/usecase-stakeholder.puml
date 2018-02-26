@@ -1,0 +1,30 @@
+@startuml
+!include skin.puml
+left to right direction
+
+:Auftraggeber: as AG
+AG --> (Datenbank mit Zuweisung\nMitarbeiter - Veranstaltung einsehen)
+AG --> (erfassen, welche Mitglieder\nwie viele Dienste machen)
+AG --> (Nutzerkreis einschränken)
+AG --> (Bot in Slack verwenden)
+AG --> (Bot um weitere Funktionalitäten erweitern)
+AG --> (Bot in nicht-technischen Teams nutzen)
+AG --> (Dokumentation der Datenbank lesen)
+AG --> (Datenbank ohne Bot nutzen\n-> Zukunftssicherheit)
+AG --> (Bot unter MIT-Lizenz nutzen)
+
+
+usecase (Nutzer an Dienst erinnern) as reminder
+:Bot: as bot
+bot --> (mittels Slack kommunizieren)
+bot --> (Datenbank abfragen)
+bot --> (Dienste in Datenbank schreiben)
+bot --> reminder
+
+note left of reminder
+    * zeitgesteuert
+    * ereignisbasiert
+    * manuell
+end note
+
+@enduml
