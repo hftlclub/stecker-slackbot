@@ -5,7 +5,6 @@ left to right direction
 :Auftraggeber: as AG
 AG --> (Datenbank mit Zuweisung\nMitarbeiter - Veranstaltung einsehen)
 AG --> (erfassen, welche Mitglieder\nwie viele Dienste machen)
-AG --> (Nutzerkreis einschränken)
 AG --> (Bot in Slack verwenden)
 AG --> (Bot um weitere Funktionalitäten erweitern)
 AG --> (Bot in nicht-technischen Teams nutzen)
