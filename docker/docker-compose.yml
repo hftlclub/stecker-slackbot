@@ -1,0 +1,36 @@
+version: "3"
+services:
+
+  slackbot:
+    build: .
+    image: slackbot
+    restart: always
+    user: "hubot"
+    env_file:
+        - steckerbot.env
+    volumes:
+      - ./:/home/hubot
+    command: "./bin/hubot"
+    networks:
+      - dbnet
+
+  db:
+    image: "mariadb:10"
+    restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "--host", "localhost", "--silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - dbnet
+    env_file:
+        - steckerbot.env
+
+networks:
+  dbnet:
+
+volumes:
+  db-data:
