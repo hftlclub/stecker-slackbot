@@ -1,5 +1,5 @@
 #!/bin/bash
-configfile="steckerbot.conf"
+configfile="steckerbot.env"
 
 if [[ -f $configfile ]]; then
   read -r -p "Eine Konfigurationsdatei existiert und wird überschrieben. Fortfahren? [y/N] " response
@@ -27,7 +27,7 @@ DBUSER=steckerbot
 
 # (A-Za-z0-9)
 DBPASS=$(</dev/urandom tr -dc A-Za-z0-9 | head -c 28)
-DBROOT=$(</dev/urandom tr -dc A-Za-z0-9 | head -c 28)
+MYSQL_ROOT_PASSWORD=$(</dev/urandom tr -dc A-Za-z0-9 | head -c 28)
 
 # -------------------------------
 # Steckerbot Konfiguration

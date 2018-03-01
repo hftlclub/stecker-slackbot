@@ -1,13 +1,18 @@
-FROM FROM nodesource/node:6.3.0
+FROM node:9-alpine
 
-ADD ../src/package.json .
-RUN npm install
-ADD ../src src
+RUN apk update \
+&& apk upgrade \
+&& apk add mariadb-client \
+&& npm install -g npm \ 
+&& npm install -g coffeescript yo \
+&& npm install generator-hubot hubot-slack \ 
+&& adduser -h /home/hubot -D hubot
+RUN rm -rf /var/cache/apk/*
 
-COPY init-steckerbot.sh /init-steckerbot.sh
-RUN chmod +x /init-steckerbot.sh
-ENTRYPOINT ["/init-steckerbot.sh"]
+ENV HOME /home/hubot
+USER hubot
+WORKDIR /home/hubot
 
-EXPOSE 1337
-CMD ["npm", "run", "startForever"]
-VOLUME ["/data"]
+RUN echo "No" | yo hubot --adapter slack --name slackbot --defaults \
+&& sed -i '/heroku/d' external-scripts.json
+ENTRYPOINT ["/bin/sh"]
