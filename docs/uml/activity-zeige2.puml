@@ -1,0 +1,20 @@
+@startuml
+
+!include skin.puml
+
+start
+:zeige;
+if (Termine) 
+    :Zeige alle kommenden\nTermine t_i an;
+elseif (Veranstaltungen) 
+    :Zeige alle kommenden\nTermine vom Typ Veranstaltungen an;
+elseif (Sitzungen) 
+    :Zeigt alle kommenden\nTermine vom Typ Sitzung an;
+elseif (Hilf mir)
+    :Zeige Hilfe an;
+else (Danke)
+    :Abbruch;
+endif
+stop
+
+@enduml

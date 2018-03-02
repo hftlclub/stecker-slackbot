@@ -1,0 +1,18 @@
+@startuml
+
+!include skin.puml
+
+start
+:nehme;
+if (Teil an t_i)
+    :Trägt den aufrufenden Nutzer\nals Teilnehmer für t_i ein;
+elseif (nicht Teil an t_i)
+    :Trägt den aufrufenden Nutzer\nfür t_i aus;
+elseif (Hilf mir)
+    :Zeige Hilfe an;
+else (Danke)
+    :Abbruch;
+endif
+stop
+
+@enduml
