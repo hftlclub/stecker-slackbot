@@ -1,0 +1,26 @@
+@startuml
+
+!include skin.puml
+
+start
+:zeige;
+if (Schicht) 
+    :Zeige nächste Schicht\nfür aufrufende Person;
+elseif (Schichten) 
+    :Zeige alle zukünftigen Schichten\nfür aufrufende Person;
+elseif (alle Schichten) 
+    :Zeige Schichtplan\naller Mitglieder;
+elseif (Anzahl) 
+    if (Schichten) 
+        :Zeige geleistete Schichten\ndes aktuellen Jahres an;
+    elseif (alte Schichten) 
+    :Zeige geleistete Schichten\ndes letzten Jahres an;
+    endif
+elseif (Hilf mir)
+    :Zeige Hilfe an;
+else (Danke)
+    :Abbruch;
+endif
+stop
+
+@enduml

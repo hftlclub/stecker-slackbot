@@ -1,0 +1,88 @@
+%% Creator: Inkscape inkscape 0.92.2, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'usecase-stakeholder_svg-tex.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{2423.8911115bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.99092103)%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{usecase-stakeholder_svg-tex.pdf}}%
+    \put(0.24689529,0.30296041){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Auftraggeber}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{usecase-stakeholder_svg-tex.pdf}}%
+    \put(0.47924889,0.59192011){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Bot in Slack verwenden}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{usecase-stakeholder_svg-tex.pdf}}%
+    \put(0.46887105,0.51994908){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Datenbank mit Zuweisung}}}%
+    \put(0.43550121,0.50418902){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Mitarbeiter - Veranstaltung einsehen}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{usecase-stakeholder_svg-tex.pdf}}%
+    \put(0.46620097,0.42517598){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{erfassen, welche Mitglieder}}}%
+    \put(0.47200442,0.40941591){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{wie viele Dienste machen}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{usecase-stakeholder_svg-tex.pdf}}%
+    \put(0.47122552,0.33570614){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Nutzerkreis einschränken}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{usecase-stakeholder_svg-tex.pdf}}%
+    \put(0.41776111,0.24775681){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Bot um weitere Funktionalitäten erweitern}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{usecase-stakeholder_svg-tex.pdf}}%
+    \put(0.43292262,0.15304773){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Dokumentation der Datenbank lesen}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{usecase-stakeholder_svg-tex.pdf}}%
+    \put(0.46171336,0.06605761){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Datenbank ohne Bot nutzen}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{usecase-stakeholder_svg-tex.pdf}}%
+    \put(0.47069779,0.906184){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Nutzer an Dienst erinnern}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{usecase-stakeholder_svg-tex.pdf}}%
+    \put(0.27881426,0.74490708){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Bot}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{usecase-stakeholder_svg-tex.pdf}}%
+    \put(0.46171336,0.82713426){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{mittels Slack kommunizieren}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{usecase-stakeholder_svg-tex.pdf}}%
+    \put(0.488634,0.75076892){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Datenbank abfragen}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=13]{usecase-stakeholder_svg-tex.pdf}}%
+    \put(0.44925236,0.67199513){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Dienste in Datenbank schreiben}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=14]{usecase-stakeholder_svg-tex.pdf}}%
+    \put(0.24592804,0.92084269){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{zeitgesteuert}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=15]{usecase-stakeholder_svg-tex.pdf}}%
+    \put(0.24592804,0.90620832){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{ereignisbasiert}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=16]{usecase-stakeholder_svg-tex.pdf}}%
+    \put(0.24592804,0.89157399){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{manuell}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=17]{usecase-stakeholder_svg-tex.pdf}}%
+  \end{picture}%
+\endgroup%
