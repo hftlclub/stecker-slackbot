@@ -5,14 +5,33 @@ module.exports = (bot) ->
 	table = "termine"
 	conn = mysql.createConnection(url)
 
-	# Text Listener
+	conn.connect (err) ->
+		if err?
+			bot.logger.info "Error\n#{err}"
+		else
+			bot.logger.info "connected to mysql"
+
+
+	################ Text Listener
 	bot.hear /wie bedient man den bot/i, (res) ->
 		res.send "es gibt noch keine hilfe"
 
 	bot.hear /^\s*hilfe\s*/i, (res) ->
 		res.reply "du bist verloren"
 
-	# Command Listener
+	bot.hear /erstelle\s+sitzung\s+(.+)\s+am\s+(.+)\s+um\s+(\d\d:\d\d)/i, (res) ->
+		erstellesitzung res.match[2],res.match[3],res.match[1],(r) ->
+			if r
+				bot.reply "Die Sitzung wurde angelegt"
+				bot.reply "#{res.match[1]} #{res.match[2]} #{res.match[3]}"
+			else
+				bot.reply "Fehler: der Termin konnte nicht erstellt werden"
+		bot.logger.info res.match[1],res.match[2],res.match[3]
+
+	bot.hear /wer nimmt alles an termin (.*) teil/i, (res) ->
+		bot.logger.info "noch nicht implementiert"
+
+	################ Command Listener
 	bot.respond /hilfe/i, (res) ->
 		res.reply "die hilfe ist nur für dich"
 
@@ -61,11 +80,26 @@ module.exports = (bot) ->
 				bot.logger.info rows[0]
 				loaded (rows[0])
 
-	conn.connect (err) ->
-		if err?
-			bot.logger.info "Error\n#{err}"
-			bot.logger.info "lalala #{url}"
-		else
-			bot.logger.info "connected to mysql"
 
-
+	erstellesitzung = (datum, zeit, name, callback) ->
+		conn.query 'select id from termintyp where name = "Sitzung"', (err, response) ->
+			if err
+				bot.logger.info "ERROR bei Abfrage des Termintyps Sitzung"
+				bot.logger.info err
+			else
+				if response.length > 1
+					bot.logger.info "ERROR mehr als eine Sitzung gefunden"
+				else
+					bot.logger.info response[0]
+					bot.logger.info "Die TermintypID ist #{response[0].id}"
+					id = response[0].id
+					conn.query "INSERT INTO termine (name, datum, typ) VALUES ('#{name}', STR_TO_DATE('#{datum}', '%d.%m.%Y'), '#{id}')", (err, response) ->
+						bot.logger.info "INSERT für Sitzung"
+						if err
+							bot.logger.info "ERROR"
+							bot.logger.info err
+							callback false
+						if response
+							bot.logger.info response
+							bot.logger.info "Termin erstellt für #{datum} #{name} #{id}"
+							callback true
