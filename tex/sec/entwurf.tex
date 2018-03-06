@@ -2,6 +2,16 @@
 % TODO: Struktur der Überschriften ändern, diese hat nur einen 
 % Unterpunkt und passt thematisch nicht
 
+Entsprechend der Anwendungsfälle aus Kapitel 2 lassen sich folgende Einschränkungen definieren:
+
+\begin{itemize}
+    \item der Bot soll weder intelligent noch lustig sein
+    \item der Bot soll nicht ständig Nachrichten verfassen (siehe Auslöser im Usecase-Diagramm)
+    \item der Bot soll nicht nur auf Slack anwendbar sein
+\end{itemize}
+
+Neben anderen möglichen Einsatzmöglichkeiten zur Mensch-Maschine-Interaktion (siehe \cite{PanConversationalInterfacesFuture2017} und \cite{GruensteinConversationalInterfaces2009}) dient der für dieses Projekt zu erstellende Bot als \enquote{Transaktionsbot} im Sinne einer Automatisierung der Datenbankabfragen. Da der Entwurf der Datenbank auch zum Projekt gehört, wird der ebenfalls zu erstellende Chatbot die einzige Schnittstelle zu den Endnutzern\footnote{in Abgrenzung zum Administrator, der z.B. direkt per Kommandozeile auf die Datenbank zugreift} bieten. Eine zukünftige Erweiterung um weitere Schnittstellen ist dabei nicht ausgeschlossen.
+
 \subsubsection{Interaktion über Slack}
 
 Es werden folgende Befehle für die Interaktion definiert.
