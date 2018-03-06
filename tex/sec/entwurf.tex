@@ -31,7 +31,7 @@ Es werden folgende Befehle für die Interaktion definiert.
 
  % Utilities
  hilf mir & zeigt alle verfügbaren Kommandos an \\
- Danke & bricht die aktuelle Konversation ab
+ Danke & bricht die aktuelle Konversation ab \\
  
  wann ist der nächste termin?
  trag mich ein
@@ -66,20 +66,41 @@ Aus den in \autoref{tab:chatbotinteraktion} definierten Befehlen wurden die Akti
 
 Das Datenbankschema soll laut Anforderung unabhängig von einem spezifischen Chatbot nutzbar sein. Falls ein Chatbot ausgetauscht oder andere Interaktionsmethoden hinzugefügt werden, darf die Datenbank entsprechend keine Abhängigkeiten besitzen. Es wird deshalb ein Datenbankschema angelegt, welches nur die Terminverwaltung abbildet und anschließend eine Erweiterung hinzugefügt, welche die notwendigen Schlüssel auf die verwendete Plattform abbildet.
 
-Die Autoren haben die Struktur der derzeitigen manuellen Terminverwaltung erfasst und daraus ein Schema entworfen. Bei diesem Prozess sind Zusammenhänge und Begriffe festgelegt und erkannt worden, welche sich im Zusammenhang mit den Anforderungen an ein Terminverwaltungssystem in einem Datenbankschema niederschlagen. Nachfolgend werden diese Informationen erläutert.
+Die Autoren haben die Struktur der derzeitigen manuellen Terminverwaltung erfasst und daraus ein Schema entworfen. 
+Das im Verlauf des Entwurfsprozesses spezifizierte Datenbankschema basiert auf in diesem Kontext wichtigen Begriffen, welche im Folgenden näher erläutert werden.
 
-Jeder Termin hat einen eine Bezeichnung, wie beispielsweise eine Weihnachtsfeier, Sitzung oder ein Afterwork. Diese Bezeichnungen werden Termintypen genannt und können mehr als einmal auftreten, wobei die Bezeichnungen nach deren Festlegung nicht direkt Terminen zugeordnet werden müssen. So kann eine Bezeichnung Weihnachtsfeier eingeführt werden, diese jedoch noch nicht geplant sein.
+Jeder Termin hat eine Bezeichnung, wie beispielsweise eine Weihnachtsfeier, Sitzung oder ein Afterwork. Diese Bezeichnungen werden Termintypen genannt und können mehr als einmal auftreten, wobei die Bezeichnungen nach deren Festlegung nicht direkt Terminen zugeordnet werden müssen. So kann eine Bezeichnung Weihnachtsfeier eingeführt werden, diese jedoch noch nicht geplant sein.
 
 Weiterhin gibt es Zeitpunkte oder Zeitspannen, zu denen Termine stattfinden. Der Begriff Termin legt jedoch nicht fest, ob es sich um eine Zeitspanne oder einen Zeitpunkt handelt. So kann der Beginn einer Sitzung festgelegt werden, deren Ende jedoch nicht. Eine Andere Sicht auf Termine wäre die planmäßige Dauer eines Afterworks, wobei der Anfang und ein voraussichtliches Ende bekannt sind.
 
 Wenn ein Termin festgelegt wird und dieser häufiger als einmal auftreten kann, ist es möglich, dass auch die Zeitspannen und Zeitpunkte mehr als einmal auftreten. Ein Afterwork beginnt laut den bekannten Informationen immer 19:00 Uhr, wobei zwei Schichten geplant sind, da die Mitglieder nicht über den ganzen Abend Bardienst haben wollen. Die erste Schicht dauert zwei Stunden, endet demnach gegen 21:00 Uhr, während die zweite Schicht 21:00 Uhr beginnt und meist bis 23:00 geht. Der Bardienst der letzten Schicht kann nach eigenem Ermessen festlegen, ob die Bar später schließt oder nicht. Für die Verwaltung ist letzteres jedoch nicht relevant.
 
-Die Mitglieder sollen weiterhin die Möglichkeit haben, sich in diese Schichten einzutragen. Es muss deshalb eine Zuordnung von den Schichten eines Termins und Nutzern geben. 
+Die Mitglieder sollen weiterhin die Möglichkeit haben, sich in diese Schichten einzutragen. Es muss deshalb eine Zuordnung der Schichten eines Termins und den Nutzern geben. 
 
 
-Um die Anforderungen in einer Datenbank modellieren zu können, wurde ein Schema erstellt, welches diese Abbildet. Die Autoren werden die Entscheidungen hierbei erläutern. Es wurde versucht ein Datenbankschema in der 3. Normalform zu erstellen, um Redundanzen zu vermeiden und Eindeutigkeit zu erreichen. guter grund????????????
+Um die Anforderungen in einer Datenbank modellieren zu können, wurde ein Schema gemäß \autoref{img:db-schema} erstellt. Das Datenbankschema wurde gemäß der 3. Normalform (siehe \cite{CoddRelationalModelData1970}) erstellt. Dadurch ergeben sich sich Vorteile hinsichtlich Integrität und Datenzugriffszeit durch die Vermeidung redundanter Daten sowie der eindeutigen Zuordnung von Primärschlüsseln zu Tabellen (Konsistenz). Ein weiterer Vorteil der 3. Normalform ist die im Verhältnis zur 1. und 2. Normalform bessere Erweiterbarkeit, da alle Datensätze thematisch getrennt in jeweils eigenen Tabellen stehen (z.B. Trennung von Nutzer und SlackNutzer). 
+Für den Einsatz als von weiteren Daten isolierter SlackBot wäre ein DB-Modell in 1. oder 2. Normalform aufgrund einfacheren Aufbaus und weniger nötigen Lesezugriffen vorzuziehen, wurde aber hinsichtlich der gewünschten Integration in weitere Anwendungen in Form der 3. Normalform erstellt.
 
-Der Termintyp eines Termins wurde in eine extra Tabelle ausgelagert, da dieser Mehrfach auftreten kann und deshalb redundant ist. Ein Termin muss eindeutig identifiziert werden können, weshalb eine ID eingeführt wird. Weiterhin erhält ein Termin ein Datum, welches den Tag des Beginns enthält. Ein Termintyp kann angelegt werden, ohne einem Termin zugeordnet zu sein, jedoch auch beliebig vielen Terminen zugeordnet werden, weshalb die Kardinalität \texttt{1 : 0..*} sein muss.
+Die strikte Aufteilung der Daten in den Tabellen bildet auch die Ebenen der verschieden Lebenszyklen der Datensätze ab, wobei hier zwischen langsam, mittel und schnell unterschieden werden konnte. Diese in \autoref{tab:db-speed} ersichtliche Unterscheidung basiert auf den relativen Unterschieden der Speicherfrequenz der Datensätze und ist daher nicht mit absoluten Werten zu bemessen. Beispielsweise ändern sich die Datensätze in der Tabelle NutzerSchicht erwartungsgemäß öfter als in der Tabelle SlackNutzer.
+
+\begin{table}[H]
+    \begin{tabularx}{0.9\columnwidth}{l|X|X}
+    Datenspeicher & Beschreibung & Tabellen \\
+    \hline
+    langsam & Daten werden selten geschrieben aber lange gespeichert & Nutzer, SlackNutzer, TerminTyp \\
+    \hline
+    mittel & Kombination schneller und langsamer Daten & Termin, Schicht \\
+    \hline
+    schnell & Daten werden oft geschrieben und relativ kurz gespeichert & NutzerSchicht, TerminSchicht \\
+    \hline
+    \end{tabularx}
+    \caption{Vergleich der \enquote{Geschwindigkeiten} der Daten}
+    \label{tab:db-speed}
+\end{table}
+
+Aktuelle Datenbankverwaltungssysteme wie MySQL, PostgreSQL und MariaDB bieten eine Query-Cache\footnote{siehe u.a. \url{https://dev.mysql.com/doc/refman/5.7/en/query-cache.html}} zum Beschleunigen der Lesezugriffe. Gemäß der hier vorgenommenen Unterteilung sind \enquote{schnelle} Daten besonders für den Cache-Einsatz geeignet, da auf diese am meisten Zugriffe erfolgen. 
+
+Der Termintyp eines Termins wurde in eine extra Tabelle ausgelagert, da dieser mehrfach auftreten kann und deshalb redundant ist. Ein Termin muss eindeutig identifiziert werden können, weshalb eine ID eingeführt wird. Weiterhin erhält ein Termin ein Datum, welches den Tag des Beginns enthält. Ein Termintyp kann angelegt werden, ohne einem Termin zugeordnet zu sein, jedoch auch beliebig vielen Terminen zugeordnet werden, weshalb die Kardinalität \texttt{1 : 0..*} sein muss.
 
 Schichten erhalten ebenfalls eine eigene Tabelle, da diese sonst redundante Informationen einführen würden. Um eine Schicht mit einem Termin zu verbinden, muss eine Zuordnung erfolgen, weshalb eine Tabelle Terminschicht eingeführt wird. Über diese sind Termine, deren Namen und Schichten eindeutig identifizierbar. Es sollen Schichten angelegt werden können, ohne diese direkt Terminen bzw. der Terminschichttabelle zuweisen zu müssen, jedoch sollen Schichten beliebig vielen Terminen zugeordnet werden können. Die Kardinalität muss deshalb \texttt{1 : 0..*} zwischen Schicht und Terminschicht sein. Da ein Termin mehrere Schichten haben kann, demnach mehrfach in der Terminschichttabelle stehen kann und mindestens eine Zeit bzw. Schicht festgelegt haben muss, ist die Kardinalität zwischen Termin und Terminschicht \texttt{1 : 1..*}.
 
