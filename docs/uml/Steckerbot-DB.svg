@@ -5,14 +5,10 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   height="574.0"
-   width="486.0"
-   version="1.1"
    id="svg480"
-   sodipodi:docname="Steckerbot.svg"
-   inkscape:version="0.92.2 5c3e80d, 2017-08-06">
+   version="1.1"
+   width="550.0"
+   height="573.0">
   <metadata
      id="metadata486">
     <rdf:RDF>
@@ -27,1182 +23,1162 @@
   </metadata>
   <defs
      id="defs484" />
-  <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1035"
-     id="namedview482"
-     showgrid="false"
-     inkscape:zoom="0.41114983"
-     inkscape:cx="-308.65402"
-     inkscape:cy="692.27984"
-     inkscape:window-x="1600"
-     inkscape:window-y="22"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="svg480" />
   <desc
-     id="desc2">{&quot;leftTopX&quot;: 4253, &quot;leftTopY&quot;: 5147, &quot;rightBottomX&quot;: 4739, &quot;rightBottomY&quot;: 5681}</desc>
+     id="desc2">{&quot;leftTopX&quot;: 4211, &quot;leftTopY&quot;: 5147, &quot;rightBottomX&quot;: 4761, &quot;rightBottomY&quot;: 5680}</desc>
   <g
-     id="g14"
+     transform="translate(0.5,0.5)"
      class="reference"
-     transform="translate(0.5,0.5)">
+     id="g14">
     <polyline
-       style="fill:none;stroke:#000000;stroke-linejoin:miter"
+       points="118.0,66.0 118.0,79.0 427.0,79.0"
        id="polyline4"
-       points="104.0,65.0 104.0,78.0 385.0,78.0" />
+       style="fill:none;stroke:#000000;stroke-linejoin:miter" />
     <g
-       id="g8"
-       transform="translate(275,84)">
+       transform="translate(317,85)"
+       id="g8">
       <text
-         style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+         font-size="12"
+         font-weight="400"
+         x="1"
+         y="11.190625"
          id="text6"
-         y="11.188868"
-         x="1"
-         font-weight="400"
-         font-size="12">1..*</text>
+         style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">0..*</text>
     </g>
     <g
-       id="g12"
-       transform="translate(222,84)">
+       transform="translate(281,85)"
+       id="g12">
       <text
-         style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+         font-size="12"
+         font-weight="400"
+         x="1"
+         y="11.190625"
          id="text10"
-         y="11.188868"
-         x="1"
-         font-weight="400"
-         font-size="12">1</text>
+         style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">1</text>
     </g>
   </g>
   <g
-     id="g26"
+     transform="translate(0.5,0.5)"
      class="reference"
-     transform="translate(0.5,0.5)">
+     id="g26">
     <polyline
-       style="fill:none;stroke:#000000;stroke-linejoin:miter"
+       points="236.0,196.0 351.0,196.0 351.0,196.0 384.0,196.0"
        id="polyline16"
-       points="190.0,196.0 309.0,196.0 309.0,196.0 342.0,196.0" />
+       style="fill:none;stroke:#000000;stroke-linejoin:miter" />
     <g
-       id="g20"
-       transform="translate(298,202)">
+       transform="translate(340,202)"
+       id="g20">
       <text
-         style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+         font-size="12"
+         font-weight="400"
+         x="1"
+         y="11.190625"
          id="text18"
-         y="11.188868"
-         x="1"
-         font-weight="400"
-         font-size="12">1..*</text>
+         style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">0..*</text>
     </g>
     <g
-       id="g24"
-       transform="translate(223,202)">
+       transform="translate(269,202)"
+       id="g24">
       <text
-         style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+         font-size="12"
+         font-weight="400"
+         x="1"
+         y="11.190625"
          id="text22"
-         y="11.188868"
-         x="1"
-         font-weight="400"
-         font-size="12">1</text>
+         style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">1</text>
     </g>
   </g>
   <g
-     id="g38"
+     transform="translate(0.5,0.5)"
      class="reference"
-     transform="translate(0.5,0.5)">
+     id="g38">
     <polyline
-       style="fill:none;stroke:#000000;stroke-linejoin:miter"
+       points="395.0,481.0 433.0,481.0 433.0,493.0 152.0,493.0"
        id="polyline28"
-       points="353.0,480.0 391.0,480.0 391.0,496.0 152.0,496.0" />
+       style="fill:none;stroke:#000000;stroke-linejoin:miter" />
     <g
-       id="g32"
-       transform="translate(208,502)">
+       transform="translate(259,499)"
+       id="g32">
       <text
-         style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+         font-size="12"
+         font-weight="400"
+         x="1"
+         y="11.190625"
          id="text30"
-         y="11.188868"
-         x="1"
-         font-weight="400"
-         font-size="12">1</text>
+         style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">1</text>
     </g>
     <g
-       id="g36"
-       transform="translate(255,502)">
+       transform="translate(297,499)"
+       id="g36">
       <text
-         style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+         font-size="12"
+         font-weight="400"
+         x="1"
+         y="11.190625"
          id="text34"
-         y="11.188868"
-         x="1"
-         font-weight="400"
-         font-size="12">1</text>
+         style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">1</text>
     </g>
   </g>
   <g
-     id="g50"
+     transform="translate(0.5,0.5)"
      class="reference"
-     transform="translate(0.5,0.5)">
+     id="g50">
     <polyline
-       style="fill:none;stroke:#000000;stroke-linejoin:miter"
+       points="434.0,489.0 434.0,436.0 434.0,436.0 434.0,338.0"
        id="polyline40"
-       points="392.0,488.0 392.0,436.0 392.0,436.0 392.0,338.0" />
+       style="fill:none;stroke:#000000;stroke-linejoin:miter" />
     <g
-       id="g44"
-       transform="translate(398,365)">
+       transform="translate(440,365)"
+       id="g44">
       <text
-         style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+         font-size="12"
+         font-weight="400"
+         x="1"
+         y="11.190625"
          id="text42"
-         y="11.188868"
-         x="1"
-         font-weight="400"
-         font-size="12">1..*</text>
+         style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">0..*</text>
     </g>
     <g
-       id="g48"
-       transform="translate(398,438)">
+       transform="translate(440,439)"
+       id="g48">
       <text
-         style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+         font-size="12"
+         font-weight="400"
+         x="1"
+         y="11.190625"
          id="text46"
-         y="11.188868"
-         x="1"
-         font-weight="400"
-         font-size="12">1</text>
+         style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">1</text>
     </g>
   </g>
   <g
-     id="g62"
+     transform="translate(0.5,0.5)"
      class="reference"
-     transform="translate(0.5,0.5)">
+     id="g62">
     <polyline
-       style="fill:none;stroke:#000000;stroke-linejoin:miter"
+       points="457.0,85.0 457.0,91.0 426.0,91.0 426.0,194.0"
        id="polyline52"
-       points="415.0,85.0 415.0,91.0 384.0,91.0 384.0,194.0" />
+       style="fill:none;stroke:#000000;stroke-linejoin:miter" />
     <g
-       id="g56"
-       transform="translate(390,136)">
+       transform="translate(432,136)"
+       id="g56">
       <text
-         style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+         font-size="12"
+         font-weight="400"
+         x="1"
+         y="11.190625"
          id="text54"
-         y="11.188868"
-         x="1"
-         font-weight="400"
-         font-size="12">1..*</text>
+         style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">1..*</text>
     </g>
     <g
-       id="g60"
-       transform="translate(390,113)">
+       transform="translate(432,113)"
+       id="g60">
       <text
-         style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+         font-size="12"
+         font-weight="400"
+         x="1"
+         y="11.190625"
          id="text58"
-         y="11.188868"
-         x="1"
-         font-weight="400"
-         font-size="12">1</text>
+         style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">1</text>
     </g>
   </g>
   <g
-     id="g74"
+     transform="translate(0.5,0.5)"
      class="reference"
-     transform="translate(0.5,0.5)">
+     id="g74">
     <polyline
-       style="fill:none;stroke:#000000;stroke-linejoin:miter"
+       points="432.0,205.0 433.0,205.0 433.0,328.0 325.0,328.0"
        id="polyline64"
-       points="390.0,205.0 391.0,205.0 391.0,328.0 283.0,328.0" />
+       style="fill:none;stroke:#000000;stroke-linejoin:miter" />
     <g
-       id="g68"
-       transform="translate(397,285)">
+       transform="translate(439,285)"
+       id="g68">
       <text
-         style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-         id="text66"
-         y="11.188868"
-         x="1"
+         font-size="12"
          font-weight="400"
-         font-size="12">1..*</text>
+         x="1"
+         y="11.190625"
+         id="text66"
+         style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">0..*</text>
     </g>
     <g
-       id="g72"
-       transform="translate(397,231)">
+       transform="translate(439,231)"
+       id="g72">
       <text
-         style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-         id="text70"
-         y="11.188868"
-         x="1"
+         font-size="12"
          font-weight="400"
-         font-size="12">1</text>
+         x="1"
+         y="11.190625"
+         id="text70"
+         style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">1</text>
     </g>
   </g>
   <g
-     id="g120"
-     transform="translate(267.5,454.5)"
-     class="table">
+     class="table"
+     transform="translate(309.5,455.5)"
+     id="g120">
     <g
        id="g78">
       <rect
-         style="fill:#f0f0f0"
-         y="0"
-         x="0"
+         height="20"
+         width="200"
          id="rect76"
-         width="160"
-         height="20" />
+         x="0"
+         y="0"
+         style="fill:#f0f0f0" />
     </g>
     <g
        id="g82">
       <text
-         style="font-weight:700;font-size:12px;font-family:arial, sans-serif;text-anchor:middle;fill:#000000"
-         id="text80"
-         y="14.188868"
-         x="81"
+         font-size="12"
          font-weight="700"
-         font-size="12">Nutzer</text>
+         x="101"
+         y="14.190625"
+         id="text80"
+         style="font-weight:700;font-size:12px;font-family:arial, sans-serif;text-anchor:middle;fill:#000000">Nutzer</text>
     </g>
     <g
-       id="g116"
-       transform="translate(0,20)">
+       transform="translate(0,20)"
+       id="g116">
       <rect
-         style="fill:#ffffff"
-         y="0"
-         x="0"
+         height="38"
+         width="200"
          id="rect84"
-         width="160"
-         height="38" />
+         x="0"
+         y="0"
+         style="fill:#ffffff" />
       <g
-         id="g94"
-         transform="translate(4,3)">
+         transform="translate(4,3)"
+         id="g94">
         <g
            id="g88">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text86"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">id</text>
+             x="1"
+             y="11.138672"
+             id="text86"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">NutzerID</text>
         </g>
         <g
-           id="g92"
-           transform="translate(0,14)">
+           transform="translate(0,14)"
+           id="g92">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text90"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">Name</text>
+             x="1"
+             y="11.138672"
+             id="text90"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">Name</text>
         </g>
       </g>
       <g
-         id="g104"
-         transform="translate(64,3)">
+         transform="translate(98.5,3)"
+         id="g104">
         <g
            id="g98">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text96"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">int</text>
+             x="1"
+             y="11.138672"
+             id="text96"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">int</text>
         </g>
         <g
-           id="g102"
-           transform="translate(0,14)">
+           transform="translate(0,14)"
+           id="g102">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text100"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">varchar(255)</text>
+             x="1"
+             y="11.138672"
+             id="text100"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">varchar(255)</text>
         </g>
       </g>
       <g
-         id="g114"
-         transform="translate(141.5,3)">
+         transform="translate(180.75,3)"
+         id="g114">
         <g
            id="g108">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text106"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">PK</text>
+             x="1"
+             y="11.138672"
+             id="text106"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">PK</text>
         </g>
         <g
-           id="g112"
-           transform="translate(0,14)">
+           transform="translate(0,14)"
+           id="g112">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text110"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12" />
+             x="1"
+             y="11.138672"
+             id="text110"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000" />
         </g>
       </g>
     </g>
     <polyline
-       style="fill:none;stroke:#000000;stroke-linejoin:miter"
+       points="0.0,20.0 0.0,0.0 200.0,0.0 200.0,20.0 0.0,20.0 0.0,58.0 200.0,58.0 200.0,20.0"
        id="polyline118"
-       points="0.0,20.0 0.0,0.0 160.0,0.0 160.0,20.0 0.0,20.0 0.0,58.0 160.0,58.0 160.0,20.0" />
+       style="fill:none;stroke:#000000;stroke-linejoin:miter" />
   </g>
   <g
-     id="g190"
-     transform="translate(301.5,20.5)"
-     class="table">
+     class="table"
+     transform="translate(343.5,20.5)"
+     id="g190">
     <g
        id="g124">
       <rect
-         style="fill:#f0f0f0"
-         y="0"
-         x="0"
+         height="20"
+         width="182"
          id="rect122"
-         width="165"
-         height="20" />
+         x="0"
+         y="0"
+         style="fill:#f0f0f0" />
     </g>
     <g
        id="g128">
       <text
-         style="font-weight:700;font-size:12px;font-family:arial, sans-serif;text-anchor:middle;fill:#000000"
-         id="text126"
-         y="14.188868"
-         x="83.5"
+         font-size="12"
          font-weight="700"
-         font-size="12">Termin</text>
+         x="92"
+         y="14.190625"
+         id="text126"
+         style="font-weight:700;font-size:12px;font-family:arial, sans-serif;text-anchor:middle;fill:#000000">Termin</text>
     </g>
     <g
-       id="g186"
-       transform="translate(0,20)">
+       transform="translate(0,20)"
+       id="g186">
       <rect
-         style="fill:#ffffff"
-         y="0"
-         x="0"
+         height="67"
+         width="182"
          id="rect130"
-         width="165"
-         height="67" />
+         x="0"
+         y="0"
+         style="fill:#ffffff" />
       <g
-         id="g148"
-         transform="translate(4,3)">
+         transform="translate(4,3)"
+         id="g148">
         <g
            id="g134">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+             font-size="12"
+             font-weight="400"
+             x="1"
+             y="11.138672"
              id="text132"
-             y="11.402344"
-             x="1"
-             font-weight="400"
-             font-size="12">id</text>
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">TerminID</text>
         </g>
         <g
-           id="g138"
-           transform="translate(0,14)">
+           transform="translate(0,14)"
+           id="g138">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+             font-size="12"
+             font-weight="400"
+             x="1"
+             y="11.138672"
              id="text136"
-             y="11.402344"
-             x="1"
-             font-weight="400"
-             font-size="12">TypID</text>
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">TypID</text>
         </g>
         <g
-           id="g142"
-           transform="translate(0,28)">
+           transform="translate(0,28)"
+           id="g142">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+             font-size="12"
+             font-weight="400"
+             x="1"
+             y="11.138672"
              id="text140"
-             y="11.402344"
-             x="1"
-             font-weight="400"
-             font-size="12">Name</text>
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">Name</text>
         </g>
         <g
-           id="g146"
-           transform="translate(0,42)">
+           transform="translate(0,42)"
+           id="g146">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text144"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">Datum</text>
+             x="1"
+             y="11.138672"
+             id="text144"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">Datum</text>
         </g>
       </g>
       <g
-         id="g166"
-         transform="translate(69,3)">
+         transform="translate(80.5,3)"
+         id="g166">
         <g
            id="g152">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+             font-size="12"
+             font-weight="400"
+             x="1"
+             y="11.138672"
              id="text150"
-             y="11.402344"
-             x="1"
-             font-weight="400"
-             font-size="12">int</text>
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">int</text>
         </g>
         <g
-           id="g156"
-           transform="translate(0,14)">
+           transform="translate(0,14)"
+           id="g156">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+             font-size="12"
+             font-weight="400"
+             x="1"
+             y="11.138672"
              id="text154"
-             y="11.402344"
-             x="1"
-             font-weight="400"
-             font-size="12">int</text>
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">int</text>
         </g>
         <g
-           id="g160"
-           transform="translate(0,28)">
+           transform="translate(0,28)"
+           id="g160">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+             font-size="12"
+             font-weight="400"
+             x="1"
+             y="11.138672"
              id="text158"
-             y="11.402344"
-             x="1"
-             font-weight="400"
-             font-size="12">varchar(255)</text>
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">varchar(255)</text>
         </g>
         <g
-           id="g164"
-           transform="translate(0,42)">
+           transform="translate(0,42)"
+           id="g164">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text162"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">date</text>
+             x="1"
+             y="11.138672"
+             id="text162"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">date</text>
         </g>
       </g>
       <g
-         id="g184"
-         transform="translate(146.5,3)">
+         transform="translate(162.75,3)"
+         id="g184">
         <g
            id="g170">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+             font-size="12"
+             font-weight="400"
+             x="1"
+             y="11.138672"
              id="text168"
-             y="11.402344"
-             x="1"
-             font-weight="400"
-             font-size="12">PK</text>
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">PK</text>
         </g>
         <g
-           id="g174"
-           transform="translate(0,14)">
+           transform="translate(0,14)"
+           id="g174">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+             font-size="12"
+             font-weight="400"
+             x="1"
+             y="11.138672"
              id="text172"
-             y="11.402344"
-             x="1"
-             font-weight="400"
-             font-size="12">FK</text>
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">FK</text>
         </g>
         <g
-           id="g178"
-           transform="translate(0,28)">
+           transform="translate(0,28)"
+           id="g178">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+             font-size="12"
+             font-weight="400"
+             x="1"
+             y="11.138672"
              id="text176"
-             y="11.402344"
-             x="1"
-             font-weight="400"
-             font-size="12" />
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000" />
         </g>
         <g
-           id="g182"
-           transform="translate(0,42)">
+           transform="translate(0,42)"
+           id="g182">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text180"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12" />
+             x="1"
+             y="11.138672"
+             id="text180"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000" />
         </g>
       </g>
     </g>
     <polyline
-       style="fill:none;stroke:#000000;stroke-linejoin:miter"
+       points="0.0,20.0 0.0,0.0 182.0,0.0 182.0,20.0 0.0,20.0 0.0,87.0 182.0,87.0 182.0,20.0"
        id="polyline188"
-       points="0.0,20.0 0.0,0.0 165.0,0.0 165.0,20.0 0.0,20.0 0.0,87.0 165.0,87.0 165.0,20.0" />
+       style="fill:none;stroke:#000000;stroke-linejoin:miter" />
   </g>
   <g
-     id="g260"
-     transform="translate(54.5,169.5)"
-     class="table">
+     class="table"
+     transform="translate(100.5,168.5)"
+     id="g260">
     <g
        id="g194">
       <rect
-         style="fill:#f0f0f0"
-         y="0"
-         x="0"
-         id="rect192"
+         height="20"
          width="163"
-         height="20" />
+         id="rect192"
+         x="0"
+         y="0"
+         style="fill:#f0f0f0" />
     </g>
     <g
        id="g198">
       <text
-         style="font-weight:700;font-size:12px;font-family:arial, sans-serif;text-anchor:middle;fill:#000000"
-         id="text196"
-         y="14.188868"
-         x="82.5"
+         font-size="12"
          font-weight="700"
-         font-size="12">Schicht</text>
+         x="82.5"
+         y="14.190625"
+         id="text196"
+         style="font-weight:700;font-size:12px;font-family:arial, sans-serif;text-anchor:middle;fill:#000000">Schicht</text>
     </g>
     <g
-       id="g256"
-       transform="translate(0,20)">
+       transform="translate(0,20)"
+       id="g256">
       <rect
-         style="fill:#ffffff"
-         y="0"
-         x="0"
-         id="rect200"
+         height="67"
          width="163"
-         height="67" />
+         id="rect200"
+         x="0"
+         y="0"
+         style="fill:#ffffff" />
       <g
-         id="g218"
-         transform="translate(4,3)">
+         transform="translate(4,3)"
+         id="g218">
         <g
            id="g204">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+             font-size="12"
+             font-weight="400"
+             x="1"
+             y="11.138672"
              id="text202"
-             y="11.402344"
-             x="1"
-             font-weight="400"
-             font-size="12">id</text>
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">SchichtID</text>
         </g>
         <g
-           id="g208"
-           transform="translate(0,14)">
+           transform="translate(0,14)"
+           id="g208">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+             font-size="12"
+             font-weight="400"
+             x="1"
+             y="11.138672"
              id="text206"
-             y="11.402344"
-             x="1"
-             font-weight="400"
-             font-size="12">Beginn</text>
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">Beginn</text>
         </g>
         <g
-           id="g212"
-           transform="translate(0,28)">
+           transform="translate(0,28)"
+           id="g212">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+             font-size="12"
+             font-weight="400"
+             x="1"
+             y="11.138672"
              id="text210"
-             y="11.402344"
-             x="1"
-             font-weight="400"
-             font-size="12">Ende</text>
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">Ende</text>
         </g>
         <g
-           id="g216"
-           transform="translate(0,42)">
+           transform="translate(0,42)"
+           id="g216">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text214"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">Teilnehmerzahl</text>
+             x="1"
+             y="11.138672"
+             id="text214"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">Teilnehmerzahl</text>
         </g>
       </g>
       <g
-         id="g236"
-         transform="translate(114.5,3)">
+         transform="translate(112.5,3)"
+         id="g236">
         <g
            id="g222">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+             font-size="12"
+             font-weight="400"
+             x="1"
+             y="11.138672"
              id="text220"
-             y="11.402344"
-             x="1"
-             font-weight="400"
-             font-size="12">int</text>
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">int</text>
         </g>
         <g
-           id="g226"
-           transform="translate(0,14)">
+           transform="translate(0,14)"
+           id="g226">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+             font-size="12"
+             font-weight="400"
+             x="1"
+             y="11.138672"
              id="text224"
-             y="11.402344"
-             x="1"
-             font-weight="400"
-             font-size="12">time</text>
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">time</text>
         </g>
         <g
-           id="g230"
-           transform="translate(0,28)">
+           transform="translate(0,28)"
+           id="g230">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+             font-size="12"
+             font-weight="400"
+             x="1"
+             y="11.138672"
              id="text228"
-             y="11.402344"
-             x="1"
-             font-weight="400"
-             font-size="12">time</text>
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">time</text>
         </g>
         <g
-           id="g234"
-           transform="translate(0,42)">
+           transform="translate(0,42)"
+           id="g234">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text232"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">int</text>
+             x="1"
+             y="11.138672"
+             id="text232"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">int</text>
         </g>
       </g>
       <g
-         id="g254"
-         transform="translate(144.5,3)">
+         transform="translate(143.75,3)"
+         id="g254">
         <g
            id="g240">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+             font-size="12"
+             font-weight="400"
+             x="1"
+             y="11.138672"
              id="text238"
-             y="11.402344"
-             x="1"
-             font-weight="400"
-             font-size="12">PK</text>
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">PK</text>
         </g>
         <g
-           id="g244"
-           transform="translate(0,14)">
+           transform="translate(0,14)"
+           id="g244">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+             font-size="12"
+             font-weight="400"
+             x="1"
+             y="11.138672"
              id="text242"
-             y="11.402344"
-             x="1"
-             font-weight="400"
-             font-size="12" />
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000" />
         </g>
         <g
-           id="g248"
-           transform="translate(0,28)">
+           transform="translate(0,28)"
+           id="g248">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+             font-size="12"
+             font-weight="400"
+             x="1"
+             y="11.138672"
              id="text246"
-             y="11.402344"
-             x="1"
-             font-weight="400"
-             font-size="12" />
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000" />
         </g>
         <g
-           id="g252"
-           transform="translate(0,42)">
+           transform="translate(0,42)"
+           id="g252">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text250"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12" />
+             x="1"
+             y="11.138672"
+             id="text250"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000" />
         </g>
       </g>
     </g>
     <polyline
-       style="fill:none;stroke:#000000;stroke-linejoin:miter"
+       points="0.0,20.0 0.0,0.0 163.0,0.0 163.0,20.0 0.0,20.0 0.0,87.0 163.0,87.0 163.0,20.0"
        id="polyline258"
-       points="0.0,20.0 0.0,0.0 163.0,0.0 163.0,20.0 0.0,20.0 0.0,87.0 163.0,87.0 163.0,20.0" />
+       style="fill:none;stroke:#000000;stroke-linejoin:miter" />
   </g>
   <g
-     id="g306"
-     transform="translate(56.5,40.5)"
-     class="table">
+     class="table"
+     transform="translate(70.5,41.5)"
+     id="g306">
     <g
        id="g264">
       <rect
-         style="fill:#f0f0f0"
-         y="0"
-         x="0"
+         height="20"
+         width="205"
          id="rect262"
-         width="160"
-         height="20" />
+         x="0"
+         y="0"
+         style="fill:#f0f0f0" />
     </g>
     <g
        id="g268">
       <text
-         style="font-weight:700;font-size:12px;font-family:arial, sans-serif;text-anchor:middle;fill:#000000"
-         id="text266"
-         y="14.188868"
-         x="81"
+         font-size="12"
          font-weight="700"
-         font-size="12">TerminTyp</text>
+         x="103.5"
+         y="14.190625"
+         id="text266"
+         style="font-weight:700;font-size:12px;font-family:arial, sans-serif;text-anchor:middle;fill:#000000">TerminTyp</text>
     </g>
     <g
-       id="g302"
-       transform="translate(0,20)">
+       transform="translate(0,20)"
+       id="g302">
       <rect
-         style="fill:#ffffff"
-         y="0"
-         x="0"
+         height="38"
+         width="205"
          id="rect270"
-         width="160"
-         height="38" />
+         x="0"
+         y="0"
+         style="fill:#ffffff" />
       <g
-         id="g280"
-         transform="translate(4,3)">
+         transform="translate(4,3)"
+         id="g280">
         <g
            id="g274">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text272"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">id</text>
+             x="1"
+             y="11.138672"
+             id="text272"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">TerminTypID</text>
         </g>
         <g
-           id="g278"
-           transform="translate(0,14)">
+           transform="translate(0,14)"
+           id="g278">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text276"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">Name</text>
+             x="1"
+             y="11.138672"
+             id="text276"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">Name</text>
         </g>
       </g>
       <g
-         id="g290"
-         transform="translate(64,3)">
+         transform="translate(103.5,3)"
+         id="g290">
         <g
            id="g284">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text282"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">int</text>
+             x="1"
+             y="11.138672"
+             id="text282"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">int</text>
         </g>
         <g
-           id="g288"
-           transform="translate(0,14)">
+           transform="translate(0,14)"
+           id="g288">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text286"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">varchar(255)</text>
+             x="1"
+             y="11.138672"
+             id="text286"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">varchar(255)</text>
         </g>
       </g>
       <g
-         id="g300"
-         transform="translate(141.5,3)">
+         transform="translate(185.75,3)"
+         id="g300">
         <g
            id="g294">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text292"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">PK</text>
+             x="1"
+             y="11.138672"
+             id="text292"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">PK</text>
         </g>
         <g
-           id="g298"
-           transform="translate(0,14)">
+           transform="translate(0,14)"
+           id="g298">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text296"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12" />
+             x="1"
+             y="11.138672"
+             id="text296"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000" />
         </g>
       </g>
     </g>
     <polyline
-       style="fill:none;stroke:#000000;stroke-linejoin:miter"
+       points="0.0,20.0 0.0,0.0 205.0,0.0 205.0,20.0 0.0,20.0 0.0,58.0 205.0,58.0 205.0,20.0"
        id="polyline304"
-       points="0.0,20.0 0.0,0.0 160.0,0.0 160.0,20.0 0.0,20.0 0.0,58.0 160.0,58.0 160.0,20.0" />
+       style="fill:none;stroke:#000000;stroke-linejoin:miter" />
   </g>
   <g
-     id="g364"
-     transform="translate(324.5,152.5)"
-     class="table">
+     class="table"
+     transform="translate(366.5,152.5)"
+     id="g364">
     <g
        id="g310">
       <rect
-         style="fill:#f0f0f0"
-         y="0"
-         x="0"
+         height="20"
+         width="164"
          id="rect308"
-         width="121"
-         height="20" />
+         x="0"
+         y="0"
+         style="fill:#f0f0f0" />
     </g>
     <g
        id="g314">
       <text
-         style="font-weight:700;font-size:12px;font-family:arial, sans-serif;text-anchor:middle;fill:#000000"
-         id="text312"
-         y="14.188868"
-         x="61.5"
+         font-size="12"
          font-weight="700"
-         font-size="12">Terminschicht</text>
+         x="83"
+         y="14.190625"
+         id="text312"
+         style="font-weight:700;font-size:12px;font-family:arial, sans-serif;text-anchor:middle;fill:#000000">TerminSchicht</text>
     </g>
     <g
-       id="g360"
-       transform="translate(0,20)">
+       transform="translate(0,20)"
+       id="g360">
       <rect
-         style="fill:#ffffff"
-         y="0"
-         x="0"
+         height="53"
+         width="164"
          id="rect316"
-         width="121"
-         height="53" />
+         x="0"
+         y="0"
+         style="fill:#ffffff" />
       <g
-         id="g330"
-         transform="translate(4,3)">
+         transform="translate(4,3)"
+         id="g330">
         <g
            id="g320">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+             font-size="12"
+             font-weight="400"
+             x="1"
+             y="11.138672"
              id="text318"
-             y="11.402344"
-             x="1"
-             font-weight="400"
-             font-size="12">id</text>
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">TerminSchichtID</text>
         </g>
         <g
-           id="g324"
-           transform="translate(0,14)">
+           transform="translate(0,14)"
+           id="g324">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+             font-size="12"
+             font-weight="400"
+             x="1"
+             y="11.138672"
              id="text322"
-             y="11.402344"
-             x="1"
-             font-weight="400"
-             font-size="12">SchichtID</text>
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">SchichtID</text>
         </g>
         <g
-           id="g328"
-           transform="translate(0,28)">
+           transform="translate(0,28)"
+           id="g328">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text326"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">TerminID</text>
+             x="1"
+             y="11.138672"
+             id="text326"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">TerminID</text>
         </g>
       </g>
       <g
-         id="g344"
-         transform="translate(83,3)">
+         transform="translate(125,3)"
+         id="g344">
         <g
            id="g334">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+             font-size="12"
+             font-weight="400"
+             x="1"
+             y="11.138672"
              id="text332"
-             y="11.402344"
-             x="1"
-             font-weight="400"
-             font-size="12">int</text>
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">int</text>
         </g>
         <g
-           id="g338"
-           transform="translate(0,14)">
+           transform="translate(0,14)"
+           id="g338">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+             font-size="12"
+             font-weight="400"
+             x="1"
+             y="11.138672"
              id="text336"
-             y="11.402344"
-             x="1"
-             font-weight="400"
-             font-size="12">int</text>
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">int</text>
         </g>
         <g
-           id="g342"
-           transform="translate(0,28)">
+           transform="translate(0,28)"
+           id="g342">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text340"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">int</text>
+             x="1"
+             y="11.138672"
+             id="text340"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">int</text>
         </g>
       </g>
       <g
-         id="g358"
-         transform="translate(102.5,3)">
+         transform="translate(144.75,3)"
+         id="g358">
         <g
            id="g348">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+             font-size="12"
+             font-weight="400"
+             x="1"
+             y="11.138672"
              id="text346"
-             y="11.402344"
-             x="1"
-             font-weight="400"
-             font-size="12">PK</text>
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">PK</text>
         </g>
         <g
-           id="g352"
-           transform="translate(0,14)">
+           transform="translate(0,14)"
+           id="g352">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
+             font-size="12"
+             font-weight="400"
+             x="1"
+             y="11.138672"
              id="text350"
-             y="11.402344"
-             x="1"
-             font-weight="400"
-             font-size="12">FK</text>
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">FK</text>
         </g>
         <g
-           id="g356"
-           transform="translate(0,28)">
+           transform="translate(0,28)"
+           id="g356">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text354"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">FK</text>
+             x="1"
+             y="11.138672"
+             id="text354"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">FK</text>
         </g>
       </g>
     </g>
     <polyline
-       style="fill:none;stroke:#000000;stroke-linejoin:miter"
+       points="0.0,20.0 0.0,0.0 164.0,0.0 164.0,20.0 0.0,20.0 0.0,73.0 164.0,73.0 164.0,20.0"
        id="polyline362"
-       points="0.0,20.0 0.0,0.0 121.0,0.0 121.0,20.0 0.0,20.0 0.0,73.0 121.0,73.0 121.0,20.0" />
+       style="fill:none;stroke:#000000;stroke-linejoin:miter" />
   </g>
   <g
-     id="g410"
-     transform="translate(254.5,301.5)"
-     class="table">
+     class="table"
+     transform="translate(296.5,301.5)"
+     id="g410">
     <g
        id="g368">
       <rect
-         style="fill:#f0f0f0"
-         y="0"
-         x="0"
+         height="20"
+         width="203"
          id="rect366"
-         width="185"
-         height="20" />
+         x="0"
+         y="0"
+         style="fill:#f0f0f0" />
     </g>
     <g
        id="g372">
       <text
-         style="font-weight:700;font-size:12px;font-family:arial, sans-serif;text-anchor:middle;fill:#000000"
-         id="text370"
-         y="14.188868"
-         x="93.5"
+         font-size="12"
          font-weight="700"
-         font-size="12">Nutzerschicht</text>
+         x="102.5"
+         y="14.190625"
+         id="text370"
+         style="font-weight:700;font-size:12px;font-family:arial, sans-serif;text-anchor:middle;fill:#000000">NutzerSchicht</text>
     </g>
     <g
-       id="g406"
-       transform="translate(0,20)">
+       transform="translate(0,20)"
+       id="g406">
       <rect
-         style="fill:#ffffff"
-         y="0"
-         x="0"
+         height="38"
+         width="203"
          id="rect374"
-         width="185"
-         height="38" />
+         x="0"
+         y="0"
+         style="fill:#ffffff" />
       <g
-         id="g384"
-         transform="translate(4,3)">
+         transform="translate(4,3)"
+         id="g384">
         <g
            id="g378">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text376"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">NutzerID</text>
+             x="1"
+             y="11.138672"
+             id="text376"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">NutzerSchichtID</text>
         </g>
         <g
-           id="g382"
-           transform="translate(0,14)">
+           transform="translate(0,14)"
+           id="g382">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text380"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">TerminSchichtID</text>
+             x="1"
+             y="11.138672"
+             id="text380"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">TerminSchichtID</text>
         </g>
       </g>
       <g
-         id="g394"
-         transform="translate(128.75,3)">
+         transform="translate(145.5,3)"
+         id="g394">
         <g
            id="g388">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text386"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">int</text>
+             x="1"
+             y="11.138672"
+             id="text386"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">int</text>
         </g>
         <g
-           id="g392"
-           transform="translate(0,14)">
+           transform="translate(0,14)"
+           id="g392">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text390"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">int</text>
+             x="1"
+             y="11.138672"
+             id="text390"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">int</text>
         </g>
       </g>
       <g
-         id="g404"
-         transform="translate(148.25,3)">
+         transform="translate(165.25,3)"
+         id="g404">
         <g
            id="g398">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text396"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">PK FK</text>
+             x="1"
+             y="11.138672"
+             id="text396"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">PK FK</text>
         </g>
         <g
-           id="g402"
-           transform="translate(0,14)">
+           transform="translate(0,14)"
+           id="g402">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text400"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">PK FK</text>
+             x="1"
+             y="11.138672"
+             id="text400"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">PK FK</text>
         </g>
       </g>
     </g>
     <polyline
-       style="fill:none;stroke:#000000;stroke-linejoin:miter"
+       points="0.0,20.0 0.0,0.0 203.0,0.0 203.0,20.0 0.0,20.0 0.0,58.0 203.0,58.0 203.0,20.0"
        id="polyline408"
-       points="0.0,20.0 0.0,0.0 185.0,0.0 185.0,20.0 0.0,20.0 0.0,58.0 185.0,58.0 185.0,20.0" />
+       style="fill:none;stroke:#000000;stroke-linejoin:miter" />
   </g>
   <g
-     id="g456"
-     transform="translate(20.5,456.5)"
-     class="table">
+     class="table"
+     transform="translate(20.5,453.5)"
+     id="g456">
     <g
        id="g414">
       <rect
-         style="fill:#f0f0f0"
-         y="0"
-         x="0"
+         height="20"
+         width="233"
          id="rect412"
-         width="182"
-         height="20" />
+         x="0"
+         y="0"
+         style="fill:#f0f0f0" />
     </g>
     <g
        id="g418">
       <text
-         style="font-weight:700;font-size:12px;font-family:arial, sans-serif;text-anchor:middle;fill:#000000"
-         id="text416"
-         y="14.188868"
-         x="92"
+         font-size="12"
          font-weight="700"
-         font-size="12">Slacknutzer</text>
+         x="117.5"
+         y="14.190625"
+         id="text416"
+         style="font-weight:700;font-size:12px;font-family:arial, sans-serif;text-anchor:middle;fill:#000000">SlackNutzer</text>
     </g>
     <g
-       id="g452"
-       transform="translate(0,20)">
+       transform="translate(0,20)"
+       id="g452">
       <rect
-         style="fill:#ffffff"
-         y="0"
-         x="0"
+         height="38"
+         width="233"
          id="rect420"
-         width="182"
-         height="38" />
+         x="0"
+         y="0"
+         style="fill:#ffffff" />
       <g
-         id="g430"
-         transform="translate(4,3)">
+         transform="translate(4,3)"
+         id="g430">
         <g
            id="g424">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text422"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">SlackID</text>
+             x="1"
+             y="11.138672"
+             id="text422"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">SlackNutzerID</text>
         </g>
         <g
-           id="g428"
-           transform="translate(0,14)">
+           transform="translate(0,14)"
+           id="g428">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text426"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">NutzerID</text>
+             x="1"
+             y="11.138672"
+             id="text426"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">NutzerID</text>
         </g>
       </g>
       <g
-         id="g440"
-         transform="translate(86,3)">
+         transform="translate(131.5,3)"
+         id="g440">
         <g
            id="g434">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text432"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">varchar(255)</text>
+             x="1"
+             y="11.138672"
+             id="text432"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">varchar(255)</text>
         </g>
         <g
-           id="g438"
-           transform="translate(0,14)">
+           transform="translate(0,14)"
+           id="g438">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text436"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">int</text>
+             x="1"
+             y="11.138672"
+             id="text436"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">int</text>
         </g>
       </g>
       <g
-         id="g450"
-         transform="translate(163.5,3)">
+         transform="translate(213.75,3)"
+         id="g450">
         <g
            id="g444">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text442"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">PK</text>
+             x="1"
+             y="11.138672"
+             id="text442"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">PK</text>
         </g>
         <g
-           id="g448"
-           transform="translate(0,14)">
+           transform="translate(0,14)"
+           id="g448">
           <text
-             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000"
-             id="text446"
-             y="11.402344"
-             x="1"
+             font-size="12"
              font-weight="400"
-             font-size="12">FK</text>
+             x="1"
+             y="11.138672"
+             id="text446"
+             style="font-weight:400;font-size:12px;font-family:arial, sans-serif;fill:#000000">FK</text>
         </g>
       </g>
     </g>
     <polyline
-       style="fill:none;stroke:#000000;stroke-linejoin:miter"
+       points="0.0,20.0 0.0,0.0 233.0,0.0 233.0,20.0 0.0,20.0 0.0,58.0 233.0,58.0 233.0,20.0"
        id="polyline454"
-       points="0.0,20.0 0.0,0.0 182.0,0.0 182.0,20.0 0.0,20.0 0.0,58.0 182.0,58.0 182.0,20.0" />
+       style="fill:none;stroke:#000000;stroke-linejoin:miter" />
   </g>
 </svg>
