@@ -41,16 +41,12 @@ Es werden folgende Befehle für die Interaktion definiert.
 
  % Utilities
  hilf mir & zeigt alle verfügbaren Kommandos an \\
- Danke & bricht die aktuelle Konversation ab \\
- 
- wann ist der nächste termin?
- trag mich ein
- 
- 
+ danke & bricht die aktuelle Konversation ab \\
 \end{tabular}
 \caption{Befehle zur Chatbotinteraktion}
 \label{tab:chatbotinteraktion}
 \end{table}
+
 
 Die Befehle in \autoref{tab:chatbotinteraktion} folgen einem vereinfachtem Schema natürlicher Sprache: \texttt{<Prädikat (Imperativ)> <Subjekt>}. Die Struktur der Befehle soll dabei einfach zu merken, auf menschlicher Sprache basierend und auch auf mobilen Geräten mit wenig Tipparbeit verwendbar sein. Bei einem optionalen Einsatz einer Spracherkennung sind auch komplexere Satzkonstruktionen möglich, für den hier zu erfüllenden Zweck genügt das Schema aus \texttt{<Befehl> <Objekt> <Filter>}. Wie in \cite{ZueConversationalinterfacesadvances2000} beschrieben, weicht die Art der Kommunikation von Mensch-zu-Mensch und Mensch-zu-Bot voneinander ab, worauf bei der Definition der Interaktionsbefehle geachtet wurde. Es ist nach Ansicht der Autoren wenig sinnvoll, einen Bot zu entwickeln, der durch den Zugriff auf große Datenmengen den Eindruck von Intelligenz vermittelt, die aber durch ihre Begrenzung dem Nutzer keinen Mehrwert bietet. Der hier entwickelte Bot verfügt bewusst über ein begrenztes Vokabular, so dass er nur die vom Nutzer gewünschten Informationen liefert; die Kenntnis der Befehle obliegt dem Nutzer.
 
@@ -70,6 +66,60 @@ Aus den in \autoref{tab:chatbotinteraktion} definierten Befehlen wurden die Akti
     \caption{Aktivitätsdiagramm zur Teilnahme an Terminen}
     \label{img:activity-teilnahme}
 \end{figure}
+
+
+Für die Befehle können auch Sätze gebildet werden, welche nachfolgend aufgeführt werden. Diese können Kontextbezogen sein, sodass sich der Bot ähnlich wie ein natürlicher Gesprächspartner verhält. Ein Beispiel hierfür ist in \autoref{tab:satzinteraktion} zu sehen.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l|l}
+Satz & Bedeutung \\
+ \hline
+Wann ist der nächste Termin? & zeigt den nächsten Termin an \\
+Trag mich ein. & \makecell{trägt den Aufrufer für den Termin ein, wenn nur eine\\ Schicht vorhanden ist / fragt nach, in welche Schicht\\ der Aufrufer eingetragen werden soll, wenn mehr als\\ eine Schicht vorhanden ist} \\
+\end{tabular}
+\caption{natürliche Interaktion}
+\label{tab:satzinteraktion}
+\end{table}
+
+Durch das Beispiel wird offensichtlich, dass der Bot den Kontext, in dem sich die Unterhaltung befindet, speichern muss. Dies ist pro Konversation, demnach pro Nutzer durchzuführen. Die Autoren gehen davon aus, dass eine Konversation nur einen Kontext besitzt. Es werden dadurch Konversationen ausgeschlossen, welche zwei Themen besitzen und diese sporadisch oder unvorhersehbar ändern.
+
+Sollte der Satz \textit{Trag mich ein.} ohne Kontext geäußert werden, so soll keine Aktion durchgeführt werden. Da der Bot einer Konversation beiwohnen könnte, welche mit einem anderen Nutzer geführt wird, ist keine Aktion erforderlich oder gewünscht. Sollte der Bot jedoch zuvor den Satz \textit{Wann ist der nächste Termin?} aufgreifen, so soll er sich, wie eine natürliche Person, angesprochen fühlen und darauf reagieren. Weiterhin ist nun ein Kontext vorhanden, wodurch der nächste Satz eine Bedeutung erhält und nicht mehr ignoriert werden soll.
+
+
+Die Autoren entschieden sich weitere Befehle einzuführen, die den Bot natürlich wirken lassen sollen. Diese können in \autoref{tab:natuerlicheinteraktion} eingesehen werden. Weiterhin werden die Sätze, auf die reagiert werden soll, in der EBNF dargestellt.
+% ACRONYM EBNF
+
+\texttt{V = ''Vernstaltungen''}\\
+\texttt{T = '' Termine''}\\
+\texttt{S = ''Sitzungen''}
+
+\texttt{Frage1 = "Kann mir \{irgend\}jemand sagen" $|$ "Weiß \{irgend\}jemand" $|$ "Wer weiß" $|$ "Wieso sagt mir niemand"}\\
+\texttt{Apell1 = ''Sag\{e\} mir endlich'' $|$ ''Jetz\{t\} sag\{e\} schon''}\\
+\texttt{Frage2 = ''Wann haben wir die nächsten'' $|$ ''Wann sind die nächsten ''}
+
+\begin{table}[H]
+\centering
+\begin{tabularx}{\textwidth}{|p{5cm}|X|}
+	\hline
+	Satz & Antwort \\
+	\hline
+	''Bob?'' & @\texttt{<Aufrufer>} Wie kann ich dir helfen? Mit \texttt{hilfe} zeige ich dir meine Hilfe. \\
+	\hline
+	{Frage1 '', wann ich Bardienst habe?'' $|$ Apell1 '', wann ich Bardienst habe'' ''.''$|$''!''} & @\texttt{<Aufrufer>} Dein nächster Bardienst ist am \texttt{<Datum>} von \texttt{<Beginn>} bis \texttt{<Ende>}.\\
+	\hline
+	Frage2 V$|$S$|$T ''?'' & @\texttt{<Aufrufer>} Die nächsten 5 \texttt{<V$|$S$|$T>} finden an folgenden Daten statt: \texttt{<Daten und Sichten>}\\
+	\hline
+	''Wann finden die nächsten '' V$|$S$|$T ''statt?'' & Die nächsten 5 \texttt{<V$|$S$|$T>} finden an folgenden Daten statt: \texttt{<Daten und Sichten>}\\
+	\hline
+	''Wird noch jemand für die nächste '' V '' gebraucht?'' &  Folgende Schichten benötigen noch Teilnehmer: \texttt{<Schicht>} \texttt{<Anzahl>} \\
+	\hline
+\end{tabularx}
+\caption{natürliche Interaktion}
+\label{tab:natuerlicheinteraktion}
+\end{table}
+
+
 
 
 \subsection{Datenbankschema}
