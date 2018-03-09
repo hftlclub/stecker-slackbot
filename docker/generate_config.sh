@@ -28,6 +28,7 @@ DBUSER=steckerbot
 # (A-Za-z0-9)
 DBPASS=$(</dev/urandom tr -dc A-Za-z0-9 | head -c 28)
 MYSQL_ROOT_PASSWORD=$(</dev/urandom tr -dc A-Za-z0-9 | head -c 28)
+MYSQL_DATABASE=db
 
 # -------------------------------
 # Steckerbot Konfiguration

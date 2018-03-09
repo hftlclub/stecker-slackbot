@@ -15,4 +15,7 @@ WORKDIR /home/hubot
 
 RUN echo "No" | yo hubot --adapter slack --name slackbot --defaults \
 && sed -i '/heroku/d' external-scripts.json
-ENTRYPOINT ["/bin/sh"]
+ENTRYPOINT ["./bin/hubot"]
+# CMD [ "./bin/hubot", "-a", "slack"]
+CMD [ "/bin/sh" ]
+EXPOSE 8080

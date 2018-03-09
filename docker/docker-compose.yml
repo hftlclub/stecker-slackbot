@@ -8,9 +8,6 @@ services:
     user: "hubot"
     env_file:
         - steckerbot.env
-    volumes:
-      - ./:/home/hubot
-    command: "./bin/hubot"
     networks:
       - dbnet
 
@@ -23,11 +20,13 @@ services:
       timeout: 5s
       retries: 10
     volumes:
-      - db-data:/var/lib/mysql
+      - db-data:/docker-entrypoint-initdb.d/:ro
     networks:
       - dbnet
+    ports:
+      - "3306:3306"
     env_file:
-        - steckerbot.env
+      - steckerbot.env
 
 networks:
   dbnet:
