@@ -14,7 +14,7 @@ Aus \autoref{tab:botparameters} sind passende Bewertungsparameter gemäß der ob
 
 % evtl. booktabs statt tabularx
 \begin{table}[htbp]
-    \begin{tabularx}{\textwidth}{lXp{6cm}}
+    \begin{tabularx}{\textwidth}{|l|X|p{6cm}|}
    \hline
    \textbf{Parameter} & \textbf{Beschreibung} & \textbf{Quelle} \\
    \hline
@@ -32,7 +32,7 @@ Aus \autoref{tab:botparameters} sind passende Bewertungsparameter gemäß der ob
    \hline
    Integrationsgrad & Anz.\ bereits vorhandener Integrationen & Website, Dokumentation, npm \\
    \hline
-   Erweiterbarkeit & Anz.\ an Erweiterungsmodulen & Code, Dokumentation \\
+   Erweiterbarkeit & Anz. der Erweiterungsmodule & Code, Dokumentation \\
    \hline
    Dokumentation & Dokumentation vorhanden ja/nein & docs-Ordner oder GitHub-Wiki \\
    \hline
@@ -44,7 +44,7 @@ Aus \autoref{tab:botparameters} sind passende Bewertungsparameter gemäß der ob
 \end{table}
 
 Die Aussagefähigkeit der in \autoref{tab:botparameters} enthaltenen Parameter ist stellenweise kritisch zu hinterfragen, da die Genauigkeit zugunsten der Generizität eingeschränkt wurde. 
-Beispiele:
+Beispiele hierfür sind folgende:
 \begin{itemize}
     \item Testabdeckung: je nach Auswahl und Integration der Testbibliothek kann die Testabdeckung immer 100\% betragen
 \item SLOC: viele Codezeilen deuten nicht zwingend auf guten Code hin (von Kommentaren wird hier, per Definition, abgesehen)
@@ -72,17 +72,17 @@ Von den dort aufgelisteten Frameworks entsprechen hier \textbf{Botkit} (\url{htt
 
 \begin{table}[htbp]
     \centering
-    \begin{tabularx}{\textwidth}{lXX}
+    \begin{tabularx}{\textwidth}{|l|X|X|}
         \hline
         \textbf{Parameter} & \textbf{Botkit} & \textbf{Hubot} \\
         \hline
-        Alter (Stand 02.2018) & ~2 Jahre & ~5 Jahre \\
+        Alter (Stand 02.2018) & $\approx$ 2 Jahre & $\approx$ 5 Jahre \\
         \hline
-        Aktivität & 2078 Commits, 29 Pull-Requests & 2011 Commits, 5 Pull-Requests \\
+        Aktivität & \makecell[l]{2078 Commits\\ 29 Pull-Requests} & \makecell[l]{2011 Commits\\ 5 Pull-Requests} \\
         \hline
-        Popularität & 7.813 Stars, 1.714 Forks & 13.817 Stars, 3.269 Forks \\
+        Popularität & \makecell[l]{7.813 Sterne\\ 1.714 Forks} & \makecell[l]{13.817 Sterne\\ 3.269 Forks} \\
         \hline
-        Codequalität & 115 Issues, Testabdeckung 100\% & 30 Issues, Testabdeckung 100\% \\
+        Codequalität & \makecell[l]{115 Issues\\ Testabdeckung 100\%} & \makecell[l]{30 Issues\\ Testabdeckung 100\%} \\
         \hline
         Komplexität & 35259 SLOC & 7472 SLOC \\
         \hline
@@ -90,11 +90,12 @@ Von den dort aufgelisteten Frameworks entsprechen hier \textbf{Botkit} (\url{htt
         \hline
         Integrationsgrad & 12 & 62 \\
         \hline
-        Erweiterbarkeit & 28 & ~50 \\
+        Erweiterbarkeit & 28 & $\approx$ 50 \\
         \hline
         Dokumentation & ja & ja \\
         \hline
         Lizenz & frei, MIT & frei, MIT \\
+        \hline
     \end{tabularx}
     \caption{Vergleich von Botkit und Hubot}
     \label{tab:comparebotkithubot}
@@ -105,11 +106,11 @@ Von den dort aufgelisteten Frameworks entsprechen hier \textbf{Botkit} (\url{htt
 
 Wie in \autoref{tab:comparebotkithubot} ersichtlich, bietet Hubot aufgrund der längeren Entwicklungszeit eine größere Anzahl von Nutzern und Integrationen. Desweiteren ist Hubot auf die praktische Notwendigkeit bei GitHub zurückzuführen, die Entwicklungsprozesse an ChatOps\footnote{Ausführen von Deployment-Befehlen etc. direkt aus dem Chat-Programm, Hintergrund siehe: \url{https://www.youtube.com/watch?v=NST3u-GjjFw}} auszurichten.
 
-Im Gegensatz dazu bietet Botkit flexiblere Einsatzmöglichkeiten und Integrationen in andere Dienste wie NLU\footnote{Natural language understanding}, Apps und Messenger. Aufgrund des relativ jungen Projektalters von zwei Jahren und der vergleichsweise höheren Anzahl an Bugtickets (\enquote{Issues}), wird die Codequalität Botkits geringer als die Hubots bewertet.
+Im Gegensatz dazu bietet Botkit flexiblere Einsatzmöglichkeiten und Integrationen in andere Dienste wie NLU\footnote{Natural language understanding}, Apps und Messenger. Aufgrund des relativ jungen Projektalters von zwei Jahren und der vergleichsweise höheren Anzahl an Bugtickets (\enquote{Issues}) und Codezeilen, wird die Codequalität Botkits geringer als die Hubots bewertet.
 
-Beide Frameworks dienen dabei unterschiedlichen Zielen: während Botkit eher als Rahmenwerk für darauf aufbauende Bots anzusehen ist, ist der Bot als solches direkt bei Hubot integriert und kann modular erweitert werden. Da beide Frameworks unter MIT-Lizenz stehen und nach JavaScript kompilieren, sind diese aus lizenzrechtlicher und technischer Sicht für das Projekt \enquote{Steckerbot} geeignet.
+Beide Frameworks dienen dabei unterschiedlichen Zielen: während Botkit eher als Rahmenwerk für darauf aufbauende Bots anzusehen ist, ist der Bot als solches direkt bei Hubot integriert und kann modular erweitert werden. Da beide Frameworks unter MIT-Lizenz stehen und zu JavaScript kompilieren, sind diese aus lizenzrechtlicher und technischer Sicht für das Projekt \enquote{Steckerbot} geeignet.
 
-Für den in \autoref{anforderungen} beschriebenen Einsatzzweck, fällt die Entscheidung auf \textbf{Hubot}. Im Vergleich zu Botkit bewerten die Autoren Hubot als strukturell simpler und näher am Ziel der praktischen Slack-Integration ausgerichtet. Botkit erfüllt diese Anforderungen auch, enthält wahrscheinlich aber mehr Fehler als Hubot.
+Für den in \autoref{anforderungen} beschriebenen Einsatzzweck fällt die Entscheidung auf \textbf{Hubot}. Im Vergleich zu Botkit bewerten die Autoren Hubot als strukturell simpler und näher am Ziel der praktischen Slack-Integration ausgerichtet. Botkit erfüllt diese Anforderungen auch, hatte jedoch keine so lange Reifephase wie Hubot.
 
 Im weiteren Verlauf dieses Dokuments werden deshalb \enquote{Hubot}, \enquote{Botframework} und \enquote{Bot} synonym verwendet.
 

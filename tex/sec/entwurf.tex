@@ -7,7 +7,7 @@ Entsprechend der Anwendungsfälle aus Kapitel 2 lassen sich folgende Einschränk
 \begin{itemize}
     \item der Bot soll weder intelligent noch lustig sein
     \item der Bot soll nicht ständig Nachrichten verfassen (siehe Auslöser im Usecase-Diagramm)
-    \item der Bot soll nicht nur auf Slack anwendbar sein
+    \item der Bot soll nicht nur auf Slack beschränkt sein
 \end{itemize}
 
 Neben anderen möglichen Einsatzmöglichkeiten zur Mensch-Maschine-Interaktion (siehe \cite{PanConversationalInterfacesFuture2017} und \cite{GruensteinConversationalInterfaces2009}) dient der für dieses Projekt zu erstellende Bot als \enquote{Transaktionsbot} im Sinne einer Automatisierung der Datenbankabfragen. Da der Entwurf der Datenbank auch zum Projekt gehört, wird der ebenfalls zu erstellende Chatbot die einzige Schnittstelle zu den Endnutzern\footnote{in Abgrenzung zum Administrator, der z.B. direkt per Kommandozeile auf die Datenbank zugreift} bieten. Eine zukünftige Erweiterung um weitere Schnittstellen ist dabei nicht ausgeschlossen.
@@ -19,7 +19,7 @@ Es werden folgende Befehle für die Interaktion definiert.
 \begin{table}[H]
 \centering
 \begin{tabular}{l|l}
-  Befehl & Bedeutung \\
+  \textbf{Befehl }& \textbf{Bedeutung }\\
  \hline
 % für vergessliche Leute
  zeige Schicht & zeigt die nächste Schicht für die aufrufende Person an \\
@@ -73,7 +73,7 @@ Für die Befehle können auch Sätze gebildet werden, welche nachfolgend aufgef�
 \begin{table}[H]
 \centering
 \begin{tabular}{l|l}
-Satz & Bedeutung \\
+\textbf{Satz} & \textbf{Bedeutung }\\
  \hline
 Wann ist der nächste Termin? & zeigt den nächsten Termin an \\
 Trag mich ein. & \makecell{trägt den Aufrufer für den Termin ein, wenn nur eine\\ Schicht vorhanden ist / fragt nach, in welche Schicht\\ der Aufrufer eingetragen werden soll, wenn mehr als\\ eine Schicht vorhanden ist} \\
@@ -84,25 +84,25 @@ Trag mich ein. & \makecell{trägt den Aufrufer für den Termin ein, wenn nur ein
 
 Durch das Beispiel wird offensichtlich, dass der Bot den Kontext, in dem sich die Unterhaltung befindet, speichern muss. Dies ist pro Konversation, demnach pro Nutzer durchzuführen. Die Autoren gehen davon aus, dass eine Konversation nur einen Kontext besitzt. Es werden dadurch Konversationen ausgeschlossen, welche zwei Themen besitzen und diese sporadisch oder unvorhersehbar ändern.
 
-Sollte der Satz \textit{Trag mich ein.} ohne Kontext geäußert werden, so soll keine Aktion durchgeführt werden. Da der Bot einer Konversation beiwohnen könnte, welche mit einem anderen Nutzer geführt wird, ist keine Aktion erforderlich oder gewünscht. Sollte der Bot jedoch zuvor den Satz \textit{Wann ist der nächste Termin?} aufgreifen, so soll er sich, wie eine natürliche Person, angesprochen fühlen und darauf reagieren. Weiterhin ist nun ein Kontext vorhanden, wodurch der nächste Satz eine Bedeutung erhält und nicht mehr ignoriert werden soll.
+Sollte der Satz \textit{Trag mich ein.} ohne Kontext geäußert werden, so soll keine Aktion durchgeführt werden. Da der Bot einer Konversation beiwohnen könnte, welche mit einem anderen Nutzer geführt wird, ist keine Aktion erforderlich oder gewünscht. Sollte der Bot jedoch zuvor den Satz \textit{Wann ist der nächste Termin?} aufgreifen, so soll er sich, wie eine natürliche Person, angesprochen fühlen und darauf reagieren. Weiterhin ist nun ein Kontext vorhanden, wodurch der nächste Satz eine Bedeutung erhält und nicht mehr ignoriert werden darf.
 
 
 Die Autoren entschieden sich weitere Befehle einzuführen, die den Bot natürlich wirken lassen sollen. Diese können in \autoref{tab:natuerlicheinteraktion} eingesehen werden. Weiterhin werden die Sätze, auf die reagiert werden soll, in der EBNF dargestellt.
 % ACRONYM EBNF
 
-\texttt{V = ''Vernstaltungen''}\\
-\texttt{T = '' Termine''}\\
-\texttt{S = ''Sitzungen''}
+\texttt{V = "Veranstaltungen"}\\
+\texttt{T = "Termine"}\\
+\texttt{S = "{}Sitzungen"}
 
 \texttt{Frage1 = "Kann mir \{irgend\}jemand sagen" $|$ "Weiß \{irgend\}jemand" $|$ "Wer weiß" $|$ "Wieso sagt mir niemand"}\\
-\texttt{Apell1 = ''Sag\{e\} mir endlich'' $|$ ''Jetz\{t\} sag\{e\} schon''}\\
-\texttt{Frage2 = ''Wann haben wir die nächsten'' $|$ ''Wann sind die nächsten ''}
+\texttt{Apell1 = "{}Sag\{e\} mir endlich" $|$ "Jetz\{t\} sag\{e\} schon"}\\
+\texttt{Frage2 = "Wann haben wir die nächsten" $|$ "Wann sind die nächsten"}
 
 \begin{table}[H]
 \centering
 \begin{tabularx}{\textwidth}{|p{5cm}|X|}
 	\hline
-	Satz & Antwort \\
+	\textbf{Satz} & \textbf{Antwort} \\
 	\hline
 	''Bob?'' & @\texttt{<Aufrufer>} Wie kann ich dir helfen? Mit \texttt{hilfe} zeige ich dir meine Hilfe. \\
 	\hline
@@ -144,8 +144,9 @@ Für den Einsatz als von weiteren Daten isolierter SlackBot wäre ein DB-Modell 
 Die strikte Aufteilung der Daten in den Tabellen bildet auch die Ebenen der verschieden Lebenszyklen der Datensätze ab, wobei hier zwischen langsam, mittel und schnell unterschieden werden konnte. Diese in \autoref{tab:db-speed} ersichtliche Unterscheidung basiert auf den relativen Unterschieden der Speicherfrequenz der Datensätze und ist daher nicht mit absoluten Werten zu bemessen. Beispielsweise ändern sich die Datensätze in der Tabelle NutzerSchicht erwartungsgemäß öfter als in der Tabelle SlackNutzer.
 
 \begin{table}[H]
-    \begin{tabularx}{0.9\columnwidth}{l|X|X}
-    Datenspeicher & Beschreibung & Tabellen \\
+    \begin{tabularx}{0.9\columnwidth}{|l|X|X|}
+    \hline
+    \textbf{Datenspeicher} & \textbf{Beschreibung} & \textbf{Tabellen} \\
     \hline
     langsam & Daten werden selten geschrieben aber lange gespeichert & Nutzer, SlackNutzer, TerminTyp \\
     \hline
