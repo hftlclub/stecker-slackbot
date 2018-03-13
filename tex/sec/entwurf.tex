@@ -120,6 +120,27 @@ Die Autoren entschieden sich weitere Befehle einzuführen, die den Bot natürlic
 \end{table}
 
 
+\subsection{Datenbankauswahl}
+
+Für die Auswahl der Datenbank müssen ebenfalls die Anforderungen betrachtet werden. So muss die Datenbank eine Opensource-Lösung sein, jedoch nicht unter einer MIT-/BSD-ähnlichen Lizenz stehen, da diese nur benutzt und nicht verändert oder erweitert werden muss. Eine Opensource-Lösung ist für die Datenbank angebracht, da keine Lizenz- oder andere Kosten anfallen sollen. Weiterhin ist damit die Sicherheit gegeben, dass die Datenbank beliebig lange genutzt werden kann, da keine Lizenzen auslaufen können oder Updates erzwungen werden, welche die Funktionalität beeinflussen können. Die Sicherheit und Performance stehen an untergeordneter Stelle, da im Verein des Auftraggebers weniger als 100 Mitglieder erwartet werden, was die Effizienz der Datenbank in den Hintergrund rückt. Weiterhin wird durch ein Vertrauensverhältnis innerhalb des Vereins und den regelmäßigen Wechsel der Rollen der Mitglieder keine Sicherheits- und Rechtebetrachtung benötigt.
+
+Grundsätzlich werden zwei verschiedene Ansätze für die Datenbank in Betracht gezogen. Es können relationale oder NoSQL-Datenbanken betrachtet werden. Der Einsatz von NoSQL wird durch folgende Kriterien begünstigt.
+
+\begin{itemize}
+	\item effizienter Umgang mit großen Datenmengen
+	\item hohe Skalierbarkeit und Flexibilität
+	\item hohe Redundanz
+	\item häufige Änderungen der Datenstruktur
+\end{itemize}
+% https://www.tecchannel.de/a/datenbanksysteme-im-vergleich-mysql-vs-mongodb,2038219,5
+
+MongoDB, als NoSQL-Datenbank hat den zusätzlichen Vorteil, dass ein objektorientiertes Datenmodell verwendet werden kann, was einfache Abfragen mittels Programmiersprachen wie Javascript ermöglicht. Da die Abfragen jedoch in der Anzahl beschränkt sind, und damit kein großer Aufwand in der Implementierung stattfinden muss, können diese in eigens erstellte Funktionen implementiert werden. Dadurch, dass keine der genannten Kriterien auf die gegebenen Anforderungen zutrifft oder notwendig ist, entschieden sich die Autoren für eine SQL-Lösung.
+%https://www.tecchannel.de/a/datenbanksysteme-im-vergleich-mysql-vs-mongodb,2038219,4
+
+Laut der Popularitätsbewertung auf {dbranking} liegt MySQL als GNU-lizensierte Datenbank an erster Stelle. Die genutzten Kriterien sind für das Projekt ebenfalls Teilweise relevant. So sind die Bewertungskriterien für die Anzahl der Nennungen des Systems auf Websites, das allgemeine Interesse an dem System und die Häufigkeit von technischen Diskussionen über das System gute Indizien für die Zunkunftssicherheit, Hilfe für optimale Nutzungsmöglichkeiten und die Fehlerbehandlung.
+%https://db-engines.com/de/ranking
+%2018-03-13
+
 
 
 \subsection{Datenbankschema}
