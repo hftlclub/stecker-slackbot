@@ -5,18 +5,25 @@ title Deploymentdiagramm
 
 actor Nutzer
 component Slack
+interface Internet
 frame Appserver {
+component Firewall
+note right of Firewall : Ports 80 und 443
 component Chatbot
-interface redis
+interface MySQL
 interface iCalFeed
+note left of iCalFeed : optional
 database Termindatenbank
 }
 
-Nutzer <--> Slack
-Nutzer <--> iCalFeed
-Slack <-> Chatbot
-Chatbot <-> redis
-redis <--> Termindatenbank
-Termindatenbank <--> iCalFeed
+Nutzer <--> Slack 
+Slack <--> Internet
+Internet <--> Firewall
+Firewall <--> Chatbot
+Chatbot <--> MySQL
+MySQL <-> Termindatenbank
+
+Nutzer <..> iCalFeed
+Termindatenbank <..> iCalFeed
 
 @enduml

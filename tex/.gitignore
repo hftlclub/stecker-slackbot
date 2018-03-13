@@ -27,4 +27,5 @@
 *.fdb_latexmk
 *.run.xml
 _minted-main
+*.tdo
 texstudio-config.txsprofile
