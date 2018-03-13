@@ -1,3 +1,20 @@
+\subsection{Anwendungsfalldiagramme}
+
+%??????????? Das klingt eher wie ein Vorwort für den Entwurf der Digaramme. ich würde hier nur Dinge rein schreiben, die sich über mehrere Kapitel erstrecken, so als "globale variablen"
+
+Die auf den vorherigen Seiten zusammengetragenen obligatorischen Projektziele wurden zur besseren Überprüfung der Ziele in Anwendungsfälle umformuliert. Diese wurden entsprechend \autoref{usecase-auftrag} auf die Akteure \enquote{Bot} und \enquote{Auftraggeber} verteilt.
+Die Auftraggeber sind hierbei Robert Weiße und Ferdinand Malcher als technische Ansprechpartner des Studentenclubs \enquote{Stecker}, der \enquote{Bot} ist eine nicht näher spezifizierte Chatbot-Technologie, die aber bewusst als Akteur eingeführt wurde, da sie selbständig Aktionen ausführen soll.
+
+%????????????????ß Ich glaube nicht, dass Ferdi Vorsitzender ist, er und Robert sind Auftraggeber soweit ich weiß
+
+
+\begin{figure}[htbp]
+    \includegraphics[width=0.7\textwidth]{../docs/uml/usecase-stakeholder.png}
+    \caption{Anwendungsfalldiagramm für Auftraggeber und Bot}
+    \label{usecase-auftrag}
+\end{figure}
+
+
 \subsection{Anforderungsanalyse mittels Use-Case-Betrachtung}
 % TODO: Struktur der Überschriften ändern, diese hat nur einen 
 % Unterpunkt und passt thematisch nicht
@@ -72,11 +89,14 @@ Für die Befehle können auch Sätze gebildet werden, welche nachfolgend aufgef�
 
 \begin{table}[H]
 \centering
-\begin{tabular}{l|l}
+\begin{tabular}{|l|l|}
+\hline
 \textbf{Satz} & \textbf{Bedeutung }\\
  \hline
 Wann ist der nächste Termin? & zeigt den nächsten Termin an \\
+\hline
 Trag mich ein. & \makecell{trägt den Aufrufer für den Termin ein, wenn nur eine\\ Schicht vorhanden ist / fragt nach, in welche Schicht\\ der Aufrufer eingetragen werden soll, wenn mehr als\\ eine Schicht vorhanden ist} \\
+\hline
 \end{tabular}
 \caption{natürliche Interaktion}
 \label{tab:satzinteraktion}
@@ -204,12 +224,10 @@ Die Umsetzung der vorgestellten Informationen ist in \autoref{img:db-schema} ers
 
 \subsection{Kommunikationsschnittstellen}
 
-Die kommunikation zwischen der Datenbank und dem Chatbot erfolgt auf dem gleichen Host, weshalb keine besonderen Fälle beachtet werden müssen. Der Kommunikationspfad zwischen dem Chatbot und Slack wird jedoch über ein Hochschulnetzwerk durchgeführt. In diesem sind in das Netzwerk des Clubs nur die Ports 80 und 443 freigegeben. Ausgehend ????????????????? doppeltes NAT aber Webseiten ok
-
-Aus diesem Grund muss der Chatbot sich als Client mit Slack verbinden und darf keine Serveranwendung sein, welche ein Polling implementiert.
+Die kommunikation zwischen der Datenbank und dem Chatbot erfolgt auf dem gleichen Host, weshalb keine besonderen Fälle beachtet werden müssen. Der Kommunikationspfad zwischen dem Chatbot und Slack wird jedoch über ein Hochschulnetzwerk durchgeführt. In diesem sind in das Netzwerk des Clubs nur die Ports 80 und 443 freigegeben. Ausgehende Verbindungen sind durch ein doppeltes NAT beschränkt, was jedoch keine Einschränkung bedeutet, da der Slack-Service eine API bereitstellt und Standardports nutzt. Aus diesem Grund muss sich der Chatbot als Client mit Slack verbinden und darf keine Serveranwendung sein, welche ein Polling implementiert.
 
 % vllt Grafik einfügen?
 
 
-TODO: ERWEITERN
-Slack hat eine option globale UIDs zum bot durchzuleiten. nützlich, wenn mehrere Workspaces genutzt werden - ist das der fall? ferdi fragen.
+%TODO: ERWEITERN
+%Slack hat eine option globale UIDs zum Bot durchzuleiten. nützlich, wenn mehrere Workspaces genutzt werden - ist das der fall? ferdi fragen.

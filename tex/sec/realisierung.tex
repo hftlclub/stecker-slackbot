@@ -1,10 +1,7 @@
 \subsection{Datenbank}
 
-MySQL ausgewählt
-
-
-
-Für die Erstellung der Datenbank entschieden sich die Autoren für die Verwendung eines Hilfswerkzeugs, in dem das Modell abgebildet und eine Befehlskette ausgegeben wird. Dadurch sollte eine Abweichung der Realisierung vom Modell vermieden und eine rasche prototypische Verifizierung ermöglicht werden. Die Autoren entschieden sich für das Hilfswerkzeug \enquote{vertabelo}. Dieses gibt die notwendigen SQL-Befehle aus, welche direkt für die Erstellung der Datenbank verwendet werden können.
+Als Datenbank wurde aus den vorher genannten Gründen MySQL ausgewählt.
+Für die Erstellung des Datenbankschemas entschieden sich die Autoren für die Verwendung eines Hilfswerkzeugs, in dem das Modell abgebildet und eine Befehlskette ausgegeben wird. Dadurch sollte eine Abweichung der Realisierung vom Modell vermieden und eine rasche prototypische Verifizierung ermöglicht werden. Die Autoren entschieden sich für das Hilfswerkzeug \enquote{vertabelo}. Dieses gibt die notwendigen SQL-Befehle aus, welche direkt für die Erstellung der Datenbank verwendet werden können.
 
 % TODO vertabelo.com/ link bla einfügen
 
@@ -13,26 +10,32 @@ Für die Erstellung der Datenbank entschieden sich die Autoren für die Verwendu
 
 \subsection{Containerisierung}
 
-Docker bla
+Um das optionale Ziel der Containerisierung zu erreichen, wurde auf einen Standardcontainer der MySQL-Entwickler über Docker zurückgegriffen. Die Autoren entschieden sich gegen den Bau eines eigenen Containers, um die Fehleranfälligkeit zu verringern und Dokumentations- und Supportkompatibel zu bleiben.
 
-compose
-
-mysql-docker warum den und nicht einen anderen
-
-hubot-docker bla
+%Containerisierungslöusugnen vergleichen, alle ausschließen, die kein MySQL haben, ...
 
 
+% TODO: docker-compose in den Anhang
+% docker-compose beschreiben
+
+
+%hubot-docker bla
+
+%Link zur docker seite als quelle
 
 \subsection{Slackidentifizierung}
 
-anflanschung der slacknutzer-tabelle // vielleicht in eine separate db??? oder reicht ne tabelle / viele tabellen für viele plattformen aus
+%anflanschung der slacknutzer-tabelle // vielleicht in eine separate db??? oder reicht ne tabelle / viele tabellen für viele plattformen aus
 
 \subsection{Botrealisierung}
+\subsubsection{Ereignisgesteuerte Aktionen}
+\subsubsection{Zeitgesteuerte Aktionen}
 
-Bob, warum
 
-Wie das mit den regexen - wegen ebnf recht einfach machbar
+%name Bob, warum dieser? - vielleicht besser in die analyse/modell
 
-Anhang mit botcode dranheften
+%TODO Wie das mit den regexen - wegen ebnf recht einfach machbar
 
-wie erweiterbarkeit realisiert? - include module bla, file x
+%Anhang mit botcode dranheften
+
+%wie erweiterbarkeit realisiert? - include module bla, file x
