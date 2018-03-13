@@ -1,38 +1,43 @@
 \subsection{Datenbank}
 
-MySQL ausgewählt
 
+Als Datenbank wurde aus den vorher genannten Gründen MySQL ausgewählt.
 Für die Erstellung der Datenbank entschieden sich die Autoren für die Verwendung eines Hilfswerkzeugs, in dem das Modell abgebildet und eine Befehlskette ausgegeben wird. Dadurch sollte eine Abweichung der Realisierung vom Modell vermieden und eine rasche prototypische Verifizierung ermöglicht werden. Aktuell (März 2018) existiert kein anerkannter Standard (wie z.B. UML) zur Beschreibung von Datenbanken, weshalb sich die Autoren für das Hilfswerkzeug \enquote{Vertabelo} entschieden. Dieses gibt die notwendigen SQL-Befehle aus, welche direkt für die Erstellung der Datenbank verwendet werden können. Weiterhin können die unter \url{vertabelo.com} angelegten Datenbankmodelle von mehreren Nutzern verwendet werden, was insbesondere für die geplante Weiterverwendung der Datenbank nützlich sein kann.
 Die bereits in \autoref{img:db-schema} gezeigte Datenbank ist unter folgender URL abrufbar: \url{https://my.vertabelo.com/public-model-view/5BaPS6sRRrFicciuYZnBT1di8UbnI3fgTxZQEbkQsipFzy1ILjZG6Ek3evfFgV7Q}. Der daraus generierte SQL-Code befindet sich im Anhang.
+Für die Erstellung des Datenbankschemas entschieden sich die Autoren für die Verwendung eines Hilfswerkzeugs, in dem das Modell abgebildet und eine Befehlskette ausgegeben wird. Dadurch sollte eine Abweichung der Realisierung vom Modell vermieden und eine rasche prototypische Verifizierung ermöglicht werden. Die Autoren entschieden sich für das Hilfswerkzeug \enquote{vertabelo}. Dieses gibt die notwendigen SQL-Befehle aus, welche direkt für die Erstellung der Datenbank verwendet werden können.
 
 
 
 
 
 \subsection{Containerisierung}
-Docker bla
 
-compose
+Um das optionale Ziel der Containerisierung zu erreichen, wurde auf einen Standardcontainer der MySQL-Entwickler über Docker zurückgegriffen. Die Autoren entschieden sich gegen den Bau eines eigenen Containers, um die Fehleranfälligkeit zu verringern und Dokumentations- und Supportkompatibel zu bleiben.
 
-mysql-docker warum den und nicht einen anderen
-
-hubot-docker bla
-\todo{weiter}
+\todo{Containerisierungslösungen vergleichen, alle ausschließen, die kein MySQL haben, ...}
 
 
+\todo{docker-compose in den Anhang}
+% docker-compose beschreiben
+
+
+%hubot-docker bla
+
+%Link zur docker seite als quelle
 
 \subsection{Slackidentifizierung}
 
-anflanschung der slacknutzer-tabelle // vielleicht in eine separate db??? oder reicht ne tabelle / viele tabellen für viele plattformen aus
-\todo{weiter}
+% anflanschung der slacknutzer-tabelle // vielleicht in eine separate db??? oder reicht ne tabelle / viele tabellen für viele plattformen aus
 
 \subsection{Botrealisierung}
+\subsubsection{Ereignisgesteuerte Aktionen}
+\subsubsection{Zeitgesteuerte Aktionen}
 
-Bob, warum
 
-Wie das mit den regexen - wegen ebnf recht einfach machbar
+%name Bob, warum dieser? - vielleicht besser in die analyse/modell
 
-Anhang mit botcode dranheften
+\todo{Wie das mit den regexen - wegen ebnf recht einfach machbar}
 
-wie erweiterbarkeit realisiert? - include module bla, file x
-\todo{weiter}
+%Anhang mit botcode dranheften
+
+%wie erweiterbarkeit realisiert? - include module bla, file x
