@@ -32,6 +32,21 @@
 * Berechtigungsstruktur/Nutzerrollen? - Status von Ferdi
 * "Besoffen bedienbar", Zielgruppe: Informatiker, aber auch Lehrer
 
+## Gespräch mit Prof. Frank am 14.04.2018
+* Dienstplan aus Doodle? Geht das? Ja, mittels CSV
+* kein Berechtigungskonzept kann funktionieren..auch in größeren Umgebungen
+* Entscheidungsbaum für Konversationen, Havariefälle
+* S.11 Sichten zu Schichten ändern
+* Nach Doppelpunkt Großschreibung
+* DB: Nutzernamen eindeutig, werden von Admin eingetragen
+* Evtl. Fragen zur IT-Sicherheit, einzuhaltende Sicherheitsaspekte, z.B. SQL-Injektion
+* Absicherung gegen DB-Angriffe mittels RegEx
+* Aufwandsabschätzung für Slack-Panel o.ä.
+* Doku ganz gut, reicht so aus. Wenn Steckerteam zufrieden
+* Demnächst: Code fertig machen, dann wird's schick
+* Abgabe: CD mit Code + PDF, dann Abnahme mit Prof. Frank
+* Link: Youtube - die Reise nach Rossa
+* Nächster Termin: vor Ostern, Abnahme, davor Doku + Code schicken
 
 ## Nützliche Links
 * [Redis Tutorial](http://www.try.redis.io)
