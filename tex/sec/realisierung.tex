@@ -1,18 +1,13 @@
 \subsection{Datenbank}
 
-
 Als Datenbank wurde aus den vorher genannten Gründen MySQL ausgewählt.
 Für die Erstellung der Datenbank entschieden sich die Autoren für die Verwendung eines Hilfswerkzeugs, in dem das Modell abgebildet und eine Befehlskette ausgegeben wird. Dadurch sollte eine Abweichung der Realisierung vom Modell vermieden und eine rasche prototypische Verifizierung ermöglicht werden. Aktuell (März 2018) existiert kein anerkannter Standard (wie z.B. UML) zur Beschreibung von Datenbanken, weshalb sich die Autoren für das Hilfswerkzeug \enquote{Vertabelo} entschieden. Dieses gibt die notwendigen SQL-Befehle aus, welche direkt für die Erstellung der Datenbank verwendet werden können. Weiterhin können die unter \url{vertabelo.com} angelegten Datenbankmodelle von mehreren Nutzern verwendet werden, was insbesondere für die geplante Weiterverwendung der Datenbank nützlich sein kann.
-Die bereits in \autoref{img:db-schema} gezeigte Datenbank ist unter folgender URL abrufbar: \url{https://my.vertabelo.com/public-model-view/5BaPS6sRRrFicciuYZnBT1di8UbnI3fgTxZQEbkQsipFzy1ILjZG6Ek3evfFgV7Q}. Der daraus generierte SQL-Code befindet sich im Anhang.
-Für die Erstellung des Datenbankschemas entschieden sich die Autoren für die Verwendung eines Hilfswerkzeugs, in dem das Modell abgebildet und eine Befehlskette ausgegeben wird. Dadurch sollte eine Abweichung der Realisierung vom Modell vermieden und eine rasche prototypische Verifizierung ermöglicht werden. Die Autoren entschieden sich für das Hilfswerkzeug \enquote{vertabelo}. Dieses gibt die notwendigen SQL-Befehle aus, welche direkt für die Erstellung der Datenbank verwendet werden können.
-
-
-
+Die bereits in \autoref{img:db-schema} gezeigte Datenbank ist unter \cite{VertabeloDesignYourDatabase2018} abrufbar. Der daraus generierte SQL-Code befindet sich im Anhang.
 
 
 \subsection{Containerisierung}
 
-Um das optionale Ziel der Containerisierung zu erreichen, wurde auf einen Standardcontainer der MySQL-Entwickler über Docker zurückgegriffen. Die Autoren entschieden sich gegen den Bau eines eigenen Containers, um die Fehleranfälligkeit zu verringern und Dokumentations- und Supportkompatibel zu bleiben.
+Um das optionale Ziel der Containerisierung zu erreichen, wurde auf einen Standardcontainer der MySQL-Entwickler über Docker zurückgegriffen. Die Autoren entschieden sich gegen den Bau eines eigenen Containers, um die Fehleranfälligkeit zu verringern und dokumentations- und supportkompatibel zu bleiben.
 
 \todo{Containerisierungslösungen vergleichen, alle ausschließen, die kein MySQL haben, ...}
 

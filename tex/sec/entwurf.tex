@@ -5,8 +5,6 @@
 Die auf den vorherigen Seiten zusammengetragenen obligatorischen Projektziele wurden zur besseren Überprüfung der Ziele in Anwendungsfälle umformuliert. Diese wurden entsprechend \autoref{usecase-auftrag} auf die Akteure \enquote{Bot} und \enquote{Auftraggeber} verteilt.
 Die Auftraggeber sind hierbei Robert Weiße und Ferdinand Malcher als technische Ansprechpartner des Studentenclubs \enquote{Stecker}, der \enquote{Bot} ist eine nicht näher spezifizierte Chatbot-Technologie, die aber bewusst als Akteur eingeführt wurde, da sie selbständig Aktionen ausführen soll.
 
-%????????????????ß Ich glaube nicht, dass Ferdi Vorsitzender ist, er und Robert sind Auftraggeber soweit ich weiß
-
 
 \begin{figure}[htbp]
     \includegraphics[width=0.7\textwidth]{../docs/uml/usecase-stakeholder.png}
@@ -44,7 +42,7 @@ Es werden folgende Befehle für die Interaktion definiert.
  
 % jedes Mitglied muss pro Jahr mindestens x mal an die Bar
  zeige Anzahl Schichten & zeigt die geleisteten Schichten für dieses Jahr an \\
- zeige Anzahl alte Schichten & zeigt die geleisteten Sichten für letztes Jahr an \\
+ zeige Anzahl alte Schichten & zeigt die geleisteten Schichten für letztes Jahr an \\
  
 % zum Anzeigen der Auswahl an welchen man teilnehmen  möchte
  zeige Termine & zeigt alle kommenden Termine $t_i$ an \\
@@ -97,7 +95,7 @@ Wann ist der nächste Termin? & zeigt den nächsten Termin an \\
 Trag mich ein. & \makecell{trägt den Aufrufer für den Termin ein, wenn nur eine\\ Schicht vorhanden ist / fragt nach, in welche Schicht\\ der Aufrufer eingetragen werden soll, wenn mehr als\\ eine Schicht vorhanden ist} \\
 \hline
 \end{tabular}
-\caption{natürliche Interaktion}
+\caption{Natürliche Interaktion}
 \label{tab:satzinteraktion}
 \end{table}
 
@@ -224,7 +222,7 @@ Die Umsetzung der vorgestellten Informationen ist in \autoref{img:db-schema} ers
 
 \subsection{Kommunikationsschnittstellen}
 
-Die Kommunikation zwischen der Datenbank und dem Chatbot erfolgt auf dem gleichen Host, weshalb keine besonderen Fälle beachtet werden müssen. Der Kommunikationspfad zwischen dem Chatbot und Slack wird jedoch über ein Hochschulnetzwerk durchgeführt. In diesem sind in das Netzwerk des Clubs nur die Ports 80 und 443 freigegeben. In der Standardkonfiguration bindet sich Hubot an Port 8080, der aber durch Setzen der Umgebungsvariable \tetxtit{PORT} geändert werden kann.
+Die Kommunikation zwischen der Datenbank und dem Chatbot erfolgt auf dem gleichen Host, weshalb keine besonderen Fälle beachtet werden müssen. Der Kommunikationspfad zwischen dem Chatbot und Slack wird jedoch über ein Hochschulnetzwerk durchgeführt. In diesem sind in das Netzwerk des Clubs nur die Ports 80 und 443 freigegeben. In der Standardkonfiguration bindet sich Hubot an Port 8080, der aber durch Setzen der Umgebungsvariable \textit{PORT} geändert werden kann.
 
 Eine erste Untersuchung des Netzwerkverkehrs zeigt jedoch weitere Ports, wie aus \autoref{img:packetports} zu entnehmen. Folgende Testumgebung kam hierbei zum Einsatz:
 Die Standardkonfiguration Hubots wurde mittels docker-compose (Details siehe Abschnitt Containerisierung) lokal gestartet und der Netzwerkverkehr an der virtuellen Netzwerkbrücke mittels Wireshark aufgezeichnet. In der Standardkonfiguration greift der in NodeJS laufende Hubot auf den Redis-Container als \enquote{Brain} zu, was standardmäßig über Port 6379 erfolgt. Über Port 443 werden HTTPS-Verbindungen zum Slack-Server aufgebaut um beispielsweise Profilbilder nachzuladen.
