@@ -40,14 +40,14 @@
 * Link: Youtube - die Reise nach Rossa
 * Nächster Termin: vor Ostern, Abnahme, davor Doku + Code schicken
 * TODOS:
-    * Entscheidungsbaum für Konversationen, Havariefälle [ ] <- Aktivitäsdiagramme, überarbeiten
-    * S.11 Sichten zu Schichten ändern [x]
-    * Nach Doppelpunkt Großschreibung [x]
-    * DB: Nutzernamen eindeutig, werden von Admin eingetragen [x]
-    * Doku ganz gut, reicht so aus. Wenn Steckerteam zufrieden [ ]
-    * Aufwandsabschätzung für Slack-Panel o.ä. [ ]
-    * Evtl. Fragen zur IT-Sicherheit, einzuhaltende Sicherheitsaspekte, z.B. SQL-Injektion [ ]
-    * Absicherung gegen DB-Angriffe mittels RegEx [x]
+    * [ ] Entscheidungsbaum für Konversationen, Havariefälle <- Aktivitätsdiagramme, überarbeiten
+    * [x] S.11 Sichten zu Schichten ändern
+    * [x] nach Doppelpunkt Großschreibung
+    * [x] DB: Nutzernamen eindeutig, werden von Admin eingetragen 
+    * [ ] Doku ganz gut, reicht so aus. Wenn Steckerteam zufrieden 
+    * [ ] Aufwandsabschätzung für Slack-Panel o.ä. 
+    * [ ] Evtl. Fragen zur IT-Sicherheit, einzuhaltende Sicherheitsaspekte, z.B. SQL-Injektion
+    * [x] Absicherung gegen DB-Angriffe mittels RegEx 
 
 ## Nützliche Links
 * [Redis Tutorial](http://www.try.redis.io)
