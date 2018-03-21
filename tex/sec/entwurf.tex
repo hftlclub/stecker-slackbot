@@ -1,20 +1,4 @@
-\subsection{Anwendungsfalldiagramme}
-
-%??????????? Das klingt eher wie ein Vorwort für den Entwurf der Digaramme. ich würde hier nur Dinge rein schreiben, die sich über mehrere Kapitel erstrecken, so als "globale variablen"
-
-Die auf den vorherigen Seiten zusammengetragenen obligatorischen Projektziele wurden zur besseren Überprüfung der Ziele in Anwendungsfälle umformuliert. Diese wurden entsprechend \autoref{usecase-auftrag} auf die Akteure \enquote{Bot} und \enquote{Auftraggeber} verteilt.
-Die Auftraggeber sind hierbei Robert Weiße und Ferdinand Malcher als technische Ansprechpartner des Studentenclubs \enquote{Stecker}, der \enquote{Bot} ist eine nicht näher spezifizierte Chatbot-Technologie, die aber bewusst als Akteur eingeführt wurde, da sie selbständig Aktionen ausführen soll.
-
-
-\begin{figure}[htbp]
-    \includegraphics[width=0.7\textwidth]{../docs/uml/usecase-stakeholder.png}
-    \caption{Anwendungsfalldiagramm für Auftraggeber und Bot}
-    \label{usecase-auftrag}
-\end{figure}
-
-
 \subsection{Anforderungsanalyse mittels Use-Case-Betrachtung}
-\todo{Struktur der Überschriften ändern, diese hat nur einen Unterpunkt und passt thematisch nicht}
 
 Entsprechend der Anwendungsfälle aus Kapitel 2 lassen sich folgende Einschränkungen definieren:
 
@@ -26,7 +10,7 @@ Entsprechend der Anwendungsfälle aus Kapitel 2 lassen sich folgende Einschränk
 
 Neben anderen möglichen Einsatzmöglichkeiten zur Mensch-Maschine-Interaktion (siehe \cite{PanConversationalInterfacesFuture2017} und \cite{GruensteinConversationalInterfaces2009}) dient der für dieses Projekt zu erstellende Bot als \enquote{Transaktionsbot} im Sinne einer Automatisierung der Datenbankabfragen. Da der Entwurf der Datenbank auch zum Projekt gehört, wird der ebenfalls zu erstellende Chatbot die einzige Schnittstelle zu den Endnutzern\footnote{in Abgrenzung zum Administrator, der z.B. direkt per Kommandozeile auf die Datenbank zugreift} bieten. Eine zukünftige Erweiterung um weitere Schnittstellen ist dabei nicht ausgeschlossen.
 
-\subsubsection{Interaktion über Slack}
+\subsection{Interaktion über Slack}
 
 Es werden folgende Befehle für die Interaktion definiert.
 
@@ -65,6 +49,7 @@ Es werden folgende Befehle für die Interaktion definiert.
 Die Befehle in \autoref{tab:chatbotinteraktion} folgen einem vereinfachtem Schema natürlicher Sprache: \texttt{<Prädikat (Imperativ)> <Subjekt>}. Die Struktur der Befehle soll dabei einfach zu merken, auf menschlicher Sprache basierend und auch auf mobilen Geräten mit wenig Tipparbeit verwendbar sein. Bei einem optionalen Einsatz einer Spracherkennung sind auch komplexere Satzkonstruktionen möglich, für den hier zu erfüllenden Zweck genügt das Schema aus \texttt{<Befehl> <Objekt> <Filter>}. Wie in \cite{ZueConversationalinterfacesadvances2000} beschrieben, weicht die Art der Kommunikation von Mensch-zu-Mensch und Mensch-zu-Bot voneinander ab, worauf bei der Definition der Interaktionsbefehle geachtet wurde. Es ist nach Ansicht der Autoren wenig sinnvoll, einen Bot zu entwickeln, der durch den Zugriff auf große Datenmengen den Eindruck von Intelligenz vermittelt, die aber durch ihre Begrenzung dem Nutzer keinen Mehrwert bietet. Der hier entwickelte Bot verfügt bewusst über ein begrenztes Vokabular, so dass er nur die vom Nutzer gewünschten Informationen liefert; die Kenntnis der Befehle obliegt dem Nutzer.
 
 Aus den in \autoref{tab:chatbotinteraktion} definierten Befehlen wurden die Aktivitätsdiagramme \autoref{img:activity-zeige} und \autoref{img:activity-teilnahme} erstellt, um die Reihenfolge der Interaktion besser zu strukturieren.
+Neben der Unterscheidung nach den den Satz einleitenden Prädikaten \textit{zeige} und \textit{nehme}ist hervorzuheben dass jede Aktivität terminiert, was auch durch einen Abbruch der Konversation mittels \textit{Danke} auftreten kann. Eine Sonderstellung nimmt hier der Block \textit{Hilf mir} ein, der ungeachtet des Satzbaus zu jedem Zeitpunkt der Konversation eine Liste der Befehle ausgibt. Je nach Befehlsumfang können diese auch kontextsensitiv sein, anfangs wird eine vollständige Liste ausgegeben.
 
 \begin{figure}[htbp]
     \centering
@@ -82,7 +67,7 @@ Aus den in \autoref{tab:chatbotinteraktion} definierten Befehlen wurden die Akti
 \end{figure}
 
 
-Für die Befehle können auch Sätze gebildet werden, welche nachfolgend aufgeführt werden. Diese können Kontextbezogen sein, sodass sich der Bot ähnlich wie ein natürlicher Gesprächspartner verhält. Ein Beispiel hierfür ist in \autoref{tab:satzinteraktion} zu sehen.
+Für die Befehle können auch Sätze gebildet werden, welche nachfolgend aufgeführt werden. Diese können kontextbezogen sein, sodass sich der Bot ähnlich wie ein natürlicher Gesprächspartner verhält. Ein Beispiel hierfür ist in \autoref{tab:satzinteraktion} zu sehen.
 
 \begin{table}[H]
 \centering
