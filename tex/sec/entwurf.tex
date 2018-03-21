@@ -229,7 +229,7 @@ Die Kommunikation zwischen der Datenbank und dem Chatbot erfolgt auf dem gleiche
 Eine erste Untersuchung des Netzwerkverkehrs zeigt jedoch weitere Ports, wie aus \autoref{img:packetports} zu entnehmen. Folgende Testumgebung kam hierbei zum Einsatz:
 Die Standardkonfiguration Hubots wurde mittels docker-compose (Details siehe Abschnitt Containerisierung) lokal gestartet und der Netzwerkverkehr an der virtuellen Netzwerkbrücke mittels Wireshark aufgezeichnet. In der Standardkonfiguration greift der in NodeJS laufende Hubot auf den Redis-Container als \enquote{Brain} zu, was standardmäßig über Port 6379 erfolgt. Über Port 443 werden HTTPS-Verbindungen zum Slack-Server aufgebaut um beispielsweise Profilbilder nachzuladen.
 
-Über die in diesem Beispiel genutzten Ports 43642 und 47230 erfolgt die weitere Kommunikation des Bots. Bei einem Neustart des Botclients ändern sich diese Ports, bleiben aber im Bereich der Non-Standard-Ports\footnote{Standardports unter \url{https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml}}. Für den Betrieb des Bots hinter einer Firewall mit Port-Whitelisting\footnote{alle Ports geschlossen, nur gewünschte Ports erlaubt} ist dies ein unerwünschtes Verhalten. Eine aus diesen Einschränkungen abgeleitete Systemarchitektur ist dem Deploymentdiagramm in \autoref{img:deployment} zu entnehmen.
+Über die in diesem Beispiel genutzten Ports 43642 und 47230 erfolgt die weitere Kommunikation des Bots. Bei einem Neustart des Botclients ändern sich diese Ports, bleiben aber im Bereich der Non-Standard-Ports\footnote{Standardports unter \url{https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml}}. Für den Betrieb des Bots hinter einer Firewall mit Port-Whitelisting\footnote{alle Ports geschlossen, nur gewünschte Ports erlaubt} ist dies ein unerwünschtes Verhalten. Da die Einschränkung jedoch nur eingehende Verbindungen betrifft, war das Verhalten akzeptabel. Eine aus diesen Einschränkungen abgeleitete Systemarchitektur ist dem Deploymentdiagramm in \autoref{img:deployment} zu entnehmen.
 In diesem ist neben den Komponenten wie Datenbankserver, Firewall und Chatbot auch eine Schnittstelle für einen Abruf der Termindaten per iCal o.ä. abgebildet, welche für eine spätere Implementierung vorgesehen ist.
 
 \begin{figure}[htbp]
@@ -239,10 +239,10 @@ In diesem ist neben den Komponenten wie Datenbankserver, Firewall und Chatbot au
     \label{img:packetports}
 \end{figure}
 
-Ausgehend  doppeltes NAT aber Webseiten ok
+%Ausgehend  doppeltes NAT aber Webseiten ok
 \todo{NAT checken}
 
-Aus diesem Grund muss der Chatbot sich als Client mit Slack verbinden und darf keine Serveranwendung sein, welche ein Polling implementiert.
+%Aus diesem Grund muss der Chatbot sich als Client mit Slack verbinden und darf keine Serveranwendung sein, welche ein Polling implementiert.
 
 % vllt Grafik einfügen?
 \begin{figure}[htbp]
@@ -253,5 +253,5 @@ Aus diesem Grund muss der Chatbot sich als Client mit Slack verbinden und darf k
 \end{figure}
 
 
-Slack hat eine option globale UIDs zum bot durchzuleiten. nützlich, wenn mehrere Workspaces genutzt werden - ist das der fall? ferdi fragen.
+%Slack hat eine option globale UIDs zum bot durchzuleiten. nützlich, wenn mehrere Workspaces genutzt werden - ist das der fall? ferdi fragen.
 \todo{ERWEITERN + Slack-Workspace mit Ferdi klären}
