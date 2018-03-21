@@ -24,7 +24,7 @@
 * DB-Server vorhanden - Daten generisch halten + dokumentieren, ggf. extra Tabellen für Bot (z.B. Mapping Wort-Datensatz)
 * Redis-Cache? Geschwindigkeit - check
 * install/backup-Skripts + Strategie - Betrachtung in Doku reicht
-* Coffeescript vs. Typescript? -  ToDo
+* Coffeescript vs. Typescript? -  ~ToDo~
 * Netzwerkkonfig/Ports? - Doppel-NAT, HTTP-Ports 80, 443 über vHosts
 * Sicherheitsbedenken - keine
 * Termin-API/Datenmodell - normalisiert, siehe Aufgabenstellung
@@ -32,6 +32,22 @@
 * Berechtigungsstruktur/Nutzerrollen? - Status von Ferdi
 * "Besoffen bedienbar", Zielgruppe: Informatiker, aber auch Lehrer
 
+## Gespräch mit Prof. Frank am 14.04.2018
+* Dienstplan aus Doodle? Geht das? Ja, mittels ~CSV~ Excel-Export
+* kein Berechtigungskonzept kann funktionieren..auch in größeren Umgebungen
+* Demnächst: Code fertig machen, dann wird's schick
+* Abgabe: CD mit Code + PDF, dann Abnahme mit Prof. Frank
+* Link: Youtube - die Reise nach Rossa
+* Nächster Termin: vor Ostern, Abnahme, davor Doku + Code schicken
+* TODOS:
+    * [ ] Entscheidungsbaum für Konversationen, Havariefälle <- Aktivitätsdiagramme, überarbeiten
+    * [x] S.11 Sichten zu Schichten ändern
+    * [x] nach Doppelpunkt Großschreibung
+    * [x] DB: Nutzernamen eindeutig, werden von Admin eingetragen 
+    * [ ] Doku ganz gut, reicht so aus. Wenn Steckerteam zufrieden 
+    * [ ] Aufwandsabschätzung für Slack-Panel o.ä. 
+    * [ ] Evtl. Fragen zur IT-Sicherheit, einzuhaltende Sicherheitsaspekte, z.B. SQL-Injektion
+    * [x] Absicherung gegen DB-Angriffe mittels RegEx 
 
 ## Nützliche Links
 * [Redis Tutorial](http://www.try.redis.io)
