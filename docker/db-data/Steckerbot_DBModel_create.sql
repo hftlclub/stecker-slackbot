@@ -4,6 +4,13 @@ CREATE DATABASE db;
 USE db;
 
 -- tables
+-- Table: brain
+CREATE TABLE `brain` (
+  `id` INT,
+  `data` TEXT,
+  PRIMARY KEY (`id`)
+);
+
 -- Table: Nutzer
 CREATE TABLE Nutzer (
     NutzerID int NOT NULL,
