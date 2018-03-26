@@ -8,6 +8,8 @@ services:
     user: "hubot"
     env_file:
         - steckerbot.env
+    depends_on:
+        - "db"
     networks:
       - dbnet
 
@@ -20,7 +22,7 @@ services:
       timeout: 5s
       retries: 10
     volumes:
-      - db-data:/docker-entrypoint-initdb.d/:ro
+      - ./db-data:/docker-entrypoint-initdb.d/:ro
     networks:
       - dbnet
     ports:

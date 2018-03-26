@@ -51,7 +51,7 @@ if [[ "$REALPATHEXISTS""n" == "n" ]]; then
 fi
 
   DATA=$(realpath ./data)
-  docker run -v $DATA:/data --rm -e SERVER_NAME=$DOMAIN $IMAGE generate
+  docker run -v $DATA:/data --rm -e SERVER_NAME=$DOMAIN $IMAGE 
 
 echo -e -n "\n### [ 6. ] ... fertig"
 echo -e -n "\n### [ 7. ] start.sh and stop.sh kann verwendet werden, um den Container zu sarten oder zu beenden"

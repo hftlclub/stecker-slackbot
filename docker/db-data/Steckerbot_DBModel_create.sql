@@ -5,10 +5,10 @@ USE db;
 
 -- tables
 -- Table: brain
-CREATE TABLE `brain` (
-  `id` INT,
-  `data` TEXT,
-  PRIMARY KEY (`id`)
+CREATE TABLE brain (
+  id INT,
+  data TEXT,
+  PRIMARY KEY (id)
 );
 
 -- Table: Nutzer

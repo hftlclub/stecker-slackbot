@@ -13,6 +13,11 @@ if [[ -f $configfile ]]; then
   esac
 fi
 
+DBNAME=steckerbot
+# (A-Za-z0-9)
+DBPASS=$(</dev/urandom tr -dc A-Za-z0-9 | head -c 28)
+MYSQL_ROOT_PASSWORD=$(</dev/urandom tr -dc A-Za-z0-9 | head -c 28)
+
 cat << EOF > $configfile
 # ------------------------------
 # Host
@@ -22,13 +27,12 @@ HOST_PORT=9001
 # ------------------------------
 # SQL DB
 # ------------------------------
-DBNAME=steckerbot
+DBNAME=$DBNAME
 DBUSER=steckerbot
+DBPASS=$DBPASS
 
-# (A-Za-z0-9)
-DBPASS=$(</dev/urandom tr -dc A-Za-z0-9 | head -c 28)
-MYSQL_ROOT_PASSWORD=$(</dev/urandom tr -dc A-Za-z0-9 | head -c 28)
 MYSQL_DATABASE=db
+MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
 
 # -------------------------------
 # Steckerbot Konfiguration
@@ -44,4 +48,22 @@ SB_ADMINPASS=$(</dev/urandom tr -dc A-Za-z0-9 | head -c 28)
 # Fixed project name
 COMPOSE_PROJECT_NAME=steckerbot-dockerized
 
+# Give the bot its brain
+MYSQL_TABLE=brain
+MYSQL_URL=mysql://root:$MYSQL_ROOT_PASSWORD@db/$DBNAME
+
 EOF
+
+read -r -p "Slack-Token eingeben? (y/N) " response
+case $response in
+    [yY][eE][sS]|[yY])
+        read -r -p "Slack-Token: " slacktoken
+        echo 'HUBOT_SLACK_TOKEN='$slacktoken >> $configfile
+        echo "Token erfolgreich geschrieben"
+        exit 0
+        ;;
+    *)
+        echo "Bitte Slack-Token in die steckerbot.env eintragen!"
+        exit 1
+        ;;
+esac
