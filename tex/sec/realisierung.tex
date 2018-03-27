@@ -1,17 +1,17 @@
 \subsection{Datenbank}
 
-Als Datenbank wurde aus den vorher genannten Gründen MySQL ausgewählt.
+Als Datenbank wurde aus den in \autoref{datenbankauswahl} genannten Gründen MySQL ausgewählt.
 Für die Erstellung der Datenbank entschieden sich die Autoren für die Verwendung eines Hilfswerkzeugs, in dem das Modell abgebildet und eine Befehlskette ausgegeben wird. Dadurch sollte eine Abweichung der Realisierung vom Modell vermieden und eine rasche prototypische Verifizierung ermöglicht werden. Aktuell (März 2018) existiert kein anerkannter Standard (wie z.B. UML) zur Beschreibung von Datenbanken, weshalb sich die Autoren für das Hilfswerkzeug \enquote{Vertabelo} entschieden. Dieses gibt die notwendigen SQL-Befehle aus, welche direkt für die Erstellung der Datenbank verwendet werden können. Weiterhin können die unter \url{vertabelo.com} angelegten Datenbankmodelle von mehreren Nutzern verwendet werden, was insbesondere für die geplante Weiterverwendung der Datenbank nützlich sein kann.
 Die bereits in \autoref{img:db-schema} gezeigte Datenbank ist unter \cite{VertabeloDesignYourDatabase2018} abrufbar. Der daraus generierte SQL-Code befindet sich im Anhang.
 
 
 \subsection{Containerisierung}
 
-Um das optionale Ziel der Containerisierung zu erreichen, wurde auf einen Standardcontainer der MySQL-Entwickler über Docker zurückgegriffen. Der Container zum Betrieb Hubots basiert auf einem Alpine Linux-Container mit NodeJS, der mittels eines selbst erstellten Dockerfiles erstellt wurde, wie aus \autoref{lst:dockerfile} zu entnehmen.
+Um das optionale Ziel der Containerisierung zu erreichen, wurde auf einen Standardcontainer der MySQL-Entwickler über Docker zurückgegriffen. Der Container zum Betrieb des Hubots basiert auf einem Alpine Linux-Container mit NodeJS, welcher mittels eines selbst entworfenen Dockerfiles erstellt wurde, welches in \autoref{lst:dockerfile} zu sehen ist.
 
 % Die Autoren entschieden sich gegen den Bau eines eigenen Containers, um die Fehleranfälligkeit zu verringern und dokumentations- und supportkompatibel zu bleiben.
 
-Docker ist eine Technologie zum Betrieb von Anwendungen in Containern, wobei jeder Container seine von den restlichen Containern isolierte Umgebung (Dateien, Abhängigkeiten) enthält, dabei aber die Hardware des Gastsystems mit anderen Containern teilt.
+Docker ist eine Technologie zum Betrieb von Anwendungen in Containern, wobei jeder Container eine von den restlichen Containern isolierte Umgebung (Dateien, Abhängigkeiten) erhält, dabei jedoch die Hardwareressourcen des Hostsystems mit anderen Containern teilt. Da diese Lösung wesentlich weniger Overhead bezüglich Speicher, Speicherplatz und Geschwindigkeit als eine Virtuelle Maschine bietet, eignen sich Container für die künstliche Abgrenzung vom Gesamtsystem und dadurch als einfach in den Produktiveinsatz zu überführende Lösung.
 
 \subsubsection{Vergleich von Containerisierungslösungen}
 Neben dem Einsatz der Containerlösung Docker wurden zu Projektbeginn Alternativen entsprechend \autoref{tab:docker-alternatives} betrachtet.
@@ -44,10 +44,10 @@ Neben dem Einsatz der Containerlösung Docker wurden zu Projektbeginn Alternativ
     \label{tab:docker-alternatives}
 \end{table}
 
-Der Vergleich der Docker-Alternativen erfolgte anhand einer positiven Gewichtung (Anzahl $+$) auf einer Skala von 1 bis 4. Dies ist für den groben Überblick ausreichend, bildet dabei aber keine detailliertere Gewichtung der Aspekte ab. Zur Abschätzung der Vor- und Nachteile reicht dieser grobe Vergleich jedoch aus. Die Gewichtung der Aspekte untereinander ist außerdem inhomogen, so ist die Anforderung der Datensparsamkeit z.B. wichtiger als die Geschwindigkeit. Daher sind die im folgenden näher erläuterten Punkte gesondert zu betrachten, da die Betrachtung der Summe über die Teilaspekte zum einen wenig aussagekräftig ist und zum anderen keine Form der Gewichtung der Vergleichskriterien beinhaltet.
+Der Vergleich der Docker-Alternativen erfolgte anhand einer positiven Gewichtung (Anzahl $+$) auf einer Skala von 1 bis 4. Dies ist für den groben Überblick ausreichend, bildet dabei aber keine detailliertere Gewichtung der Aspekte ab. Zur Abschätzung der Vor- und Nachteile reicht dieser grobe Vergleich jedoch aus. Die Gewichtung der Aspekte untereinander ist außerdem inhomogen. So ist die Anforderung der Datensparsamkeit z.B. wichtiger als die Geschwindigkeit. Daher sind die im folgenden näher erläuterten Punkte gesondert zu betrachten, da die Betrachtung der Summe über die Teilaspekte zum einen wenig aussagekräftig ist und zum anderen keine Form der Gewichtung der Vergleichskriterien beinhaltet.
 
 \begin{itemize}
-    \item Beispiel - ein charakteristischer Befehl/Referenz, siehe \url{https://github.com/hubotio/hubot/tree/master/docs/deploying}
+    \item Beispiel - ein charakteristischer Befehl/Referenz, siehe \url{https://github.com/hubotio/hubot/tree/master/docs/deploying} !!!!!!!!!!!!!!!!! \todo{sehr hässlich das muss woanders hin, footnote oder cite oder so}
     \item Geschwindigkeit - relative Zeit zur Ausführung der Anwendung
     \item Datensparsamkeit - Menge der ausgehenden Daten (weniger ist besser)
     \item Portierbarkeit - Grad der einfachen Portierung auf andere Systeme/Plattformen
@@ -58,13 +58,14 @@ Neben den positiven Kriterien, die sich untereinander nur qualitativ unterscheid
 
 \subsubsection{Entwicklungsumgebung mit Docker}
 
-Basierend auf \autoref{img:deployment} ist die Systemumgebung für den Betrieb Hubots mindestens aus den Komponenten \enquote{Chatbot} und \enquote{Termindatenbank} aufgebaut. Aus Gründen der Wartbarkeit wird diese Trennung auch von den Docker-Containern aufrechterhalten.
+Basierend auf \autoref{img:deployment} ist die Systemumgebung für den Betrieb von Hubot mindestens aus den Komponenten \enquote{Chatbot} und \enquote{Termindatenbank} aufgebaut. Aus Gründen der Wartbarkeit, des fehlerminimierenden Betriebs und der offiziellen Empfehlung der Entwickler wird diese Trennung auch von den Docker-Containern aufrechterhalten.
 
-Besondere Beachtung erfordert dabei die Verwaltung persistenter Daten, insbesondere der Datenbank. Da Docker-Container Daten standardmäßig nur volatil speichern\footnote{zur Gewährleistung der Idempotenz}, wird für den Erhalt der Datenbank ein persistentes Docker-Volume benötigt. Dafür wird ein \enquote{Volume} zwischen Hostsystem und Docker-Container eingebunden, so dass die Datenbank auch nach Beenden des Containers zur Verfügung steht.
+Besondere Beachtung erfordert dabei die Verwaltung persistenter Daten, insbesondere der Datenbank. Da Docker-Container Daten standardmäßig nur flüchtig speichern, % Idempotenz kann man hier nicht wirklich sagen, da man die referenz auf einen container entfernen muss, bevor man ihn wieder starten kann, das ist gecheatet. finde ich dementsprechend gewagt
+wird für den Erhalt der Datenbank ein persistentes Docker-Volume benötigt. Dafür wird ein \enquote{Volume} zwischen Hostsystem und Docker-Container eingebunden, so dass die Datenbank auch nach Beenden des Containers zur Verfügung steht.
 
 Hinzu kommt ein weiterer Container zum Betrieb des eigentlichen Chatbots mittels NodeJS. Dieser wird mit dem gleichen virtuellen Netzwerk wie der DB-Container verbunden um Zugriff auf die Datenbank zu erhalten.
 
-Weitere Einstellungen wie z.B. die zu öffnenden Ports folgen dem Paradigma \enquote{Convention over Configuration} (siehe \cite{NicholasChenConventionConfiguration2006}). Die Verbindung der Container untereinander erfolgt mittels docker-compose, in der docker-compose-Datei sind auch \textit{sinnvolle} Standardwerte enthalten, die schnell zum produktiven Einsatz führen (\cite{DockerCompose2018} und \autoref{lst:docker-compose}).
+Weitere Einstellungen wie z.B. die zu öffnenden Ports folgen dem Paradigma \enquote{Convention over Configuration} (siehe \cite{NicholasChenConventionConfiguration2006}). Die Verbindung der Container untereinander erfolgt mittels docker-compose, in der docker-compose-Datei sind ebenfalls vordefinierte Standardwerte enthalten, welche schnell zum produktiven Einsatz führen (\cite{DockerCompose2018} und \autoref{lst:docker-compose}).
 Dynamische Konfigurationen wie z.B. die UserID des Slackbots werden über entsprechende Umgebunsgvariablen in einer \verb+.env+-Datei übergeben und können problemlos während der Laufzeit geändert werden.
 
 \todo{docker-compose in den Anhang}

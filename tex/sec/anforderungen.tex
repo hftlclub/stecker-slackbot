@@ -1,15 +1,16 @@
+\label{anforderungen}
 \subsection{Anforderungen des Auftraggebers}
-Der Auftraggeber teilt seine Anforderungen in notwendige und optionale Ziele ein, welche nachfolgend aufgelistet werden. Als notwendige Ziele für das Projekt wurden folgende festgelegt.
+Der Auftraggeber teilt seine Anforderungen in notwendige und optionale Ziele ein, welche nachfolgend aufgelistet werden.
 
 \begin{itemize}
 	\item Chatbot ist in Slack verwendbar
-	\item Datenbank, welche Veranstaltungen und Zuweisungen der Mitglieder enthält
+	\item Datenbank, für Veranstaltungen und Zuweisungen der Mitglieder
 	\item Erfassung, welche Mitglieder wie viele Dienste gemacht haben
-	\item Abfragefunktion ist für Termine vorhanden
+	\item Abfragefunktion für Termine
 	\item zeitgesteuerte, ereignisbasierte und manuelle Erinnerungsfunktion
-	\item Einschränkung der Zielgruppe bzgl. Erinnerungen möglich
+	\item Zielgruppe für Erinnerungen
 	\item einfache Bedienbarkeit
-	\item Erweiterbarkeit des Projekts gegeben
+	\item Erweiterbarkeit des Projekts
 	\item MIT-ähnliche Lizenzen für Drittanbietersoftware und -quelltext
 	\item Dokumentation der Datenbank
 	\item Unabhängigkeit der relevanten Daten vom verwendeten Bot
@@ -17,7 +18,7 @@ Der Auftraggeber teilt seine Anforderungen in notwendige und optionale Ziele ein
 \end{itemize}
 
 
-Die optionalen Ziele werden nachfolgend aufgeführt.
+Zusätzlich wurden folgende optionale Ziele festgelegt.
 \begin{itemize}
 	\item aus iCal Termine extrahieren
 	\item Dienstplan aus Doodle-ähnlicher Umfrage erstellen
@@ -48,9 +49,9 @@ $Nutzer = Administrator \cup Mitarbeiter$
 % ??????????? Das klingt eher wie ein Vorwort für den Entwurf der Digaramme. ich würde hier nur Dinge rein schreiben, die sich über mehrere Kapitel erstrecken, so als "globale variablen"
 % Ich würde die UML-Usecases schon gern einleiten, wirkt sonst so lieblos, sollen ja auch einen Sinn haben
 
-Die auf den vorherigen Seiten zusammengetragenen obligatorischen Projektziele wurden zur besseren Überprüfung der Ziele in Anwendungsfälle umformuliert. Diese wurden entsprechend \autoref{usecase-auftrag} auf die Akteure \enquote{Bot} und \enquote{Auftraggeber} verteilt.
+Die zusammengetragenen obligatorischen Projektziele wurden zur besseren Überprüfung der Ziele in Anwendungsfälle umformuliert. Diese wurden entsprechend \autoref{usecase-auftrag} auf die Akteure \enquote{Bot} und \enquote{Auftraggeber} verteilt.
 
-Die Auftraggeber sind hierbei Ferdinand Malcher und Robert Weisse als Angehörige des Studentenclubs \enquote{Stecker}. Der \enquote{Bot} ist eine nicht näher spezifizierte Chatbot-Technologie, die aber bewusst als Akteur eingeführt wurde, da sie selbständig Aktionen ausführen soll.
+Die Auftraggeber sind hierbei Ferdinand Malcher und Robert Weisse, als Angehörige des Studentenclubs \enquote{Stecker}. Der \enquote{Bot} ist eine nicht näher spezifizierte Chatbot-Technologie, die aber bewusst als Akteur eingeführt wurde, da sie selbständig Aktionen ausführen soll.
 
 \begin{figure}[htbp]
     \includegraphics[width=0.7\textwidth]{../docs/uml/usecase-stakeholder.png}
@@ -60,7 +61,7 @@ Die Auftraggeber sind hierbei Ferdinand Malcher und Robert Weisse als Angehörig
 
 
 Für den zukünftigen Einsatz wurde ein weiteres Anwendungsfalldiagramm zur Unterteilung der Berechtigung der Nutzer erstellt. Gemäß Aufgabenstellung sind in \autoref{img:usecase-berechtigung} die Anwendungsfälle der Nutzer beschrieben. Die darin ebenfalls enthaltene Unterteilung der Berechtigungen dient hier nur der Vollständigkeit, da diese nicht zur initialen Aufgabenstellung gehört.
-Eine weitere mögliche Betrachtung ist der unterschiedliche Grad an Fähigkeiten zwischen Administrator und Mitarbeiter. Während es einem Administrator zumutbar ist, beispielweise einen Nutzer direkt per Datenbankzugriff anzulegen, so benötigt der Mitarbeiter eine seinen Fähigkeiten angemessene Schnittstelle wie sie der Chatbot bieten soll.
+Eine weitere mögliche Betrachtung ist der unterschiedliche Grad an Fähigkeiten zwischen Administrator und Mitarbeiter. Während es einem Administrator zumutbar ist, beispielweise einen Nutzer direkt per Datenbankzugriff anzulegen, so benötigt der Mitarbeiter eine seinen Fähigkeiten angemessene Schnittstelle, wie sie der Chatbot bieten soll.
 
 \begin{figure}[htbp]
     \includegraphics[width=0.9\textwidth]{../docs/uml/usecase-berechtigung.png}
