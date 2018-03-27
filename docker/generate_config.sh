@@ -13,7 +13,7 @@ if [[ -f $configfile ]]; then
   esac
 fi
 
-DBNAME=steckerbot
+DBNAME=terminverwaltung
 # (A-Za-z0-9)
 DBPASS=$(</dev/urandom tr -dc A-Za-z0-9 | head -c 28)
 MYSQL_ROOT_PASSWORD=$(</dev/urandom tr -dc A-Za-z0-9 | head -c 28)
@@ -33,6 +33,8 @@ DBPASS=$DBPASS
 
 MYSQL_DATABASE=db
 MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
+
+TZ='Europe/Berlin'
 
 # -------------------------------
 # Steckerbot Konfiguration
@@ -63,7 +65,22 @@ case $response in
         exit 0
         ;;
     *)
-        echo "Bitte Slack-Token in die steckerbot.env eintragen!"
+        echo "Bitte HUBOT_SLACK_TOKEN in die steckerbot.env eintragen!"
         exit 1
         ;;
 esac
+
+read -r -p "Slack-Room-ID eingeben? (y/N) " response
+case $response in
+    [yY][eE][sS]|[yY])
+        read -r -p "Slack-Token: " roomid
+        echo 'ROOM_ID='$roomid >> $configfile
+        echo "Token erfolgreich geschrieben"
+        exit 0
+        ;;
+    *)
+        echo "Bitte ROOM_ID in die steckerbot.env eintragen!"
+        exit 1
+        ;;
+esac
+

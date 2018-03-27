@@ -2,6 +2,7 @@ version: "3"
 services:
 
   slackbot:
+    container_name: slackbot
     build: .
     image: slackbot
     restart: always
@@ -14,6 +15,7 @@ services:
       - dbnet
 
   db:
+    container_name: termindatenbank
     image: "mariadb:10"
     restart: always
     healthcheck:

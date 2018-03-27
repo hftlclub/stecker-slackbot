@@ -3,7 +3,7 @@ FROM node:9-alpine
 RUN apk update \
 && apk upgrade \
 && apk add mariadb-client iputils \
-&& npm install -g npm \ 
+&& npm install -g npm \
 && npm install -g coffeescript yo \
 && adduser -h /home/hubot -D hubot
 RUN rm -rf /var/cache/apk/*
@@ -12,8 +12,8 @@ ENV HOME /home/hubot
 USER hubot
 WORKDIR /home/hubot
 
-RUN npm install generator-hubot hubot-slack 
-RUN echo "No" | yo hubot --adapter slack --name slackbot --defaults 
+RUN npm install generator-hubot hubot-slack
+RUN echo "No" | yo hubot --adapter slack --name slackbot --defaults
 RUN sed -i '/heroku/d' external-scripts.json
 RUN npm install hubot-mysql-brain --save \
 && sed -i 's/hubot-redis-brain/hubot-mysql-brain/g' external-scripts.json
