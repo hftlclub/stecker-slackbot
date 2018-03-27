@@ -60,6 +60,12 @@ insert into NutzerSchicht (terminschichtid, nutzerid) values (
 insert into NutzerSchicht (terminschichtid, nutzerid) values (
 	(select terminschichtid from TerminSchicht where schichtid = (select schichtid from Schicht where beginn = TIME("13:00")) and terminid = 1),
 	(select nutzerid from Nutzer where name = "Dieter Schnürschuh"));
+insert into NutzerSchicht (terminschichtid, nutzerid) values (
+	(select terminschichtid from TerminSchicht where schichtid = (select schichtid from Schicht where beginn = TIME("13:00")) and terminid = 1),
+	(select nutzerid from Nutzer where name = "Bogdan Raczynski"));
+insert into NutzerSchicht (terminschichtid, nutzerid) values (
+	(select terminschichtid from TerminSchicht where schichtid = (select schichtid from Schicht where beginn = TIME("19:00")) and terminid = 3),
+	(select nutzerid from Nutzer where name = "Bogdan Raczynski"));
 
 
 
