@@ -1,6 +1,7 @@
 mysql = require 'mysql'
 
 module.exports = (bot) ->
+	conversation={}
 	url = process.env.MYSQL_URL
 	conn = mysql.createConnection(url)
 
@@ -29,8 +30,44 @@ module.exports = (bot) ->
 				bot.reply "Fehler: der Termin konnte nicht erstellt werden"
 		bot.logger.info res.match[1],res.match[2],res.match[3]
 
-	bot.hear /wer nimmt alles an termin (.*) teil/i, (res) ->
-		bot.logger.info "noch nicht implementiert"
+#	bot.hear /wer nimmt alles an termin (.*) teil/i, (res) ->
+#		bot.logger.info "noch nicht implementiert"
+
+	bot.hear /\s*Wann\s*ist\s*die\s*nächste\s*Schicht\s*\?/i, (res) ->
+		nutzer=res.envelope.user.id
+		conn.query "SELECT TerminTyp.Name, ADDTIME(Termin.Datum, Schicht.Beginn) as genauertermin FROM (SELECT terminschichtid from TerminSchicht) as ts left join TerminSchicht on TerminSchicht.terminschichtid = ts.terminschichtid left join Schicht on TerminSchicht.SchichtID = Schicht.SchichtID left join Termin on Termin.terminid = TerminSchicht.terminid left join TerminTyp on TerminTyp.TerminTypID = Termin.TerminTypID where ADDTIME(Termin.Datum, Schicht.Beginn) >= NOW() order by genauertermin ASC LIMIT 1", (err, rows) ->
+			if err
+				bot.reply "Ich konnte die nächste Schicht nicht finden." + err
+			else
+				conversation.vorher="nächsterTermin"
+				conversation.nutzer=nutzer
+				name=rows[0].Name
+				genauertermin=rows[0].genauertermin
+				conversation.schichtname=name
+				conversation.genauertermin=genauertermin
+				res.reply "Die nächste Schicht ist: #{name} #{genauertermin}"
+
+	bot.hear /\s*trage?\s*mich\s*ein/i, (res) ->
+		nutzer=res.envelope.user.id
+		genauertermin=conversation.genauertermin
+		name=conversation.schichtname
+		#bot.logger.info "ich habe dich gehört"
+		if conversation.nutzer == nutzer && conversation.vorher == "nächsterTermin"
+			#bot.logger.info "insert into NutzerSchicht (terminschichtid, nutzerid) values ((select terminschichtid from TerminSchicht		where schichtid = (select schichtid from Schicht where beginn = TIME('#{genauertermin}'))		and    terminid = (select terminid  from Termin			where termintypid = (select termintypid from TerminTyp where name = '#{name}')            and datum = DATE('#{genauertermin}'))),	(select nutzerid from SlackNutzer where slacknutzerid = '#{nutzer}'));"
+			conn.query "insert into NutzerSchicht (terminschichtid, nutzerid) values ((select terminschichtid from TerminSchicht		where schichtid = (select schichtid from Schicht where beginn = TIME('#{genauertermin}'))		and    terminid = (select terminid  from Termin			where termintypid = (select termintypid from TerminTyp where name = '#{name}')            and datum = DATE('#{genauertermin}'))),	(select nutzerid from SlackNutzer where slacknutzerid = '#{nutzer}'));", (err, rows) ->
+				if err
+					res.reply "Das hat nicht geklappt."
+					bot.logger.info err
+				else
+					bot.logger.info "#{nutzer} wurde in eine Schicht eingetragen"
+					res.reply "Ich habe dich in die Schicht eingetragen."
+
+	bot.hear /\s*danke\s*/i, (res) ->
+		nutzer=res.envelope.user.id
+		if conversation.nutzer == nutzer
+			conversation={}
+			res.reply "Gern geschehen."
+				
 
 	################ Command Listener
 	# ANLEGE-BEFEHLE
@@ -98,38 +135,6 @@ module.exports = (bot) ->
 				if response
 					bot.logger.info response
 					res.reply "ich habe dich für Termin #{termin} eingetragen"
-
-	bot.respond /datenbank/i, (res) ->
-		conn.query "SELECT * FROM `termine` WHERE `id`=1", (err, rows) ->
-            if err or rows.length == 0
-                bot.logger.info "tabelle leer oder keine daten bekommen"
-            else
-                bot.logger.info "tabelle termine id 1"
-                bot.logger.info rows[0]
-                res.reply rows[0].id
-	
-	bot.respond /store/i, (res) ->
-		store ("termin bla")
-		res.reply "fertig"
-
-	store = (name) ->
-		conn.query "INSERT INTO termine (name) VALUES ('#{name}')", (err, response) ->
-			bot.logger.info "INSERT IN DB"
-			if err
-				bot.logger.info "ERROR"
-				bot.logger.info err
-			if response
-				bot.logger.info response
-
-	load = (id) ->
-		conn.query "SELECT * FROM `termine` WHERE `id`=#{id}", (err, rows) ->
-			if err or rows.length == 0
-				bot.logger.info "tabelle leer oder keine daten bekommen"
-			else
-				bot.logger.info "tabelle termine id #{id}"
-				bot.logger.info rows[0]
-				loaded (rows[0])
-
 
 	erstellesitzung = (datum, zeit, ende, name, callback) ->
 		conn.query 'select id from termintyp where name = "Sitzung"', (err, response) ->
