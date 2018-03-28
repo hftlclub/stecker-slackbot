@@ -16,8 +16,8 @@ note left of iCalFeed : optional
 database Termindatenbank
 }
 
-Nutzer <--> Slack 
-Slack <--> Internet
+Nutzer <-> Slack 
+Slack <-> Internet
 Internet <--> Firewall
 Firewall <--> Chatbot
 Chatbot <--> MySQL
