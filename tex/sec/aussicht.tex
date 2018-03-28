@@ -12,13 +12,13 @@ Während der Implementierung des Prototypen wurde gemäß der Anforderungen nich
         \hline
         Docker-Variablen & in Plaintext gespeichert & Docker Secrets verwenden \\
         \hline
-        MySQL-DB & theoretisch anfällig für SQL-Injektion & DB über Firewall absichern, Backups \\
+        MySQL-DB & theoretisch anfällig für SQL-Injektion & DB-Eingaben validieren (z.B. RegEx), regelmäßige Backups \\
         \hline
         NodeJS & Sicherheitslücken alter Versionen & regelmäßige Aktualisierungen \\
         \hline
         Passwörter & keine Passwort-Policy vorhanden & nur ausreichend komplexe Passwörter zulassen \\
         \hline
-        Verbindungssicherheit & Verbindungen unverschlüsselt & SSL-Zertifikat für Verbindungen, z.B. von Let's Encrypt \\
+        Verbindungssicherheit & DB-Verbindung beim Anlegen von Nutzern unverschlüsselt & SSL-Zertifikat für Verbindungen, z.B. von Let's Encrypt \\
         \hline
     \end{tabularx}
     \caption{Überblick Sicherheitsaspekte}
