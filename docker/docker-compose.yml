@@ -16,7 +16,7 @@ services:
 
   db:
     container_name: termindatenbank
-    image: "mariadb:10"
+    image: "mysql"
     restart: always
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "--host", "localhost", "--silent"]

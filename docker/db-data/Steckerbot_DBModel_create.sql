@@ -1,5 +1,5 @@
 -- databases
-CREATE DATABASE db;
+-- CREATE DATABASE db;
 USE db;
 
 -- tables
