@@ -47,7 +47,6 @@ Es werden folgende Befehle für die Interaktion definiert.
 
  % Utilities
  hilf mir & zeigt alle verfügbaren Kommandos an \\
- danke & bricht die aktuelle Konversation ab \\
 \end{tabular}
 \caption{Befehle zur Chatbotinteraktion}
 \label{tab:chatbotinteraktion}
@@ -83,19 +82,23 @@ Für die Befehle können auch Sätze gebildet werden, welche nachfolgend aufgef�
 \hline
 \textbf{Satz} & \textbf{Bedeutung }\\
  \hline
-Wann ist der nächste Termin? & zeigt den nächsten Termin an \\
+Wann ist die nächste Schicht? & zeigt die nächste Schicht an \\
 \hline
-Trag mich ein. & \makecell{trägt den Aufrufer für den Termin ein, wenn nur eine\\ Schicht vorhanden ist / fragt nach, in welche Schicht\\ der Aufrufer eingetragen werden soll, wenn mehr als\\ eine Schicht vorhanden ist} \\
+Trag mich ein. & trägt den Aufrufer für die nächste Schicht ein \\
+% \makecell{trägt den Aufrufer für den Termin ein, wenn nur eine\\ Schicht vorhanden ist / fragt nach, in welche Schicht\\ der Aufrufer eingetragen werden soll, wenn mehr als\\ eine Schicht vorhanden ist} \\
+\hline
+Danke & bricht die Konversation ab \\
 \hline
 \end{tabular}
-\caption{Natürliche Interaktion}
+\caption{kontextabhängige Befehle}
 \label{tab:satzinteraktion}
 \end{table}
 
 Durch das Beispiel wird offensichtlich, dass der Bot den Kontext, in dem sich die Unterhaltung befindet, speichern muss. Dies ist pro Konversation und demnach pro Nutzer durchzuführen. Die Autoren gehen davon aus, dass eine Konversation nur einen Kontext besitzt. Es werden daher Konversationen ausgeschlossen, welche zwei Themen besitzen und diese sporadisch oder unvorhersehbar ändern.
 
-Sollte der Satz \textit{Trag mich ein.} ohne Kontext geäußert werden, so soll keine Aktion durchgeführt werden. Da der Bot einer Konversation beiwohnen könnte, welche mit einem anderen Nutzer geführt wird, ist keine Aktion erforderlich oder gewünscht. Sollte der Bot jedoch zuvor den Satz \textit{Wann ist der nächste Termin?} aufgreifen, so soll er sich, wie eine natürliche Person, angesprochen fühlen und darauf reagieren. Weiterhin ist nun ein Kontext vorhanden, wodurch der nächste Satz eine Bedeutung erhält und nicht mehr ignoriert werden darf.
+Sollte der Satz \textit{Trag mich ein.} ohne Kontext geäußert werden, so soll keine Aktion durchgeführt werden. Da der Bot einer Konversation beiwohnen könnte, welche mit einem anderen Nutzer geführt wird, ist keine Aktion erforderlich oder gewünscht. Sollte der Bot jedoch zuvor den Satz \textit{Wann ist die nächste Schicht} aufgreifen, so soll er sich, wie eine natürliche Person, angesprochen fühlen und darauf reagieren. Weiterhin ist nun ein Kontext vorhanden, wodurch der nächste Satz eine Bedeutung erhält und nicht mehr ignoriert werden darf.
 
+Das Wort \textit{Danke} dürfte auch sehr häufig in normalen Gruppendiskussionen geäußert werden, ohne dass der Bot dabei direkt angesprochen wird. Daher r ist es wichtig, auf dieses Wort nur im Kontext einer Konversation mit dem zu reagieren, da nur dort den Nutzern die kontextspezifische Bedeutung von Danke bewusst ist.
 
 Aufgrund dessen entschieden sich die Autoren weitere Befehle einzuführen, welche den Bot natürlich wirken lassen sollen. Diese können in \autoref{tab:natuerlicheinteraktion} eingesehen werden. Weiterhin werden jene Sätze, auf die reagiert werden sollen, in der EBNF\footnote{Erweiterte Backus-Naur-Form} dargestellt.
 % ACRONYM EBNF
@@ -224,7 +227,7 @@ Die Standardkonfiguration Hubots wurde mittels docker-compose (Details siehe Abs
 Über die in diesem Beispiel genutzten Ports 43642 und 47230 erfolgt die weitere Kommunikation des Bots. Bei einem Neustart des Botclients ändern sich diese Ports, bleiben aber im Bereich der Non-Standard-Ports\footnote{Standardports unter \url{https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml}}. Für den Betrieb des Bots hinter einer Firewall mit Port-Whitelisting\footnote{alle Ports geschlossen, nur gewünschte Ports erlaubt} ist dies ein unerwünschtes Verhalten. Da die Einschränkung jedoch nur eingehende Verbindungen betrifft, war das Verhalten akzeptabel. Eine aus diesen Einschränkungen abgeleitete Systemarchitektur ist dem Deploymentdiagramm in \autoref{img:deployment} zu entnehmen.
 In diesem ist neben den Komponenten wie Datenbankserver, Firewall und Chatbot auch eine Schnittstelle für einen Abruf der Termindaten per iCal o.ä. abgebildet, welche für eine spätere Implementierung vorgesehen ist.
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{img/packetports.png}
     \caption{Übersicht über von Hubot genutzte TCP-Ports}
@@ -237,7 +240,7 @@ In diesem ist neben den Komponenten wie Datenbankserver, Firewall und Chatbot au
 %Aus diesem Grund muss der Chatbot sich als Client mit Slack verbinden und darf keine Serveranwendung sein, welche ein Polling implementiert.
 
 % vllt Grafik einfügen?
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{../docs/uml/architecture.png}
     \caption{Deploymentdiagramm}
@@ -246,4 +249,4 @@ In diesem ist neben den Komponenten wie Datenbankserver, Firewall und Chatbot au
 
 
 %Slack hat eine option globale UIDs zum bot durchzuleiten. nützlich, wenn mehrere Workspaces genutzt werden - ist das der fall? ferdi fragen.
-\todo{ERWEITERN + Slack-Workspace mit Ferdi klären}
+% \todo{ERWEITERN + Slack-Workspace mit Ferdi klären}
