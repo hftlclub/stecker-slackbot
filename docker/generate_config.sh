@@ -13,7 +13,7 @@ if [[ -f $configfile ]]; then
   esac
 fi
 
-DBNAME=terminverwaltung
+DBNAME=db
 # (A-Za-z0-9)
 DBPASS=$(</dev/urandom tr -dc A-Za-z0-9 | head -c 28)
 MYSQL_ROOT_PASSWORD=$(</dev/urandom tr -dc A-Za-z0-9 | head -c 28)
@@ -31,6 +31,7 @@ DBNAME=$DBNAME
 DBUSER=steckerbot
 DBPASS=$DBPASS
 
+MYSQL_URL=mysql://root:$MYSQL_ROOT_PASSWORD@$DBNAME/$DBNAME
 MYSQL_DATABASE=db
 MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
 
@@ -50,10 +51,6 @@ SB_ADMINPASS=$(</dev/urandom tr -dc A-Za-z0-9 | head -c 28)
 # Fixed project name
 COMPOSE_PROJECT_NAME=steckerbot-dockerized
 
-# Give the bot its brain
-MYSQL_TABLE=brain
-MYSQL_URL=mysql://root:$MYSQL_ROOT_PASSWORD@db/$DBNAME
-
 EOF
 
 read -r -p "Slack-Token eingeben? (y/N) " response
@@ -62,7 +59,6 @@ case $response in
         read -r -p "Slack-Token: " slacktoken
         echo 'HUBOT_SLACK_TOKEN='$slacktoken >> $configfile
         echo "Token erfolgreich geschrieben"
-        exit 0
         ;;
     *)
         echo "Bitte HUBOT_SLACK_TOKEN in die steckerbot.env eintragen!"
@@ -73,9 +69,9 @@ esac
 read -r -p "Slack-Room-ID eingeben? (y/N) " response
 case $response in
     [yY][eE][sS]|[yY])
-        read -r -p "Slack-Token: " roomid
+        read -r -p "Room-ID: " roomid
         echo 'ROOM_ID='$roomid >> $configfile
-        echo "Token erfolgreich geschrieben"
+        echo "ID erfolgreich geschrieben"
         exit 0
         ;;
     *)
