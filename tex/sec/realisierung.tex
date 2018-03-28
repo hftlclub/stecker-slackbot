@@ -99,7 +99,17 @@ Die zeitgesteuerten Aktionen beschränken sich auf die selbstständige Erinnerun
 
 Die Autoren legten eine zeitlich positive Abweichung von 5 Minuten als akzeptablen Wert bezüglich des echten Termins fest. Dieser entstand durch die Überlegung, wie groß die maximale Dauer für eine Abfrage an die Datenbank sein kann. Bei einer Teilnehmeranzahl von im $\o$ 10, einer Mitgliedsdauer von 50 Jahren und einer implementierungstechnisch pessimistisch angenommenen wöchentlichen Teilnahme an einer Veranstaltung pro Mitglied würden $52 \cdot 50 \cdot 10$ Terminschichteinträge vorhanden sein. Da eine Abfrage des nächsten Termins auf einem aktuellen Laptop $\approx 60\mu s$ dauert, ist eine obere Grenze von $52 \cdot 10 \cdot 50 \cdot 60 \mu s=1,56s=\varepsilon $ zu erwarten.
 
-Der Bot fragt die Datenbank periodisch aller 3 Minuten auf nächstgelegene Termine ab, während die zu betrachtenden Termine in einer Zeitspanne von 5 Minuten liegen. Da der Bot eine maximale Abfragezeit von $\varepsilon + 3min$ hat, liegt der Abtastzeitpunkt immer innerhalb der 5 Minuten-Spanne. Nachfolgende Grafik verdeutlicht dies.
+Der Bot fragt die Datenbank periodisch aller 3 Minuten auf nächstgelegene Termine ab, während die zu betrachtenden Termine in einer Zeitspanne von 5 Minuten liegen. Da der Bot eine maximale Abfragezeit von $\varepsilon + 3min$ hat, liegt der Abtastzeitpunkt selbst mit $\varepsilon$ immer innerhalb der 5 Minuten-Spanne. \autoref{querytiming} verdeutlicht dies.
+ 
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=1\textwidth,clip]{img/query.pdf}
+	\caption{Zeitdiagramm für die Datenbankabfrage}
+	\label{querytiming}
+\end{figure}
+
+Es ist zu erkennen, dass das Zeitfenster, in dem die Abfrage eines Termins stattfindet, an $t=3s$ beginnt und bei $t=8s$ endet, während der Bot mindestens einen Abtastzeitpunkt innerhalb der Zeitspanne besitzt. Die beiden Zeitpunkte liegen in der Grafik bei $t=2 \cdot \varepsilon + 2\cdot 3min$ und $t=3\cdot \varepsilon + 3\cdot 3min$.
+
 
 %Anhang mit botcode dranheften
 
