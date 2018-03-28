@@ -162,8 +162,8 @@ Die Mitglieder sollen weiterhin die Möglichkeit haben, sich in diese Schichten 
 
 
 Um die Anforderungen in einer Datenbank modellieren zu können, wurde ein Schema gemäß \autoref{img:db-schema} erstellt. Das Datenbankschema wurde gemäß der 3. Normalform (siehe \cite{CoddRelationalModelData1970}) erstellt. Dadurch ergeben sich Vorteile hinsichtlich Integrität und Datenzugriffszeit durch die Vermeidung redundanter Daten sowie der eindeutigen Zuordnung von Primärschlüsseln zu Tabellen (Konsistenz). Ein weiterer Vorteil der 3. Normalform ist die im Verhältnis zur 1. und 2. Normalform bessere Erweiterbarkeit, da alle Datensätze thematisch getrennt in jeweils eigenen Tabellen stehen (z.B. Trennung von Nutzer und SlackNutzer). 
-Für den Einsatz als von weiteren Daten isolierter SlackBot wäre ein DB-Modell in 1. oder 2. Normalform aufgrund des einfacheren Aufbaus und weniger nötigen Lesezugriffen vorzuziehen, wurde aber hinsichtlich der gewünschten Integration in weitere Anwendungen in Form der 3. Normalform erstellt.
-\todo{das war ein 4-zeilen satz. kannst du den anders formulieren? ich will den nicht selbst kaputt machen}
+Für den Einsatz als von weiteren Daten isolierter SlackBot wäre ein DB-Modell in 1. oder 2. Normalform aufgrund des einfacheren Aufbaus und weniger nötigen Lesezugriffen vorzuziehen. Dieses wurde aber hinsichtlich der gewünschten Integration in weitere Anwendungen in Form der 3. Normalform erstellt.
+% \todo{das war ein 4-zeilen satz. kannst du den anders formulieren? ich will den nicht selbst kaputt machen}
 
 Die strikte Aufteilung der Daten in den Tabellen bildet auch die Ebenen der verschieden Lebenszyklen der Datensätze ab, wobei hier zwischen langsam, mittel und schnell unterschieden werden konnte. Diese in \autoref{tab:db-speed} ersichtliche Unterscheidung basiert auf den relativen Unterschieden der Speicherfrequenz der Datensätze und ist daher nicht mit absoluten Werten zu bemessen. Beispielsweise ändern sich die Datensätze in der Tabelle NutzerSchicht erwartungsgemäß öfter als in der Tabelle SlackNutzer.
 
