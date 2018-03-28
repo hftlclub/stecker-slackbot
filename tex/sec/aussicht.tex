@@ -1,0 +1,35 @@
+\subsection{Sicherheitsaspekte}
+
+Während der Implementierung des Prototypen wurde gemäß der Anforderungen nicht auf Sicherheitsaspekte eingegangen. Bei weiterem Einsatz des Bot-Protoypen sollten diese aber unter keinen Umständen vernachlässigt werden. Eine Übersicht über zu beachtende Sicherheitsaspekte befindet sich in \autoref{tab:secaspects}. Diese Übersicht stellt dabei keinen Anspruch auf Vollständigkeit, erlaubt aber einen groben Überblick über zu erwartende Sicherheitslücken.
+
+\begin{table}[h]
+    \centering
+    \begin{tabularx}{\textwidth}{|X|X|X|}
+        \hline
+        \textbf{Aspekt} & \textbf{Problem} & \textbf{Lösung} \\
+        \hline
+        Berechtigungen & Adminrechte nicht getrennt & Berechtigungen gemäß DB implementieren \\
+        \hline
+        Docker-Variablen & in Plaintext gespeichert & Docker Secrets verwenden \\
+        \hline
+        MySQL-DB & theoretisch anfällig für SQL-Injektion & DB über Firewall absichern, Backups \\
+        \hline
+        NodeJS & Sicherheitslücken alter Versionen & regelmäßige Aktualisierungen \\
+        \hline
+        Passwörter & keine Passwort-Policy vorhanden & nur ausreichend komplexe Passwörter zulassen \\
+        \hline
+        Verbindungssicherheit & Verbindungen unverschlüsselt & SSL-Zertifikat für Verbindungen, z.B. von Let's Encrypt \\
+        \hline
+    \end{tabularx}
+    \caption{Überblick Sicherheitsaspekte}
+    \label{tab:secaspects}
+\end{table}
+
+\subsection{Botschnittstelle}
+Der Prototyp des Chatbots verfügt über eine rein dialogbasierte Nutzerinteraktion. Jeder Befehl erfolgt über die Textschnittstelle, worüber nur eingeschränkte Interaktionsmöglichkeiten möglich sind.
+
+Die Implementierung einer erweiterten Schnittstelle in Form eines Slack-Panels\footnote{\url{https://api.slack.com/dialogs}} zur interaktiven Auswahl von Terminen ermöglicht z.B. eine schnellere Auswahl von Terminen, da diese nicht immer einzeln erfragt werden müssen, sondern direkt im Slack-Kanal ausgewählt werden können.
+
+Für diese Funktionalität ist die Registrierung des Bots als \enquote{Slack-App} nötig, da dies nur mit Slack-Webhooks möglich ist.
+
+Der dafür geschätzte Aufwand beträgt 16 h.
