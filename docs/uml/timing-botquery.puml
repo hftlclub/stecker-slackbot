@@ -1,0 +1,36 @@
+@startuml
+!include skin.puml
+
+title Timing Diagram
+
+robust "DB Fenster" as DB
+robust "Steckerbot" as BOT
+
+DB is 0
+BOT is idle
+
+@DB
+0 is 0
+3 is "DB Zyklus"
+8 is 0
+
+DB@3 <-> @8 : Abtastfrequenz < 5 min - ε
+
+@3
+DB -> BOT : Start
+@8
+DB -> BOT : Ende
+
+@BOT
+0 is "1*ε"
++0.5 is "ε + 3 min"
++3 is "2*ε"
++0.5 is "2*ε + 6 min"
++3 is "3*ε"
++0.5 is "3*ε + 9 min"
+
+'BOT@0 <-> @0.5 : ε
+'BOT@+3 <-> @+0.5 : ε
+'BOT@+3 <-> @+0.5 : ε
+@enduml
+
