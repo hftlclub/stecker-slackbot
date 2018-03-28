@@ -104,9 +104,9 @@ Aufgrund dessen entschieden sich die Autoren weitere Befehle einzuführen, welch
 \texttt{T = "Termine"}\\
 \texttt{S = "{}Sitzungen"}
 
-\texttt{Frage1 = "Kann mir \{irgend\}jemand sagen" $|$ "Weiß \{irgend\}jemand" $|$ "Wer weiß" $|$ "Wieso sagt mir niemand"}\\
-\texttt{Apell1 = "{}Sag\{e\} mir endlich" $|$ "Jetz\{t\} sag\{e\} schon"}\\
-\texttt{Frage2 = "Wann haben wir die nächsten" $|$ "Wann sind die nächsten"}
+\texttt{Frage1 = "Kann mir \{irgend\}jemand sagen"{} $|$ "Weiß \{irgend\}jemand"{} $|$\\ "Wer weiß"{} $|$ "Wieso sagt mir niemand"}\\
+\texttt{Apell1 = "{}Sag\{e\} mir endlich"{} $|$ "Jetz\{t\} sag\{e\} schon"}\\
+\texttt{Frage2 = "Wann haben wir die nächsten"{} $|$ "Wann sind die nächsten"}
 
 \begin{table}[H]
 \centering
@@ -114,15 +114,15 @@ Aufgrund dessen entschieden sich die Autoren weitere Befehle einzuführen, welch
 	\hline
 	\textbf{Satz} & \textbf{Antwort} \\
 	\hline
-	''Bob?'' & @\texttt{<Aufrufer>} Wie kann ich dir helfen? Mit \texttt{hilfe} zeige ich dir meine Hilfe. \\
+	\texttt{"Bob?"} & @\texttt{<Aufrufer>} Wie kann ich dir helfen? Mit \texttt{hilfe} zeige ich dir meine Hilfe. \\
 	\hline
-	{Frage1 '', wann ich Bardienst habe?'' $|$ Apell1 '', wann ich Bardienst habe'' ''.''$|$''!''} & @\texttt{<Aufrufer>} Dein nächster Bardienst ist am \texttt{<Datum>} von \texttt{<Beginn>} bis \texttt{<Ende>}.\\
+	{\texttt{Frage1 ", wann ich Bardienst habe?"{} $|$ Apell1 ", wann ich Bardienst habe"{} "."$|$"!"}} & @\texttt{<Aufrufer>} Dein nächster Bardienst ist am \texttt{<Datum>} von \texttt{<Beginn>} bis \texttt{<Ende>}.\\
 	\hline
-	Frage2 V$|$S$|$T ''?'' & @\texttt{<Aufrufer>} Die nächsten 5 \texttt{<V$|$S$|$T>} finden an folgenden Daten statt: \texttt{<Daten und Sichten>}\\
+	\texttt{Frage2 "{} "{} V$|$S$|$T "?"} & @\texttt{<Aufrufer>} Die nächsten 5 \texttt{<V$|$S$|$T>} finden an folgenden Daten statt: \texttt{<Daten und Sichten>}\\
 	\hline
-	''Wann finden die nächsten '' V$|$S$|$T ''statt?'' & Die nächsten 5 \texttt{<V$|$S$|$T>} finden an folgenden Daten statt: \texttt{<Daten und Sichten>}\\
+	\texttt{"Wann finden die nächsten "{} V$|$S$|$T "{} statt?"} & Die nächsten 5 \texttt{<V$|$S$|$T>} finden an folgenden Daten statt: \texttt{<Daten und Sichten>}\\
 	\hline
-	''Wird noch jemand für die nächste '' V '' gebraucht?'' &  Folgende Schichten benötigen noch Teilnehmer: \texttt{<Schicht>} \texttt{<Anzahl>} \\
+	\texttt{"Wird noch jemand für die nächste "{} V "{} gebraucht?"} &  Folgende Schichten benötigen noch Teilnehmer: \texttt{<Schicht>} \texttt{<Anzahl>} \\
 	\hline
 \end{tabularx}
 \caption{natürliche Interaktion}
@@ -216,7 +216,7 @@ Die Umsetzung der vorgestellten Informationen ist in \autoref{img:db-schema} ers
 
 \subsection{Kommunikationsschnittstellen}
 
-Die Kommunikation zwischen der Datenbank und dem Chatbot erfolgt auf dem gleichen Host, weshalb keine besonderen Fälle beachtet werden müssen. Der Kommunikationspfad zwischen dem Chatbot und Slack wird jedoch über ein Hochschulnetzwerk durchgeführt. In diesem sind in das Netzwerk des Clubs nur die Ports 80 und 443 freigegeben. In der Standardkonfiguration bindet sich Hubot an Port 8080, der aber durch Setzen der Umgebungsvariable \textit{PORT} geändert werden kann.
+Die Kommunikation zwischen der Datenbank und dem Chatbot erfolgt auf dem gleichen Host, weshalb keine besonderen Fälle beachtet werden müssen. Der Kommunikationspfad zwischen dem Chatbot und Slack wird jedoch über ein Hochschulnetzwerk durchgeführt. In diesem sind in das Netzwerk des Clubs nur die Ports 80 und 443 freigegeben. In der Standardkonfiguration bindet sich Hubot an Port 8080, der aber durch Setzen der Umgebungsvariable \texttt{PORT} geändert werden kann.
 
 Eine erste Untersuchung des Netzwerkverkehrs zeigt jedoch weitere Ports, wie aus \autoref{img:packetports} zu entnehmen. Folgende Testumgebung kam hierbei zum Einsatz:
 Die Standardkonfiguration Hubots wurde mittels docker-compose (Details siehe Abschnitt Containerisierung) lokal gestartet und der Netzwerkverkehr an der virtuellen Netzwerkbrücke mittels Wireshark aufgezeichnet. In der Standardkonfiguration greift der in NodeJS laufende Hubot auf den Redis-Container als \enquote{Brain} zu, was standardmäßig über Port 6379 erfolgt. Über Port 443 werden HTTPS-Verbindungen zum Slack-Server aufgebaut um beispielsweise Profilbilder nachzuladen.
