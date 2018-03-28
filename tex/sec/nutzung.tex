@@ -100,11 +100,9 @@ Folgende Befehle wurden im Prototyp implementiert (\autoref{tab:protcmd}):
 \subsection{Besonderheiten und Best Practices}
 
 Im Verlauf der Entwicklung des Bots traten stellenweise unerwartete Probleme auf, deren Lösungsansätze für zukünftige Weiterentwicklungen von Nutzem sein dürften.
+\begin{itemize}
+    \item \textbf{Änderung des Botnamens}: Der Name des Bots steht zusammen mit anderen Metadaten in der \texttt{package.json} im docker-Ordner.
+    \item \textbf{Mangelnde Schreibberechtigung im Hubot-Container}: die Hubot-Skripte müssen unter dem Nutzer Hubot laufen und sollten direkt in den Container gemounted werden.
+    \item \textbf{Änderung der NodeJS Version}: die NodeJS-Version ist zur Wahrung der Stabilität explizit in der docker-compose.yml-Datei anzugeben.
 
-\textbf{Änderung des Botnamens}: Der Name des Bots steht zusammen mit anderen Metadaten in der \texttt{package.json} im docker-Ordner.
-
-\textbf{Mangelnde Schreibberechtigung im Hubot-Container}: die Hubot-Skripte müssen unter dem Nutzer Hubot laufen und sollten direkt in den Container gemounted werden.
-
-\textbf{Änderung der NodeJS Version}: die NodeJS-Version ist zur Wahrung der Stabilität explizit in der docker-compose.yml-Datei anzugeben.
-
-
+\end{itemize}
