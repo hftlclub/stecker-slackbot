@@ -92,18 +92,6 @@ module.exports = (bot) ->
 			else
 				msg.reply "Der Termintyp wurde angelegt."
 
-	bot.respond /erstelle termin (.*) mit typ (.*) am (\d\d\d\d-\d\d-\d\d)/i, (msg) ->
-		termin = msg.match[1]
-		termintyp = msg.match[2]
-		datum = msg.match[3]
-		conn.query "insert into Termin (TerminID, TypID, Name, Datum) values (3, 1, '#{termin}', date('#{datum}'))", (err, row) ->
-			if err
-				bot.logger.info err
-				bot.reply "Der Termin konnte nicht angelegt werden."
-			else
-				bot.logger.info "Termin angelegt"
-				bot.reply "Der Termin wurde angelegt."
-
 	# ANZEIGE-BEFEHLE
 	bot.respond /zeige Schicht/i, (res) ->
 		Slacknutzer = res.envelope.user.id
@@ -121,20 +109,6 @@ module.exports = (bot) ->
 
 	bot.respond /hilfe/i, (res) ->
 		hilfe res
-
-	bot.respond /nehme an Termin (.*) teil/i, (res) ->
-		termin = res.match[1]
-		user = "username"
-		conn.query "INSERT INTO terminteilnehmer (termin, user) VALUES ('#{termin}', '#{user}')", (err, response) ->
-			bot.logger.info "INSERT Teilnehmer: #{user}, Termin: #{termin}"
-			if err
-				bot.logger.info "ERROR"
-				bot.logger.info err
-				res.reply "es ist etwas schief gelaufen :("
-			else
-				if response
-					bot.logger.info response
-					res.reply "ich habe dich für Termin #{termin} eingetragen"
 
 	erstellesitzung = (datum, zeit, ende, name, callback) ->
 		conn.query 'select id from termintyp where name = "Sitzung"', (err, response) ->
