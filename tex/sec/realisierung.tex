@@ -11,7 +11,7 @@ Um das optionale Ziel der Containerisierung zu erreichen, wurde auf einen Standa
 
 % Die Autoren entschieden sich gegen den Bau eines eigenen Containers, um die Fehleranfälligkeit zu verringern und dokumentations- und supportkompatibel zu bleiben.
 
-Docker ist eine Technologie zum Betrieb von Anwendungen in Containern, wobei jeder Container eine von den restlichen Containern isolierte Umgebung (Dateien, Abhängigkeiten) erhält, dabei jedoch die Hardwareressourcen des Hostsystems mit anderen Containern teilt. Da diese Lösung wesentlich weniger Overhead bezüglich Speicher, Speicherplatz und Geschwindigkeit als eine Virtuelle Maschine bietet, eignen sich Container für die künstliche Abgrenzung vom Gesamtsystem und dadurch als einfach in den Produktiveinsatz zu überführende Lösung.
+Docker ist eine Technologie zum Betrieb von Anwendungen in Containern, wobei jeder Container eine von den restlichen Containern isolierte Umgebung (Dateien, \linebreak Abhängigkeiten) erhält, dabei jedoch die Hardwareressourcen des Hostsystems mit anderen Containern teilt. Da diese Lösung wesentlich weniger Overhead bezüglich Speicher, Speicherplatz und Geschwindigkeit als eine Virtuelle Maschine bietet, eignen sich Container für die künstliche Abgrenzung vom Gesamtsystem und dadurch als einfach in den Produktiveinsatz zu überführende Lösung.
 
 \subsubsection{Vergleich von Containerisierungslösungen}
 Neben dem Einsatz der Containerlösung Docker wurden zu Projektbeginn Alternativen entsprechend \autoref{tab:docker-alternatives} betrachtet.
@@ -97,9 +97,19 @@ Ereignisgesteuerte Aktionen werden nur ausgeführt, wenn ein Nutzer ein Ereignis
 
 Die zeitgesteuerten Aktionen beschränken sich auf die selbstständige Erinnerung an Termine durch den Bot. Der Bot darf in dieser Hinsicht keinen Zwischenspeicher besitzen, da neue Termine nicht durch den Bot eingetragen werden müssen und von einer externen Anwendung kommen können. Der gemeinsame Zugriffspunkt ist die Datenbank. Aus diesem Grund fragt der Bot die Datenbank periodisch ab.
 
-Die Autoren legten eine zeitlich positive Abweichung von 5 Minuten als akzeptablen Wert bezüglich des echten Termins fest. Dieser entstand durch die Überlegung, wie groß die maximale Dauer für eine Abfrage an die Datenbank sein kann. Bei einer Teilnehmeranzahl von im $\o$ 10, einer Mitgliedsdauer von 50 Jahren und einer implementierungstechnisch pessimistisch angenommenen wöchentlichen Teilnahme an einer Veranstaltung pro Mitglied würden $52 \cdot 50 \cdot 10$ Terminschichteinträge vorhanden sein. Da eine Abfrage des nächsten Termins auf einem aktuellen Laptop $\approx 60\mu s$ dauert, ist eine obere Grenze von $52 \cdot 10 \cdot 50 \cdot 60 \mu s=1,56s=\eta$ zu erwarten.
+Die Autoren legten eine zeitlich positive Abweichung von 5 Minuten als akzeptablen Wert bezüglich des echten Termins fest. Dieser entstand durch die Überlegung, wie groß die maximale Dauer für eine Abfrage an die Datenbank sein kann. Bei einer Teilnehmeranzahl von im $\o$ 10, einer Mitgliedsdauer von 50 Jahren und einer implementierungstechnisch pessimistisch angenommenen wöchentlichen Teilnahme an einer Veranstaltung pro Mitglied würden $52 \cdot 50 \cdot 10$ Terminschichteinträge vorhanden sein. Da eine Abfrage des nächsten Termins auf einem aktuellen Laptop $\approx 60\mu s$ dauert, ist eine obere Grenze von $52 \cdot 10 \cdot 50 \cdot 60 \mu s=1,56s=\varepsilon $ zu erwarten.
 
-Der Bot fragt die Datenbank periodisch aller 3 Minuten auf nächstgelegene Termine ab, während die zu betrachtenden Termine in einer Zeitspanne von 5 Minuten liegen. Da der Bot eine maximale Abfragezeit von $\eta + 3min$ hat, liegt der Abtastzeitpunkt immer innerhalb der 5 Minuten-Spanne. Nachfolgende Grafik verdeutlicht dies.
+Der Bot fragt die Datenbank periodisch aller 3 Minuten auf nächstgelegene Termine ab, während die zu betrachtenden Termine in einer Zeitspanne von 5 Minuten liegen. Da der Bot eine maximale Abfragezeit von $\varepsilon + 3min$ hat, liegt der Abtastzeitpunkt selbst mit $\varepsilon$ immer innerhalb der 5 Minuten-Spanne. \autoref{querytiming} verdeutlicht dies.
+ 
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=1\textwidth,clip]{img/query.pdf}
+	\caption{Zeitdiagramm für die Datenbankabfrage}
+	\label{querytiming}
+\end{figure}
+
+Es ist zu erkennen, dass das Zeitfenster, in dem die Abfrage eines Termins stattfindet, an $t=3s$ beginnt und bei $t=8s$ endet, während der Bot mindestens einen Abtastzeitpunkt innerhalb der Zeitspanne besitzt. Die beiden Zeitpunkte liegen in der Grafik bei $t=2 \cdot \varepsilon + 2\cdot 3min$ und $t=3\cdot \varepsilon + 3\cdot 3min$.
+
 
 %Anhang mit botcode dranheften
 
