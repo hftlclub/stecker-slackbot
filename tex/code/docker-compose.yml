@@ -2,17 +2,21 @@ version: "3"
 services:
 
   slackbot:
+    container_name: slackbot
     build: .
     image: slackbot
     restart: always
     user: "hubot"
     env_file:
         - steckerbot.env
+    depends_on:
+        - "db"
     networks:
       - dbnet
 
   db:
-    image: "mariadb:10"
+    container_name: termindatenbank
+    image: "mysql"
     restart: always
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "--host", "localhost", "--silent"]
@@ -20,7 +24,7 @@ services:
       timeout: 5s
       retries: 10
     volumes:
-      - db-data:/docker-entrypoint-initdb.d/:ro
+      - ./db-data:/docker-entrypoint-initdb.d/:ro
     networks:
       - dbnet
     ports:

@@ -1,26 +1,25 @@
-
 -- databases
-CREATE DATABASE db;
+-- CREATE DATABASE db;
 USE db;
 
 -- tables
 -- Table: Nutzer
 CREATE TABLE Nutzer (
-    NutzerID int NOT NULL,
+    NutzerID int NOT NULL auto_increment,
     Name varchar(255) NOT NULL,
     CONSTRAINT Nutzer_pk PRIMARY KEY (NutzerID)
 );
 
 -- Table: NutzerSchicht
 CREATE TABLE NutzerSchicht (
-    NutzerSchichtID int NOT NULL,
+    NutzerID int NOT NULL,
     TerminSchichtID int NOT NULL,
-    CONSTRAINT NutzerSchicht_pk PRIMARY KEY (NutzerSchichtID,TerminSchichtID)
+    CONSTRAINT NutzerSchicht_pk PRIMARY KEY (NutzerID,TerminSchichtID)
 );
 
 -- Table: Schicht
 CREATE TABLE Schicht (
-    SchichtID int NOT NULL,
+    SchichtID int NOT NULL auto_increment,
     Beginn time NOT NULL,
     Ende time NOT NULL,
     Teilnehmerzahl int NOT NULL,
@@ -36,16 +35,16 @@ CREATE TABLE SlackNutzer (
 
 -- Table: Termin
 CREATE TABLE Termin (
-    TerminID int NOT NULL,
-    TypID int NOT NULL,
-    Name varchar(255) NOT NULL,
+    TerminID int NOT NULL auto_increment,
+    TerminTypID int NOT NULL,
+    Beschreibung TEXT,
     Datum date NOT NULL,
     CONSTRAINT Termin_pk PRIMARY KEY (TerminID)
 );
 
 -- Table: TerminSchicht
 CREATE TABLE TerminSchicht (
-    TerminSchichtID int NOT NULL,
+    TerminSchichtID int NOT NULL auto_increment,
     SchichtID int NOT NULL,
     TerminID int NOT NULL,
     CONSTRAINT TerminSchicht_pk PRIMARY KEY (TerminSchichtID)
@@ -53,14 +52,13 @@ CREATE TABLE TerminSchicht (
 
 -- Table: TerminTyp
 CREATE TABLE TerminTyp (
-    TerminTypID int NOT NULL,
+    TerminTypID int NOT NULL auto_increment,
     Name varchar(255) NOT NULL,
     CONSTRAINT TerminTyp_pk PRIMARY KEY (TerminTypID)
 );
-
 -- foreign keys
 -- Reference: Nutzerschicht_Nutzer (table: NutzerSchicht)
-ALTER TABLE NutzerSchicht ADD CONSTRAINT Nutzerschicht_Nutzer FOREIGN KEY Nutzerschicht_Nutzer (NutzerSchichtID)
+ALTER TABLE NutzerSchicht ADD CONSTRAINT Nutzerschicht_Nutzer FOREIGN KEY Nutzerschicht_Nutzer (NutzerID)
     REFERENCES Nutzer (NutzerID);
 
 -- Reference: Nutzerschicht_Terminschicht (table: NutzerSchicht)
@@ -72,7 +70,7 @@ ALTER TABLE SlackNutzer ADD CONSTRAINT Slacknutzer_Nutzer FOREIGN KEY Slacknutze
     REFERENCES Nutzer (NutzerID);
 
 -- Reference: Termin_TerminTyp (table: Termin)
-ALTER TABLE Termin ADD CONSTRAINT Termin_TerminTyp FOREIGN KEY Termin_TerminTyp (TypID)
+ALTER TABLE Termin ADD CONSTRAINT Termin_TerminTyp FOREIGN KEY Termin_TerminTyp (TerminTypID)
     REFERENCES TerminTyp (TerminTypID);
 
 -- Reference: Termin_Terminschicht (table: TerminSchicht)
@@ -83,5 +81,5 @@ ALTER TABLE TerminSchicht ADD CONSTRAINT Termin_Terminschicht FOREIGN KEY Termin
 ALTER TABLE TerminSchicht ADD CONSTRAINT Terminschicht_Schicht FOREIGN KEY Terminschicht_Schicht (SchichtID)
     REFERENCES Schicht (SchichtID);
 
--- End of file.
+-- End of database creation
 
