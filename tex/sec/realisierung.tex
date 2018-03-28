@@ -77,16 +77,29 @@ Dynamische Konfigurationen wie z.B. die UserID des Slackbots werden über entspr
 
 \subsection{Slackidentifizierung}
 
+Die Identifizierung von Nutzern durch den Bot geschieht über die von Slack vergebene eindeutige Nutzeridentifizierungsnummer, welche über ein Nachrichtenobjekt innerhalb des Bots ausgelesen werden kann. Diese eindeutige Identifizierungsnummer wird durch den aufrufenden Nutzer in Slack in die Datenbank eingetragen, indem der Nutzer folgenden den Befehl aufruft: 
+\texttt{@bob füge mich der Datenbank hinzu als <Vorname Nachname>}.
+
+Der angegebene Name wird anschließend in der Nutzertabelle identifiziert und mit der SlackID verknüpft. Die Zuweisung kann nicht automatisch durch den in Slack angegebenen Namen geschehen, da dieser nicht gleich dem in der Datenbank als echten Namen eingetragenen Namen sein muss.
+
+
 % anflanschung der slacknutzer-tabelle // vielleicht in eine separate db??? oder reicht ne tabelle / viele tabellen für viele plattformen aus
 
 \subsection{Botrealisierung}
+\subsubsection{Botname}
+Da der Bot einen im deutschsprachigen Raum selten vorkommenden und zugleich kurzen und dadurch schnell zu schreibenden und leicht zu merkenden Namen erhalten sollte, entschieden sich die Autoren für den Namen Bob. Hierbei ist es nicht notwendig auf die Groß- und Kleinschreibung zu achten. Weiterhin wird der Bot im dynamischen Dropdownmenü innerhalb von Slack als Vorschlag angeboten, wenn dieser dem Raum hinzugefügt und direkt mittels einem \texttt{@}-Symbol adressiert wird. Die Autoren erhoffen sich dadurch eine einfachere Verwendung des Bots innerhalb der mobilen Applikation, da bei diesen die Schreibgeschwindigkeit geringer ist. Weiterhin kann dadurch eine größere Akzeptanz erreicht werden.
+
 \subsubsection{Ereignisgesteuerte Aktionen}
+
+Ereignisgesteuerte Aktionen werden nur ausgeführt, wenn ein Nutzer ein Ereignis auslöst. Der Bot interpretiert hierbei jede in den Chat geschriebene Nachricht und prüft diese auf ein Muster mithilfe eines regulären Ausdrucks. Da die Definitionen der ereignisgesteuerten Aktionen in der EBNF geschrieben wurden, können diese ohne umfangreiche Konvertierung mit einem regulären Ausdruck implementiert werden. Hierbei ist die Groß- und Kleinschreibung und die Anzahl an Leerzeichen zwischen den Schlagwörtern unwichtig.
+
 \subsubsection{Zeitgesteuerte Aktionen}
 
+Die zeitgesteuerten Aktionen beschränken sich auf die selbstständige Erinnerung an Termine durch den Bot. Der Bot darf in dieser Hinsicht keinen Zwischenspeicher besitzen, da neue Termine nicht durch den Bot eingetragen werden müssen und von einer externen Anwendung kommen können. Der gemeinsame Zugriffspunkt ist die Datenbank. Aus diesem Grund fragt der Bot die Datenbank periodisch ab.
 
-%name Bob, warum dieser? - vielleicht besser in die analyse/modell
+Die Autoren legten eine zeitlich positive Abweichung von 5 Minuten als akzeptablen Wert bezüglich des echten Termins fest. Dieser entstand durch die Überlegung, wie groß die maximale Dauer für eine Abfrage an die Datenbank sein kann. Bei einer Teilnehmeranzahl von im $\o$ 10, einer Mitgliedsdauer von 50 Jahren und einer implementierungstechnisch pessimistisch angenommenen wöchentlichen Teilnahme an einer Veranstaltung pro Mitglied würden $52 \cdot 50 \cdot 10$ Terminschichteinträge vorhanden sein. Da eine Abfrage des nächsten Termins auf einem aktuellen Laptop $\approx 60\mu s$ dauert, ist eine obere Grenze von $52 \cdot 10 \cdot 50 \cdot 60 \mu s=1,56s=\eta$ zu erwarten.
 
-\todo{Wie das mit den regexen - wegen ebnf recht einfach machbar}
+Der Bot fragt die Datenbank periodisch aller 3 Minuten auf nächstgelegene Termine ab, während die zu betrachtenden Termine in einer Zeitspanne von 5 Minuten liegen. Da der Bot eine maximale Abfragezeit von $\eta + 3min$ hat, liegt der Abtastzeitpunkt immer innerhalb der 5 Minuten-Spanne. Nachfolgende Grafik verdeutlicht dies.
 
 %Anhang mit botcode dranheften
 
