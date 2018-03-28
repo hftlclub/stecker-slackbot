@@ -14,7 +14,7 @@ BOT is idle
 3 is "DB Zyklus"
 8 is 0
 
-DB@3 <-> @8 : Abtastfrequenz < 5 min - ε
+DB@3 <-> @8 : \n Abtastperiodendauer < 5 min - ε
 
 @3
 DB -> BOT : Start
