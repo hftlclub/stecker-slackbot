@@ -27,8 +27,6 @@ WORKDIR /home/hubot
 RUN npm install generator-hubot hubot-slack
 RUN echo "No" | yo hubot --adapter slack --name slackbot --defaults
 RUN sed -i '/heroku/d' external-scripts.json
-RUN npm install hubot-mysql-brain --save \
-	&& sed -i 's/hubot-redis-brain/hubot-mysql-brain/g' external-scripts.json
 
 # RUN rm hubot-scripts.json
 

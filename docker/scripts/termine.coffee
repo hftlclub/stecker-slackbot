@@ -67,6 +67,10 @@ module.exports = (bot) ->
 		if conversation.nutzer == nutzer
 			conversation={}
 			res.reply "Gern geschehen."
+            
+	bot.hear /\s*egal bei welchem Wetter\s*/i, (res) ->
+		res.reply "Wir saufen heut' im Stecker :beer:"
+
 				
 
 	################ Command Listener
@@ -133,4 +137,10 @@ module.exports = (bot) ->
 							bot.logger.info "Termin erstellt für #{datum} #{name} #{id}"
 							callback true
 	hilfe = (res) ->
-		res.reply "die hilfe ist nur für dich"
+		res.reply "Hallo, aktuell verstehe ich folgende Kommandos:\n \
+        ping :\t testet Verbindung des Bots \n \
+        Füge mich der Datenbank hinzu als <Name> :\t fügt Nutzer initial mit dem Namen <Name> der DB hinzu \n \
+        Wann ist die nächste Schicht? :\t zeigt nächste verfügbare Schicht an \n \
+        Trag mich ein :\t trägt Nutzer in zuvor angezeigte Schicht ein \n \
+        Danke :\t beendet die Konversation im aktuellen Kontext \n \
+        ...es gibt noch weitere Befehle, entdecke die Möglichkeiten"
