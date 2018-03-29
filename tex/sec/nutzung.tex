@@ -14,7 +14,7 @@ Das bevorzugte Betriebssystem ist Linux, da dieses im Serverbereich weit verbrei
 Zur Weiterentwicklung des Bots sind NodeJS, npm, ein MySQL-Client, das coffeescript-Paket und yeoman nötig.
 
 \subsection{Einstellung der Slack-Plattform}
-Da der Slackbot als virtueller Nutzer in Slack laufen soll, benötigt dieser eine Verbindung zu entsprechenden Workspace in Slack. Dazu ist vom Administrator oder Entwickler ein Slack-Token zu generieren.
+Da der Slackbot als virtueller Nutzer in Slack laufen soll, benötigt dieser eine Verbindung zum entsprechenden Workspace in Slack. Dazu ist vom Administrator oder Entwickler ein Slack-Token zu generieren.
 Dieser Slack-Token kann durch Hinzufügen einer neuen Hubot-Konfiguration generiert werden.\footnote{\url{https://my.slack.com/apps/A0F7YS25R-bots}} Dabei muss der anlegende Nutzer bereits ein Konto bei Slack haben und in dem Workspace registriert sein, in welchem der Bot laufen soll.
 Nach dem in \autoref{img:hubot-int} erscheinenden Dialog zur Eingabe des Namens für den Bot wird ein eindeutiger Token generiert und angezeigt. Dieser wird für die weitere Installation benötigt und beginnt mit \texttt{xoxb-}.
 
@@ -27,7 +27,7 @@ Nach dem in \autoref{img:hubot-int} erscheinenden Dialog zur Eingabe des Namens 
 
 \subsection{Starten der lokalen Umgebung}
 Nach Abruf des Projekts\footnote{\url{https://github.com/ohli/steckerbot}}
-(über \texttt{git clone} oder Herunterladen des Archivs) befindet sich der Quellcode im Ordner docker mit folgenden Dateien:
+über \texttt{git clone} oder durch das Herunterladen des Archivs, befindet sich der Quellcode im Ordner docker mit folgenden Dateien und Verzeichnissen:
 
 \begin{verbatim}
 bin/
@@ -44,15 +44,13 @@ package.json
 
 Die Umgebung wird dynamisch aus zwei Docker-Containern aufgebaut, welche mittels docker-compose verknüpft werden. Alle vom Standard abweichenden Einstellungen werden über die \texttt{steckerbot.env} definiert. Diese kann über den Aufruf der \texttt{generate\_""config.sh} generiert werden. Beim Aufruf wird automatisch ein Passwort für den MySQL-Rootnutzer erzeugt sowie weitere Umgebungsvariablen gesetzt. Dies ist nur für Testzwecke vorgesehen und kann im produktiven Betrieb durch ein selbst gewähltes Passwort ersetzt werden. Aktuell liegen die Passwörter im Klartext in der .env-Datei vor, was durch den Einsatz von z.B. Docker Secrets\footnote{\url{https://docs.docker.com/engine/reference/commandline/secret/}} vermieden werden sollte.
 
-In den Ordnern bin, node\_modules und scripts befinden sich Dateien des Hubot-Frameworks. db-data enthält SQL-Dateien die zur Laufzeit zum initialisieren der Datenbank genutzt werden.
-
+In den Ordnern \texttt{bin}, \texttt{node\_modules} und \texttt{scripts} befinden sich Dateien des Hubot-""Frameworks. \texttt{db-data} enthält SQL-Dateien die zur Laufzeit zum initialisieren der Datenbank genutzt werden.
 Die ausgelieferte Standardkonfiguration kann nach Anlegen der .env-Datei über die folgenden Befehle gestartet werden:
 
 \texttt{docker-compose build}\\
 \texttt{docker-compose up}
 
-Dies startet und initialisiert zuerst einen lokalen MySQL-Container und verbindet anschließend den Hubot-Container mit dieser. Nun sollte der zuvor im Slack angelegte Bot als \enquote{online} erscheinen und auf erste einfache Befehle antworten.
-
+Dies startet und initialisiert zuerst einen lokalen MySQL-Container und verbindet anschließend den Hubot-Container mit dieser. Nun wird der zuvor im Slack angelegte Bot als \enquote{online} erscheinen und auf erste einfache Befehle antworten.
 Zum Stoppen der Container ist im gleichen Ordner \texttt{docker-compose down} einzugeben bzw. die laufende Log-Ausgabe mittels \texttt{Ctrl+C} zu beenden.
 
 \subsection{Initialisieren der Datenbank}
@@ -66,7 +64,7 @@ Zum Anlegen neuer Nutzer wird folgender Vorgang empfohlen:
     \item Anlegen der gewünschten Daten in die bereits bestehenden Tabellen
 \end{enumerate}
 
-Die angelegten Daten können anschließend mit den SQL-Dateien aus dem Ordner sql-tests getestet werden.
+Die angelegten Daten können anschließend mit den SQL-Dateien aus dem Ordner \linebreak\texttt{sql-tests} getestet werden.
 
 \subsection{Beispielbefehle}
 
@@ -101,10 +99,10 @@ Die Befehle aus \autoref{tab:protcmd} wurden im Prototyp implementiert.
 Im Verlauf der Entwicklung des Bots traten stellenweise unerwartete Probleme auf, deren Lösungsansätze für zukünftige Weiterentwicklungen von Nutzen sein können.
 \begin{itemize}
     \item \textbf{Änderung des Botnamens}: Der Name des Bots steht zusammen mit anderen Metadaten in der \texttt{package.json} im docker-Ordner.
-    \item \textbf{Mangelnde Schreibberechtigung im Hubot-Container}: die Hubot-Skripte müssen unter dem Nutzer Hubot laufen und sollten direkt in den Container gemounted werden.
-    \item \textbf{Änderung der NodeJS Version}: die NodeJS-Version ist zur Wahrung der Stabilität explizit im Dockerfile anzugeben, aktuell ist diese 6.13
-    \item \textbf{Zeitreferenz falsch} Die Zeitzonen der Docker-Container müssen übereinstimmen, da sonst die Erinnerungsfunktion des Bots nicht funktioniert
-    \item \textbf{Erweiterung des Bots} weitere Module für Hubot können über \texttt{npm search hubot} installiert werden. Für eigene Erweiterungen ist eine CoffeeScript-Datei im Ordner scripts anzulegen.
+    \item \textbf{Mangelnde Schreibberechtigung im Hubot-Container}: Die Hubot-Skripte müssen unter dem Nutzer Hubot laufen und sollten direkt in den Container gemounted werden.
+    \item \textbf{Änderung der NodeJS Version}: Die NodeJS-Version ist zur Wahrung der Stabilität explizit im Dockerfile anzugeben, aktuell ist diese 6.13.
+    \item \textbf{Zeitreferenz falsch}: Die Zeitzonen der Docker-Container müssen übereinstimmen, da sonst die Erinnerungsfunktion des Bots nicht funktioniert.
+    \item \textbf{Erweiterung des Bots}: Weitere Module für Hubot können über \texttt{npm search hubot} installiert werden. Für eigene Erweiterungen ist eine CoffeeScript-Datei im Ordner scripts anzulegen.
     \item \textbf{Größe der Docker Images} Aktuell benötigen die beiden Images für Hubot und die DB zusammen rund 1 GByte Speicherplatz, da diese auf Debian basieren. Durch Änderung der Image Basis von Debian auf z.B. Alpine Linux kann Speicherplatz eingespart werden.
     \item \textbf{Mangelnde Schreibberechtigung im Hubot-Container}: Die Hubot-Skripte müssen unter dem Nutzer Hubot laufen und sollten direkt in den Container gemounted werden.
 

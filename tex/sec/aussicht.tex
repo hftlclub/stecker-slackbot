@@ -26,6 +26,7 @@ Während der Implementierung des Prototypen wurde gemäß der Anforderungen nich
 \end{table}
 
 \subsection{Botschnittstelle}
+\label{sec:botx}
 Der Prototyp des Chatbots verfügt über eine rein textbasierte Nutzerinteraktion. Jeder Befehl erfolgt über die Textschnittstelle, worüber nur eingeschränkte Interaktionen möglich sind.
 
 Die Implementierung einer erweiterten Schnittstelle in Form eines Slack-Panels\footnote{\url{https://api.slack.com/dialogs}} zur interaktiven Auswahl von Terminen ermöglicht eine schnellere Auswahl von Terminen, da diese nicht immer einzeln erfragt werden müssen, sondern direkt im Slack-Kanal ausgewählt werden können.
@@ -34,4 +35,4 @@ Der dafür geschätzte Aufwand beträgt $16h$.
 
 Die von den Autoren nicht realisierte Implementierung der Einschränkung der Zielgruppe für Erinnerungen kann erreicht werden, indem eine der Datenbankabfragen angepasst wird und über die Funktion \texttt{messageRoom} an spezielle Nutzer gesendet wird. Diese ist in der Implementierung der Erinnerungsfunktion in der Datei \texttt{reminder.coffee} ersichtlich. Der geschätzte Aufwand hierfür beträgt $8h$.
 
-Weiterhin können die restlichen vorgeschlagenen Chatbotbefehle implementiert werden. Der Aufwand beträgt trotz bereits als Hilfestellung dienender Vorlagen pro zu implementierenden Befehl etwa $1-2h$. Dies ist dem Testen und Debuggen von Grenzfällen und dem Erzeugen von Testdaten geschuldet. Aus diesem Grund schätzen die Autoren den Aufwand auf etwa $20-50h$.
+Weiterhin können die restlichen vorgeschlagenen Chatbotbefehle implementiert werden. Der Aufwand beträgt, trotz bereits als Hilfestellung dienender Vorlagen, pro zu implementierenden Befehl etwa $1-2h$. Dies ist dem Testen und Debuggen von Grenzfällen und dem Erzeugen von Testdaten geschuldet. Aus diesem Grund schätzen die Autoren den Aufwand auf etwa $20-50h$.

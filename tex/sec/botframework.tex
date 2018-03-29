@@ -46,8 +46,8 @@ Aus \autoref{tab:botparameters} sind passende Bewertungsparameter gemäß der ob
 Die Aussagefähigkeit der in \autoref{tab:botparameters} enthaltenen Parameter ist stellenweise kritisch zu hinterfragen, da die Genauigkeit zugunsten der Generizität eingeschränkt wurde. 
 Beispiele hierfür sind folgende:
 \begin{itemize}
-    \item Testabdeckung: je nach Auswahl und Integration der Testbibliothek kann die Testabdeckung immer 100\% betragen
-\item SLOC\footnote{SLOC: Single Lines of Code}: viele Codezeilen deuten nicht zwingend auf guten Code hin (von Kommentaren wird hier -- per Definition -- abgesehen)
+    \item Testabdeckung: Je nach Auswahl und Integration der Testbibliothek kann die Testabdeckung immer 100\% betragen.
+\item SLOC\footnote{Single Lines Of Code}: Viele Codezeilen deuten nicht zwingend auf guten Code hin (von Kommentaren wird hier per Definition abgesehen).
 \end{itemize}
 
 Unter Beachtung der Einschränkungen und der Kombination aller Parameter ist eine differenzierte Gegenüberstellung durchzuführen.
@@ -61,13 +61,13 @@ Aufbauend auf den in \autoref{anforderungen} gestellten Anforderungen entfallen 
     \item nicht kostenfrei sind
 \end{itemize}
 
-Durch diese Einschränkungen sind z.B. das von Facebook entwickelte wit-Botframework (\cite{FacebookWitai2013})
-und das von Microsoft entwickelte Botframework (\cite{MicrosoftMicrosoftBotFramework2016}) nicht Teil genauerer Betrachtungen.
-Eine weitere Gruppe von Botframeworks zeichnet sich durch eine (meist zwingende) Anbindung an eine Spracherkennung aus, die für den hier gewünschten Anwendungsfall nicht benötigt wird. Dadurch werden Frameworks wie beispielsweise Dialogflow (\cite{DialogflowDialogflow2018}) nicht Teil weiterer Betrachtungen sein.
+Durch diese Einschränkungen sind z.B. das von Facebook entwickelte wit-Botframework \cite{FacebookWitai2013}
+und das von Microsoft entwickelte Botframework \cite{MicrosoftMicrosoftBotFramework2016} nicht Teil genauerer Betrachtungen.
+Eine weitere Gruppe von Botframeworks zeichnet sich durch eine meist zwingende Anbindung an eine Spracherkennung aus, die für den hier gewünschten Anwendungsfall nicht benötigt wird. Dadurch werden Frameworks wie beispielsweise Dialogflow \cite{DialogflowDialogflow2018} nicht Teil weiterer Betrachtungen sein.
 
 
 Weitere Botframeworks sind unter \cite{AbdelhaiawesomebotsAwesomeLinks2018} aufgelistet. 
-Von den dort aufgelisteten Frameworks entsprechen Botkit (\cite{BotkitBotkitToolkitbuilding2017}) und Hubot (\cite{GitHubGettingStartedHubot2009})  den Anforderungen.
+Von den dort aufgelisteten Frameworks entsprechen Botkit \cite{BotkitBotkitToolkitbuilding2017} und Hubot \cite{GitHubGettingStartedHubot2009}  den Anforderungen.
 
 \subsection{Vergleich der Frameworks}
 
@@ -111,9 +111,9 @@ Wie in \autoref{tab:comparebotkithubot} ersichtlich, bietet Hubot aufgrund der l
 
 Im Gegensatz dazu bietet Botkit flexiblere Einsatz- und Integrationsmöglichkeiten in andere Dienste wie NLU\footnote{Natural language understanding}, Apps und Messenger. Aufgrund des relativ jungen Projektalters von zwei Jahren und der vergleichsweise hohen Anzahl an Bugtickets (\enquote{Issues}) und Codezeilen, wird die Codequalität von Botkit geringer als die von Hubot bewertet.
 
-Beide Frameworks dienen dabei unterschiedlichen Zielen. Während Botkit eher als Rahmenwerk für darauf aufbauende Bots anzusehen ist, ist der Bot als solches direkt bei Hubot integriert und kann modular erweitert werden. Da beide Frameworks unter MIT-Lizenz stehen und zu JavaScript kompilieren, sind diese aus lizenzrechtlicher und technischer Sicht für das Projekt \enquote{Steckerbot} geeignet.
+Beide Frameworks dienen dabei unterschiedlichen Zielen. Während Botkit eher als Rahmenwerk für darauf aufbauende Bots anzusehen ist, ist der Bot als solches direkt bei Hubot integriert und kann modular erweitert werden. Da beide Frameworks unter der MIT-Lizenz stehen und zu JavaScript kompilieren, sind diese aus lizenzrechtlicher und technischer Sicht für das Projekt geeignet.
 
-Für den in \autoref{anforderungen} beschriebenen Einsatzzweck fällt die Entscheidung auf Hubot. Im Vergleich zu Botkit bewerten die Autoren Hubot als strukturell simpler und näher am Ziel der praktischen Slack-Integration ausgerichtet. Botkit erfüllt diese Anforderungen auch, hatte jedoch keine so lange Reifephase wie Hubot.
+Für den in \autoref{anforderungen} beschriebenen Einsatzzweck fällt die Entscheidung auf Hubot. Im Vergleich zu Botkit bewerten die Autoren Hubot als strukturell simpler und näher am Ziel der praktischen Slack-Integration ausgerichtet. Botkit erfüllt diese Anforderungen auch, hat jedoch keine so lange Reifephase wie Hubot.
 
 Im weiteren Verlauf dieses Dokuments werden deshalb \enquote{Hubot}, \enquote{Botframework} und \enquote{Bot} synonym verwendet.
 

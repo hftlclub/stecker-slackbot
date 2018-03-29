@@ -1,22 +1,22 @@
 \subsection{Anwendungsfalldiagramme}
 
-Die zusammengetragenen obligatorischen Projektziele wurden zur besseren Überprüfung der Ziele in Anwendungsfälle (Grafiken in Abschnitt \autoref{sec:usecase-diagram}) umformuliert. Diese wurden entsprechend \autoref{img:usecase-auftrag} auf die Akteure \enquote{Bot} und \enquote{Auftraggeber} verteilt.
+Die zusammengetragenen obligatorischen Projektziele wurden zur besseren Überprüfung der Ziele in Anwendungsfälle (Grafiken in Anhang \autoref{sec:usecase-diagram}) umformuliert. Diese wurden entsprechend \autoref{img:usecase-auftrag} auf die Akteure \enquote{Bot} und \enquote{Auftraggeber} verteilt.
 
-Die Auftraggeber sind hierbei Ferdinand Malcher und Robert Weisse, als Angehörige des Studentenclubs \enquote{Stecker}. Der \enquote{Bot} ist eine nicht näher spezifizierte Chatbot-Technologie, die aber bewusst als Akteur eingeführt wurde, da sie selbständig Aktionen ausführen soll.
+Die Auftraggeber sind hierbei Ferdinand Malcher und Robert Weisse, als Angehörige des Studentenclubs \enquote{Stecker}. Der Bot ist eine nicht näher spezifizierte Chatbot-Technologie, die aber bewusst als Akteur eingeführt wurde, da sie selbständig Aktionen ausführen soll.
 
 Für den zukünftigen Einsatz wurde ein weiteres Anwendungsfalldiagramm zur Unterteilung der Berechtigung der Nutzer erstellt. Gemäß Aufgabenstellung sind in \autoref{img:usecase-berechtigung} die Anwendungsfälle der Nutzer beschrieben. Die darin ebenfalls enthaltene Unterteilung der Berechtigungen dient hier nur der Vollständigkeit, da diese nicht zur initialen Aufgabenstellung gehört.
-Eine weitere mögliche Betrachtung ist der unterschiedliche Grad an Fähigkeiten zwischen Administrator und Mitarbeiter. Während es einem Administrator zumutbar ist, beispielweise einen Nutzer direkt per Datenbankzugriff anzulegen, so benötigt der Mitarbeiter eine seinen Fähigkeiten angemessene Schnittstelle, wie sie der Chatbot bieten soll.
+Eine weitere mögliche Betrachtung ist der unterschiedliche Grad an Fähigkeiten zwischen Administrator und Mitarbeiter. Während es beispielweise einem Administrator zumutbar ist, einen Nutzer direkt per Datenbankzugriff anzulegen, so benötigt der Mitarbeiter eine seinen Fähigkeiten angemessene Schnittstelle, wie sie der Chatbot bieten soll.
 
 
 Entsprechend der Anwendungsfälle lassen sich folgende Einschränkungen definieren:
 
 \begin{itemize}
-    \item der Bot soll weder intelligent noch lustig sein
-    \item der Bot soll nicht ständig Nachrichten verfassen (siehe Auslöser im Usecase-Diagramm)
-    \item der Bot soll nicht nur auf Slack beschränkt sein
+    \item Der Bot soll weder intelligent noch lustig sein.
+    \item Der Bot soll nicht ständig Nachrichten verfassen (siehe Auslöser im Usecase-""Diagramm).
+    \item Der Bot soll nicht nur auf Slack beschränkt sein.
 \end{itemize}
 
-Neben anderen möglichen Einsatzmöglichkeiten zur Mensch-Maschine-Interaktion (siehe \cite{PanConversationalInterfacesFuture2017} und \cite{GruensteinConversationalInterfaces2009}) dient der für dieses Projekt zu erstellende Bot als \enquote{Transaktionsbot} im Sinne einer Automatisierung der Datenbankabfragen. Da der Entwurf der Datenbank auch ein Teil des Projektes ist, wird der ebenfalls zu erstellende Chatbot die einzige Schnittstelle zu den Endnutzern\footnote{in Abgrenzung zum Administrator, der z.B. direkt per Kommandozeile auf die Datenbank zugreift} bieten. Eine zukünftige Erweiterung um weitere Schnittstellen ist dabei jedoch vorgesehen.
+Neben anderen möglichen Einsatzmöglichkeiten zur Mensch-Maschine-Interaktion (siehe \cite{PanConversationalInterfacesFuture2017} und \cite{GruensteinConversationalInterfaces2009}) dient der für dieses Projekt zu erstellende Bot als \enquote{Transaktionsbot} im Sinne einer Automatisierung von Datenbankabfragen. Da der Entwurf der Datenbank auch ein Teil des Projektes ist, wird der ebenfalls zu erstellende Chatbot die einzige Schnittstelle zu den Endnutzern\footnote{in Abgrenzung zum Administrator, der z.B. direkt per Kommandozeile auf die Datenbank zugreift} bieten. Eine zukünftige Erweiterung um weitere Schnittstellen ist dabei jedoch vorgesehen.
 
 \subsection{Interaktion über Slack}
 
@@ -53,12 +53,12 @@ Es werden folgende Befehle für die Interaktion definiert.
 \end{table}
 
 
-Die Befehle aus \autoref{tab:chatbotinteraktion} folgen einem vereinfachtem Schema natürlicher Sprache: \texttt{<Prädikat (Imperativ)> <Subjekt>}. Die Struktur der Befehle soll dabei einfach zu merken, auf menschlicher Sprache basierend und auch auf mobilen Geräten mit wenig Tipparbeit verwendbar sein. Bei einem optionalen Einsatz einer Spracherkennung sind auch komplexere Satzkonstruktionen möglich, für den hier zu erfüllenden Zweck genügt jedoch das Schema aus \texttt{<Befehl> <Objekt> <Filter>}. Wie in \cite{ZueConversationalinterfacesadvances2000} beschrieben, weicht die Art der Kommunikation von Mensch-zu-Mensch und Mensch-zu-Bot voneinander ab, worauf bei der Definition der Interaktionsbefehle geachtet wurde. Es ist nach Ansicht der Autoren wenig sinnvoll, einen Bot zu entwickeln, der durch den Zugriff auf große Datenmengen den Eindruck von Intelligenz vermittelt, die aber durch ihre Begrenzung dem Nutzer keinen Mehrwert bietet. Der hier entwickelte Bot verfügt bewusst über ein begrenztes Vokabular, sodass er nur die vom Nutzer gewünschten Informationen liefert; die Kenntnis der Befehle obliegt dem Nutzer.
+Die Befehle aus \autoref{tab:chatbotinteraktion} folgen einem vereinfachtem Schema natürlicher Sprache:\linebreak \texttt{<Prädikat (Imperativ)> <Subjekt>}. Die Struktur der Befehle soll dabei einfach zu merken, auf menschlicher Sprache basierend und auch auf mobilen Geräten mit wenig Tipparbeit verwendbar sein. Bei einem optionalen Einsatz einer Spracherkennung sind auch komplexere Satzkonstruktionen möglich, für den hier zu erfüllenden Zweck genügt jedoch das Schema aus \texttt{<Befehl> <Objekt> <Filter>}. Wie in \cite{ZueConversationalinterfacesadvances2000} beschrieben, weicht die Art der Kommunikation von Mensch-zu-Mensch und Mensch-zu-Bot voneinander ab, worauf bei der Definition der Interaktionsbefehle geachtet wurde. Es ist nach Ansicht der Autoren wenig sinnvoll, einen Bot zu entwickeln, der durch den Zugriff auf große Datenmengen den Eindruck von Intelligenz vermittelt, die aber durch ihre Begrenzung dem Nutzer keinen Mehrwert bietet. Der hier entwickelte Bot verfügt bewusst über ein begrenztes Vokabular, sodass er nur die vom Nutzer gewünschten Informationen liefert; die Kenntnis der Befehle obliegt dem Nutzer.
 
 Aus den in \autoref{tab:chatbotinteraktion} definierten Befehlen wurden Aktivitätsdiagramme erstellt, welche in \autoref{img:activity-zeige} und \autoref{img:activity-teilnahme} ersichtlich sind, um die Reihenfolge der Interaktion besser zu strukturieren.
-Neben der Unterscheidung nach den Satz einleitenden Prädikaten \textit{zeige} und \textit{nehme} ist hervorzuheben, dass jede Aktivität terminiert, was auch durch einen Abbruch der Konversation mittels dem Wort \textit{danke} geschehen kann. Eine Sonderstellung nimmt hier der Block \textit{Hilf mir} ein, der ungeachtet des Satzbaus zu jedem Zeitpunkt der Konversation eine Liste der Befehle ausgibt. Je nach Befehlsumfang können diese auch kontextsensitiv sein, anfangs wird eine vollständige Liste ausgegeben.
+Neben der Unterscheidung nach den Satz einleitenden Prädikaten \textit{zeige} und \textit{nehme} ist hervorzuheben, dass jede Aktivität terminiert, was auch durch einen Abbruch der Konversation mittels dem Wort \textit{danke} geschehen kann. Eine Sonderstellung nimmt hier der Block \textit{hilf mir} ein, der ungeachtet des Satzbaus zu jedem Zeitpunkt der Konversation eine Liste der Befehle ausgibt. Je nach Befehlsumfang können diese auch kontextsensitiv sein, anfangs wird jedoch eine vollständige Liste ausgegeben.
 
-\begin{figure}[htbp]
+\begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{../docs/uml/activity-zeige.png}
     \includegraphics[width=0.9\textwidth]{../docs/uml/activity-zeige2.png}
@@ -66,7 +66,7 @@ Neben der Unterscheidung nach den Satz einleitenden Prädikaten \textit{zeige} u
     \label{img:activity-zeige}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.7\textwidth]{../docs/uml/activity-teilnahme.png}
     \caption{Aktivitätsdiagramm zur Teilnahme an Terminen}
@@ -87,7 +87,7 @@ Wann ist die nächste Schicht? & zeigt die nächste Schicht an \\
 Trag mich ein. & trägt den Aufrufer für die nächste Schicht ein \\
 % \makecell{trägt den Aufrufer für den Termin ein, wenn nur eine\\ Schicht vorhanden ist / fragt nach, in welche Schicht\\ der Aufrufer eingetragen werden soll, wenn mehr als\\ eine Schicht vorhanden ist} \\
 \hline
-Danke & bricht die Konversation ab \\
+Danke. & bricht die Konversation ab \\
 \hline
 \end{tabular}
 \caption{kontextabhängige Befehle}
@@ -96,9 +96,9 @@ Danke & bricht die Konversation ab \\
 
 Durch das Beispiel wird offensichtlich, dass der Bot den Kontext, in dem sich die Unterhaltung befindet, speichern muss. Dies ist pro Konversation und demnach pro Nutzer durchzuführen. Die Autoren gehen davon aus, dass eine Konversation nur einen Kontext besitzt. Es werden daher Konversationen ausgeschlossen, welche zwei Themen besitzen und diese sporadisch oder unvorhersehbar ändern.
 
-Sollte der Satz \textit{Trag mich ein.} ohne Kontext geäußert werden, so soll keine Aktion durchgeführt werden. Da der Bot einer Konversation beiwohnen könnte, welche mit einem anderen Nutzer geführt wird, ist keine Aktion erforderlich oder gewünscht. Sollte der Bot jedoch zuvor den Satz \textit{Wann ist die nächste Schicht} aufgreifen, so soll er sich, wie eine natürliche Person, angesprochen fühlen und darauf reagieren. Weiterhin ist nun ein Kontext vorhanden, wodurch der nächste Satz eine Bedeutung erhält und nicht mehr ignoriert werden darf.
+Sollte der Satz \enquote{Trag mich ein.} ohne Kontext geäußert werden, so soll keine Aktion durchgeführt werden. Da der Bot einer Konversation beiwohnen könnte, welche mit einem anderen Nutzer geführt wird, ist keine Aktion erforderlich oder gewünscht. Sollte der Bot jedoch zuvor den Satz \enquote{Wann ist die nächste Schicht} aufgreifen, so soll er sich, wie eine natürliche Person, angesprochen fühlen und darauf reagieren. Weiterhin ist nun ein Kontext vorhanden, wodurch der nächste Satz eine Bedeutung erhält und nicht mehr ignoriert werden darf.
 
-Das Wort \textit{Danke} dürfte auch sehr häufig in normalen Gruppendiskussionen geäußert werden, ohne dass der Bot dabei direkt angesprochen wird. Daher r ist es wichtig, auf dieses Wort nur im Kontext einer Konversation mit dem zu reagieren, da nur dort den Nutzern die kontextspezifische Bedeutung von Danke bewusst ist.
+Das Wort \enquote{Danke} kann auch sehr häufig in normalen Gruppendiskussionen geäußert werden, ohne dass der Bot dabei direkt angesprochen wird. Daher ist es wichtig, auf dieses Wort nur im Kontext einer Konversation mit demjenigen zu reagieren, welcher mit dem Bot interagiert, da nur dort den Nutzern die kontextspezifische Bedeutung von Danke bewusst ist.
 
 Aufgrund dessen entschieden sich die Autoren weitere Befehle einzuführen, welche den Bot natürlich wirken lassen sollen. Diese können in \autoref{tab:natuerlicheinteraktion} eingesehen werden. Weiterhin werden jene Sätze, auf die reagiert werden sollen, in der EBNF\footnote{Erweiterte Backus-Naur-Form} dargestellt.
 % ACRONYM EBNF
@@ -150,7 +150,7 @@ Grundsätzlich werden zwei verschiedene Ansätze für die Datenbank in Betracht 
 MongoDB hat als NoSQL-Datenbank den zusätzlichen Vorteil, dass ein objektorientiertes Datenmodell verwendet werden kann, was einfache Abfragen mittels Programmiersprachen wie Javascript ermöglicht. Da die Abfragen jedoch in der Anzahl beschränkt sind, und damit kein großer Aufwand in der Implementierung stattfinden muss, können diese in eigens erstellte Funktionen implementiert werden. Dadurch, dass keine der genannten Kriterien auf die gegebenen Anforderungen zutrifft oder notwendig ist, entschieden sich die Autoren für eine SQL-Lösung.
 %https://www.tecchannel.de/a/datenbanksysteme-im-vergleich-mysql-vs-mongodb,2038219,4
 
-Laut der Popularitätsbewertung auf {dbranking} liegt MySQL als GNU-lizensierte Datenbank an erster Stelle. Die genutzten Kriterien sind für das Projekt ebenfalls Teilweise relevant. So sind die Bewertungskriterien für die Anzahl der Nennungen des Systems auf Websites, das allgemeine Interesse an dem System und die Häufigkeit von technischen Diskussionen über das System gute Indizien für die Zukunftssicherheit, Hilfe für optimale Nutzungsmöglichkeiten und die Fehlerbehandlung.
+Laut der Popularitätsbewertung auf \cite{dbranking} liegt MySQL als GNU-lizensierte Datenbank an erster Stelle. Die genutzten Kriterien sind für das Projekt ebenfalls Teilweise relevant. So sind die Bewertungskriterien für die Anzahl der Nennungen des Systems auf Websites, das allgemeine Interesse an dem System und die Häufigkeit von technischen Diskussionen über das System gute Indizien für die Zukunftssicherheit, Hilfe für optimale Nutzungsmöglichkeiten und die Fehlerbehandlung.
 %https://db-engines.com/de/ranking
 %2018-03-13
 
@@ -172,8 +172,8 @@ Wenn ein Termin festgelegt wird und dieser häufiger als einmal auftreten kann, 
 Die Mitglieder sollen weiterhin die Möglichkeit haben, sich in diese Schichten einzutragen. Es muss deshalb eine Zuordnung der Schichten eines Termins und den Nutzern geben. 
 
 
-Um die Anforderungen in einer Datenbank modellieren zu können, wurde ein Schema gemäß \autoref{img:db-schema} erstellt. Das Datenbankschema wurde gemäß der 3. Normalform (siehe \cite{CoddRelationalModelData1970}) erstellt. Dadurch ergeben sich Vorteile hinsichtlich Integrität und Datenzugriffszeit durch die Vermeidung redundanter Daten sowie der eindeutigen Zuordnung von Primärschlüsseln zu Tabellen (Konsistenz). Ein weiterer Vorteil der 3. Normalform ist die im Verhältnis zur 1. und 2. Normalform bessere Erweiterbarkeit, da alle Datensätze thematisch getrennt in jeweils eigenen Tabellen stehen (z.B. Trennung von Nutzer und SlackNutzer). 
-Für den Einsatz als von weiteren Daten isolierter SlackBot wäre ein DB-Modell in 1. oder 2. Normalform aufgrund des einfacheren Aufbaus und weniger nötigen Lesezugriffen vorzuziehen. Dieses wurde aber hinsichtlich der gewünschten Integration in weitere Anwendungen in Form der 3. Normalform erstellt.
+Um die Anforderungen in einer Datenbank modellieren zu können, wurde ein Schema gemäß \autoref{img:db-schema} erstellt. Das Datenbankschema wurde gemäß der 3. Normalform erstellt. \cite{CoddRelationalModelData1970} Dadurch ergeben sich Vorteile hinsichtlich Integrität und Datenzugriffszeit durch die Vermeidung redundanter Daten sowie der eindeutigen Zuordnung von Primärschlüsseln zu Tabellen (Konsistenz). Ein weiterer Vorteil der 3. Normalform ist die im Verhältnis zur 1. und 2. Normalform bessere Erweiterbarkeit, da alle Datensätze thematisch getrennt in jeweils eigenen Tabellen stehen (z.B. Trennung von Nutzer und SlackNutzer). 
+Für den Einsatz als von weiteren Daten isolierter SlackBot wäre ein DB-Modell in 1. oder 2. Normalform aufgrund des einfacheren Aufbaus und weniger nötigen Lesezugriffen vorzuziehen. Dieses wurde aber aufgrund der gewünschten Integration in weitere Anwendungen in Form der 3. Normalform erstellt.
 % \todo{das war ein 4-zeilen satz. kannst du den anders formulieren? ich will den nicht selbst kaputt machen}
 
 Die strikte Aufteilung der Daten in den Tabellen bildet auch die Ebenen der verschieden Lebenszyklen der Datensätze ab, wobei hier zwischen langsam, mittel und schnell unterschieden werden konnte. Diese in \autoref{tab:db-speed} ersichtliche Unterscheidung basiert auf den relativen Unterschieden der Speicherfrequenz der Datensätze und ist daher nicht mit absoluten Werten zu bemessen. Beispielsweise ändern sich die Datensätze in der Tabelle NutzerSchicht erwartungsgemäß öfter als in der Tabelle SlackNutzer.
@@ -222,10 +222,10 @@ Die Umsetzung der vorgestellten Informationen ist in \autoref{img:db-schema} ers
 Die Kommunikation zwischen der Datenbank und dem Chatbot erfolgt auf dem gleichen Host, weshalb keine besonderen Fälle beachtet werden müssen. Der Kommunikationspfad zwischen dem Chatbot und Slack wird jedoch über ein Hochschulnetzwerk durchgeführt. In diesem sind in das Netzwerk des Clubs nur die Ports 80 und 443 freigegeben. In der Standardkonfiguration bindet sich Hubot an Port 8080, der aber durch Setzen der Umgebungsvariable \texttt{PORT} geändert werden kann.
 
 Eine erste Untersuchung des Netzwerkverkehrs zeigt jedoch weitere Ports, wie aus \autoref{img:packetports} zu entnehmen. Folgende Testumgebung kam hierbei zum Einsatz:
-Die Standardkonfiguration Hubots wurde mittels docker-compose (Details siehe Abschnitt Containerisierung) lokal gestartet und der Netzwerkverkehr an der virtuellen Netzwerkbrücke mittels Wireshark aufgezeichnet. In der Standardkonfiguration greift der in NodeJS laufende Hubot auf den Redis-Container als \enquote{Brain} zu, was standardmäßig über Port 6379 erfolgt. Über Port 443 werden HTTPS-Verbindungen zum Slack-Server aufgebaut um beispielsweise Profilbilder nachzuladen.
+Die Standardkonfiguration Hubots wurde mittels docker-compose (Details siehe Abschnitt Containerisierung) lokal gestartet und der Netzwerkverkehr an der virtuellen Netzwerkbrücke mittels Wireshark aufgezeichnet. In der Standardkonfiguration greift der in NodeJS laufende Hubot auf den Redis-Container als \enquote{Brain} zu, was standardmäßig über Port 6379 erfolgt. Über Port 443 werden HTTPS-Verbindungen zum Slack-Server aufgebaut, um beispielsweise Profilbilder nachzuladen.
 
-Über die in diesem Beispiel genutzten Ports 43642 und 47230 erfolgt die weitere Kommunikation des Bots. Bei einem Neustart des Botclients ändern sich diese Ports, bleiben aber im Bereich der Non-Standard-Ports\footnote{Standardports unter \url{https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml}}. Für den Betrieb des Bots hinter einer Firewall mit Port-Whitelisting\footnote{alle Ports geschlossen, nur gewünschte Ports erlaubt} ist dies ein unerwünschtes Verhalten. Da die Einschränkung jedoch nur eingehende Verbindungen betrifft, war das Verhalten akzeptabel. Eine aus diesen Einschränkungen abgeleitete Systemarchitektur ist dem Deploymentdiagramm in \autoref{img:deployment} zu entnehmen.
-In diesem ist neben den Komponenten wie Datenbankserver, Firewall und Chatbot auch eine Schnittstelle für einen Abruf der Termindaten per iCal o.ä. abgebildet, welche für eine spätere Implementierung vorgesehen ist.
+Über die in diesem Beispiel genutzten Ports 43642 und 47230 erfolgt die weitere Kommunikation des Bots. Bei einem Neustart des Botclients ändern sich diese, bleiben aber im Bereich der Non-Standard-Ports\footnote{Standardports unter \url{https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml}}. Für den Betrieb des Bots hinter einer Firewall mit Port-Whitelisting\footnote{alle Ports geschlossen, nur gewünschte Ports erlaubt} ist dies ein unerwünschtes Verhalten. Da die Einschränkung jedoch nur eingehende Verbindungen betrifft, war das Verhalten akzeptabel. Eine aus diesen Einschränkungen abgeleitete Systemarchitektur ist dem Deploymentdiagramm in \autoref{img:deployment} zu entnehmen.
+In diesem ist neben den Komponenten wie Datenbankserver, Firewall und Chatbot auch eine Schnittstelle für einen Abruf der Termindaten per iCal o.Ä. abgebildet, welche für eine spätere Implementierung vorgesehen ist.
 
 \begin{figure}[h]
     \centering
