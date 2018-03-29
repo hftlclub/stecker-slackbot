@@ -7,9 +7,9 @@ RUN apt-get update \
 RUN groupadd -g 501 hubot && \
 useradd -m -u 501 -g 501 hubot
 
-COPY ["external-scripts.json", "package.json", "/home/hubot/"]
-COPY ["node_modules/", "/home/hubot/node_modules/"]
-COPY ["scripts/", "/home/hubot/scripts/"]
+COPY ["hubot/external-scripts.json", "hubot/package.json", "/home/hubot/"]
+COPY ["hubot/node_modules/", "/home/hubot/node_modules/"]
+COPY ["hubot/scripts/", "/home/hubot/scripts/"]
 
 RUN npm install -g npm \
 && npm install -g coffeescript yo \
