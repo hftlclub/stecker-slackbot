@@ -103,6 +103,8 @@ Im Verlauf der Entwicklung des Bots traten stellenweise unerwartete Probleme auf
 \begin{itemize}
     \item \textbf{Änderung des Botnamens}: Der Name des Bots steht zusammen mit anderen Metadaten in der \texttt{package.json} im docker-Ordner.
     \item \textbf{Mangelnde Schreibberechtigung im Hubot-Container}: die Hubot-Skripte müssen unter dem Nutzer Hubot laufen und sollten direkt in den Container gemounted werden.
-    \item \textbf{Änderung der NodeJS Version}: die NodeJS-Version ist zur Wahrung der Stabilität explizit in der docker-compose.yml-Datei anzugeben.
-
+    \item \textbf{Änderung der NodeJS Version}: die NodeJS-Version ist zur Wahrung der Stabilität explizit im Dockerfile anzugeben.
+    \item \textbf{Zeitreferenz falsch} Die Zeitzonen der Docker-Container müssen übereinstimmen, da sonst die Erinnerungsfunktion des Bots nicht funktioniert
+    \item \textbf{Erweiterung des Bots} weitere Module für Hubot können über \texttt{npm search hubot} installiert werden. Für eigene Erweiterungen ist eine CoffeeScript-Datei im Ordner scripts anzulegen.
+    \item \textbf{Größe der Docker Images} Aktuell benötigen die beiden Images für Hubot und die DB zusammen rund 1 GByte Speicherplatz, da diese auf Debian basieren. Durch Änderung der Image Basis von Debian auf z.B. Alpine Linux kann Speicherplatz eingespart werden.
 \end{itemize}
