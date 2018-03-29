@@ -1,6 +1,6 @@
 \subsection{Sicherheitsaspekte}
 
-Während der Implementierung des Prototypen wurde gemäß der Anforderungen nicht auf Sicherheitsaspekte eingegangen. Bei weiterem Einsatz des Bot-Protoypen sollten diese aber unter keinen Umständen vernachlässigt werden. Eine Übersicht über zu beachtende Sicherheitsaspekte befindet sich in \autoref{tab:secaspects}. Diese Übersicht stellt dabei keinen Anspruch auf Vollständigkeit, erlaubt aber einen groben Überblick über zu erwartende Sicherheitslücken.
+Während der Implementierung des Prototypen wurde gemäß der Anforderungen nicht auf Sicherheitsaspekte eingegangen. Bei weiterem Einsatz des Bot-Protoypen sollten diese aber unter keinen Umständen vernachlässigt werden. Eine Übersicht über zu beachtende Sicherheitsaspekte befindet sich in \autoref{tab:secaspects}. Diese Übersicht stellt dabei keinen Anspruch auf Vollständigkeit, erlaubt jedoch einen groben Überblick, über die Sicherheitsbedenken oder zu erwartende Sicherheitslücken.
 
 \begin{table}[h]
     \centering
@@ -12,7 +12,7 @@ Während der Implementierung des Prototypen wurde gemäß der Anforderungen nich
         \hline
         Docker-Variablen & in Plaintext gespeichert & Docker Secrets verwenden \\
         \hline
-        MySQL-DB & theoretisch anfällig für SQL-Injektion & DB-Eingaben validieren (z.B. RegEx), regelmäßige Backups \\
+        MySQL-DB & theoretisch anfällig für SQL-Injektion & alle DB-Eingaben validieren (z.B. RegEx), regelmäßige Backups \\
         \hline
         NodeJS & Sicherheitslücken alter Versionen & regelmäßige Aktualisierungen \\
         \hline
@@ -26,9 +26,9 @@ Während der Implementierung des Prototypen wurde gemäß der Anforderungen nich
 \end{table}
 
 \subsection{Botschnittstelle}
-Der Prototyp des Chatbots verfügt über eine rein dialogbasierte Nutzerinteraktion. Jeder Befehl erfolgt über die Textschnittstelle, worüber nur eingeschränkte Interaktionen möglich sind.
+Der Prototyp des Chatbots verfügt über eine rein textbasierte Nutzerinteraktion. Jeder Befehl erfolgt über die Textschnittstelle, worüber nur eingeschränkte Interaktionen möglich sind.
 
-Die Implementierung einer erweiterten Schnittstelle in Form eines Slack-Panels\footnote{\url{https://api.slack.com/dialogs}} zur interaktiven Auswahl von Terminen ermöglicht z.B. eine schnellere Auswahl von Terminen, da diese nicht immer einzeln erfragt werden müssen, sondern direkt im Slack-Kanal ausgewählt werden können.
+Die Implementierung einer erweiterten Schnittstelle in Form eines Slack-Panels\footnote{\url{https://api.slack.com/dialogs}} zur interaktiven Auswahl von Terminen ermöglicht eine schnellere Auswahl von Terminen, da diese nicht immer einzeln erfragt werden müssen, sondern direkt im Slack-Kanal ausgewählt werden können.
 Für diese Funktionalität ist die Registrierung des Bots als \enquote{Slack-App} nötig, da dies nur mit Slack-Webhooks möglich ist.
 Der dafür geschätzte Aufwand beträgt $16h$.
 

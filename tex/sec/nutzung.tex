@@ -27,7 +27,7 @@ Nach dem in \autoref{img:hubot-int} erscheinenden Dialog zur Eingabe des Namens 
 
 \subsection{Starten der lokalen Umgebung}
 Nach Abruf des Projekts\footnote{\url{https://github.com/ohli/steckerbot}}
-(über \texttt{git clone} oder Herunterladen des Archivs) befindet sich der Quellcode im Ordner \textit{docker} mit folgenden Dateien:
+(über \texttt{git clone} oder Herunterladen des Archivs) befindet sich der Quellcode im Ordner docker mit folgenden Dateien:
 
 \begin{verbatim}
 bin/
@@ -48,8 +48,7 @@ In den Ordnern bin, node\_modules und scripts befinden sich Dateien des Hubot-Fr
 
 Die ausgelieferte Standardkonfiguration kann nach Anlegen der .env-Datei über die folgenden Befehle gestartet werden:
 
-\texttt{docker-compose build}
-
+\texttt{docker-compose build}\\
 \texttt{docker-compose up}
 
 Dies startet und initialisiert zuerst einen lokalen MySQL-Container und verbindet anschließend den Hubot-Container mit dieser. Nun sollte der zuvor im Slack angelegte Bot als \enquote{online} erscheinen und auf erste einfache Befehle antworten.
@@ -62,16 +61,16 @@ Die im vorherigen Unterabschnitt angelegte Datenbank muss zu Beginn noch mit Dat
 Zum Anlegen neuer Nutzer wird folgender Vorgang empfohlen:
 
 \begin{enumerate}
-    \item ermitteln der IP-Adresse des MySQL-Containers mittels \texttt{docker inspect termindatenbank}
+    \item Ermitteln der IP-Adresse des MySQL-Containers mittels \texttt{docker inspect\linebreak termindatenbank}
     \item Verbinden eines MySQL-Clients wie z.B. MySQL Workbench\footnote{\url{https://www.mysql.com/de/products/workbench/}} mit der IP des MySQL-Containers
     \item Anlegen der gewünschten Daten in die bereits bestehenden Tabellen
 \end{enumerate}
 
-Die angelegten Daten können anschließend mit den .sql-Dateien aus dem Ordner sql-tests getestet werden.
+Die angelegten Daten können anschließend mit den SQL-Dateien aus dem Ordner sql-tests getestet werden.
 
 \subsection{Beispielbefehle}
 
-Folgende Befehle wurden im Prototyp implementiert (\autoref{tab:protcmd}):
+Die Befehle aus \autoref{tab:protcmd} wurden im Prototyp implementiert.
 
 \begin{table}[h!]
     \centering
@@ -89,20 +88,20 @@ Folgende Befehle wurden im Prototyp implementiert (\autoref{tab:protcmd}):
         \hline
         Trag mich ein & trägt Nutzer in zuvor angezeigte Schicht ein & Ich habe dich in die Schicht eingetragen \\
         \hline
-        Danke & beendet Konversation \& Kontext der Schicht & Gern geschehen \\
+        Danke & beendet die Konversation im aktuellen Kontext & Gern geschehen \\
         \hline
     \end{tabularx}
-    \caption{Befehle des Bot-Prototyps}
+    \caption{Befehle des Bot-Prototypen}
     \label{tab:protcmd}
 \end{table}
 
 
 \subsection{Besonderheiten und Best Practices}
 
-Im Verlauf der Entwicklung des Bots traten stellenweise unerwartete Probleme auf, deren Lösungsansätze für zukünftige Weiterentwicklungen von Nutzem sein dürften.
+Im Verlauf der Entwicklung des Bots traten stellenweise unerwartete Probleme auf, deren Lösungsansätze für zukünftige Weiterentwicklungen von Nutzen sein können.
 \begin{itemize}
     \item \textbf{Änderung des Botnamens}: Der Name des Bots steht zusammen mit anderen Metadaten in der \texttt{package.json} im docker-Ordner.
-    \item \textbf{Mangelnde Schreibberechtigung im Hubot-Container}: die Hubot-Skripte müssen unter dem Nutzer Hubot laufen und sollten direkt in den Container gemounted werden.
-    \item \textbf{Änderung der NodeJS Version}: die NodeJS-Version ist zur Wahrung der Stabilität explizit in der docker-compose.yml-Datei anzugeben.
+    \item \textbf{Mangelnde Schreibberechtigung im Hubot-Container}: Die Hubot-Skripte müssen unter dem Nutzer Hubot laufen und sollten direkt in den Container gemounted werden.
+    \item \textbf{Änderung der NodeJS Version}: Die NodeJS-Version ist zur Wahrung der Stabilität explizit in der docker-compose.yml-Datei anzugeben.
 
 \end{itemize}
