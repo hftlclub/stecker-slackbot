@@ -227,7 +227,7 @@ Die Standardkonfiguration Hubots wurde mittels docker-compose (Details siehe Abs
 Über die in diesem Beispiel genutzten Ports 43642 und 47230 erfolgt die weitere Kommunikation des Bots. Bei einem Neustart des Botclients ändern sich diese Ports, bleiben aber im Bereich der Non-Standard-Ports\footnote{Standardports unter \url{https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml}}. Für den Betrieb des Bots hinter einer Firewall mit Port-Whitelisting\footnote{alle Ports geschlossen, nur gewünschte Ports erlaubt} ist dies ein unerwünschtes Verhalten. Da die Einschränkung jedoch nur eingehende Verbindungen betrifft, war das Verhalten akzeptabel. Eine aus diesen Einschränkungen abgeleitete Systemarchitektur ist dem Deploymentdiagramm in \autoref{img:deployment} zu entnehmen.
 In diesem ist neben den Komponenten wie Datenbankserver, Firewall und Chatbot auch eine Schnittstelle für einen Abruf der Termindaten per iCal o.ä. abgebildet, welche für eine spätere Implementierung vorgesehen ist.
 
-\begin{figure}[H]
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.7\textwidth]{img/packetports.png}
     \caption{Übersicht über von Hubot genutzte TCP-Ports}
@@ -240,7 +240,7 @@ In diesem ist neben den Komponenten wie Datenbankserver, Firewall und Chatbot au
 %Aus diesem Grund muss der Chatbot sich als Client mit Slack verbinden und darf keine Serveranwendung sein, welche ein Polling implementiert.
 
 % vllt Grafik einfügen?
-\begin{figure}[H]
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.5\textwidth]{../docs/uml/architecture.png}
     \caption{Deploymentdiagramm}
