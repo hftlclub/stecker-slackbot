@@ -3,6 +3,7 @@ mysql = require 'mysql'
 module.exports = (bot) ->
 	conversation={}
 	url = process.env.MYSQL_URL
+	bot.logger.info "MySQL URl: " + url
 	conn = mysql.createConnection(url)
 
 	conn.connect (err) ->

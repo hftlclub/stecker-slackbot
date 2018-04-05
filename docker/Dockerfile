@@ -10,6 +10,7 @@ useradd -m -u 501 -g 501 hubot
 COPY ["hubot/external-scripts.json", "hubot/package.json", "/home/hubot/"]
 COPY ["hubot/node_modules/", "/home/hubot/node_modules/"]
 COPY ["hubot/scripts/", "/home/hubot/scripts/"]
+COPY ["scripts/start.sh", "/home/hubot/"]
 
 RUN npm install -g npm \
 && npm install -g coffeescript yo \
@@ -31,6 +32,7 @@ RUN sed -i '/heroku/d' external-scripts.json
 # RUN rm hubot-scripts.json
 
 # ENTRYPOINT ["./bin/hubot"]
-CMD [ "./bin/hubot", "-a", "slack"]
+CMD [ "./start.sh"]
+# CMD [ "sleep", "30 &&", "./bin/hubot", "-a", "slack"]
 # CMD [ "/bin/sh" ]
 EXPOSE 8080
