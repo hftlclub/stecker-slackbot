@@ -40,13 +40,13 @@
 * Link: Youtube - die Reise nach Rossa
 * Nächster Termin: vor Ostern, Abnahme, davor Doku + Code schicken
 * TODOS:
-    * [ ] Entscheidungsbaum für Konversationen, Havariefälle <- Aktivitätsdiagramme, überarbeiten
+    * [x] Entscheidungsbaum für Konversationen, Havariefälle <- Aktivitätsdiagramme, überarbeiten
     * [x] S.11 Sichten zu Schichten ändern
     * [x] nach Doppelpunkt Großschreibung
     * [x] DB: Nutzernamen eindeutig, werden von Admin eingetragen 
     * [ ] Doku ganz gut, reicht so aus. Wenn Steckerteam zufrieden 
-    * [ ] Aufwandsabschätzung für Slack-Panel o.ä. 
-    * [ ] Evtl. Fragen zur IT-Sicherheit, einzuhaltende Sicherheitsaspekte, z.B. SQL-Injektion
+    * [x] Aufwandsabschätzung für Slack-Panel o.ä. 
+    * [x] Evtl. Fragen zur IT-Sicherheit, einzuhaltende Sicherheitsaspekte, z.B. SQL-Injektion
     * [x] Absicherung gegen DB-Angriffe mittels RegEx 
 
 ## Nützliche Links
