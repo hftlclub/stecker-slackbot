@@ -1,4 +1,4 @@
-FROM node:6.13
+FROM node:10.0
 
 RUN apt-get update \
 && apt-get upgrade -y \
@@ -7,15 +7,16 @@ RUN apt-get update \
 RUN groupadd -g 501 hubot && \
 useradd -m -u 501 -g 501 hubot
 
-COPY ["hubot/external-scripts.json", "hubot/package.json", "/home/hubot/"]
-COPY ["hubot/node_modules/", "/home/hubot/node_modules/"]
-COPY ["hubot/scripts/", "/home/hubot/scripts/"]
-COPY ["scripts/start.sh", "/home/hubot/"]
-
 RUN npm install -g npm \
 && npm install -g coffeescript yo \
 && adduser -h /home/hubot -D hubot
 RUN rm -rf /var/cache/apk/*
+
+
+COPY ["hubot/external-scripts.json", "/home/hubot/"]
+COPY ["hubot/package.json", "/home/hubot/package.json"]
+COPY ["hubot/scripts/", "/home/hubot/scripts/"]
+COPY ["scripts/start.sh", "/home/hubot/"]
 
 RUN chown -R hubot:hubot /home/hubot
 
@@ -24,10 +25,10 @@ USER hubot
 WORKDIR /home/hubot
 
 
-
 RUN npm install generator-hubot hubot-slack
 RUN echo "No" | yo hubot --adapter slack --name slackbot --defaults
 RUN sed -i '/heroku/d' external-scripts.json
+RUN npm install
 
 # RUN rm hubot-scripts.json
 
